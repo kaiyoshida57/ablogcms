@@ -1,0 +1,14 @@
+<!-- /_layouts/base.html テンプレートを継承 -->
+@extends("/_layouts/base.html")
+
+<!-- /_layouts/base.html の「section("main")」を上書き -->
+@section("main")
+<section>
+	<header class="acms-page-header page-header">
+		<h1 class="entry-title">%{CATEGORY_NAME}</h1>
+	</header>
+
+	<!-- フォーム -->
+	@include("/contact/form/main.html")
+</section>
+@endsection

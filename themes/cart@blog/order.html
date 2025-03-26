@@ -1,0 +1,32 @@
+@extends("/_layouts/cart_base.html")
+
+@section("main")
+<!-- 注文画面 -->
+<!-- BEGIN_MODULE Shop2_Form_Order -->
+
+<!-- BEGIN step -->
+@include("/order/cart.html")
+<!-- END step -->
+
+<!-- BEGIN step#address -->
+@include("/order/address.html")
+<!-- END step#address -->
+
+<!-- BEGIN step#deliver -->
+@include("/order/deliver.html")
+<!-- END step#deliver -->
+
+<!-- BEGIN step#confirm -->
+@include("/order/confirm.html")
+<!-- END step#confirm -->
+
+<!-- BEGIN step#result -->
+@include("/order/result.html")
+<!-- END step#result -->
+
+<!-- BEGIN step#error -->
+@include("/order/error.html")
+<!-- END step#error -->
+
+<!-- END_MODULE Shop2_Form_Order -->
+@endsection

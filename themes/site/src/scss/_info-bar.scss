@@ -1,0 +1,52 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ページ上部のインフォーメーション
+------------------------------ */
+.info-bar {
+	color: #FFF;
+	background: #666;
+}
+
+.info-bar-contents{
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.info-bar-icon {
+	display: flex;
+
+	@include acms.font-size(24);
+}
+
+.info-bar-message {
+	padding: 0 15px;
+}
+
+.info-bar-link-wrap {
+	margin-left: auto;
+}
+
+.info-bar-link {
+	padding: 5px 0;
+	color: #FFF;
+
+	&:link,
+	&:visited,
+	&:hover,
+	&:active,
+	&:focus {
+		color: #FFF;
+	}
+
+	&:hover {
+		text-decoration: none;
+		border-bottom: 1px solid currentcolor;
+	}
+}
+
+.info-bar-link-icon {
+	margin: 0 10px 0 0;
+}

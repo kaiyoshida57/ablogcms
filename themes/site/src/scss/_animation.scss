@@ -1,0 +1,142 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　アニメーション
+------------------------------ */
+@keyframes fade-in {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+
+	20% {
+		display: block;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+
+	20% {
+		display: block;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+
+	20% {
+		display: block;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+
+@keyframes fadeUp {
+	0% {
+		transform: translate(0, 20px);
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+
+.js .js-animation {
+	.section-heading,
+	.entry-heading-center {
+		transform: translate(0,20px);
+		opacity: 0;
+		transition: opacity .2s ease-out, transform .4s ease-out;
+	}
+
+	.module-group-list,
+	.entry-column,
+	.module-section,
+	.suggest-center-box {
+		transform: translate(0,20px);
+		opacity: 0;
+		transition: opacity .2s ease-out .4s, transform .4s ease-out .4s;
+	}
+
+	.main-slider-text-wrap {
+		transform: translate(0,20px);
+		opacity: 0;
+		transition: opacity .2s ease-out .6s, transform .4s ease-out .6s;
+	}
+}
+
+.js-animation.is-show {
+	.section-heading,
+	.entry-heading-center {
+		transform: translate(0);
+		opacity: 1;
+	}
+
+	.module-group-list,
+	.entry-column,
+	.module-section,
+	.suggest-center-box {
+		transform: translate(0);
+		opacity: 1;
+	}
+
+	.main-slider-text-wrap {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+@media print {
+  .js .js-animation {
+    .section-heading,
+    .entry-heading-center {
+      transform: translate(0);
+      opacity: 1;
+    }
+
+    .module-group-list,
+    .entry-column,
+    .module-section,
+    .suggest-center-box {
+      transform: translate(0);
+      opacity: 1;
+    }
+
+    .main-slider-text-wrap {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+}

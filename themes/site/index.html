@@ -1,0 +1,11 @@
+@extends("/_layouts/basic.html")
+
+@section("main")
+
+<!-- タグフィルター -->
+@include("/include/tag/filter.html")
+
+<!-- エントリーサマリー（画像メイン表示） -->
+@include("/include/entry/summary-image.html", {"module_id": "summary_index", "message": ""})
+
+@endsection

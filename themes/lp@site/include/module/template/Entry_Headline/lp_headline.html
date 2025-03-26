@@ -1,0 +1,15 @@
+<!-- BEGIN_MODULE Entry_Headline -->
+<section class="lp-module-section">
+	@include("/admin/module/setting.html")
+	<div class="lp-module-header clearfix"><!-- BEGIN moduleField --><!-- BEGIN module_heading:veil -->
+		<h2 id="layout-entry_headline" class="lp-module-heading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+	</div>
+	<ul class="lp-headline" aria-labelledby="layout-entry_headline"><!-- BEGIN entry:loop -->
+		<li class="lp-headline-item {entry:loop.class} js-biggerlink">
+			<time class="lp-headlineDat" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )</time>
+			<!-- BEGIN category:veil --><span class="lp-label-category">{categoryName}</span><!-- END category:veil -->
+			<!-- BEGIN url#front --><a href="{url}" class="lp-headline-title"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --><!-- BEGIN new --><span class="acms-label label-new">NEW</span><!-- END new -->
+		</li><!-- END entry:loop -->
+	</ul>
+</section>
+<!-- END_MODULE Entry_Headline -->

@@ -1,0 +1,109 @@
+@extends("/_layouts/one-column.html")
+
+@section("head-link")
+@parent
+<!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- サイトトップページ用 構造化データ -->
+@include("/include/head/structured-data-sitetop.html")
+<!-- END_MODULE Touch_RootBlog -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+@endsection
+
+@section("head-js")
+@parent
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/js/top.js" async></script>
+@endsection
+
+@section("header")
+@parent
+<!-- BEGIN_MODULE Entry_Summary id="summary_news_info" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+<div class="info-bar<!-- BEGIN information_type:veil --> info-bar-{information_type}<!-- END information_type:veil -->">
+	<div class="acms-container">
+		<div class="info-bar-contents">
+			<div class="info-bar-icon"><!-- BEGIN_IF [{information_type}/eq/good-news] -->
+				<span class="acms-icon-shortcut" aria-hidden="true"></span><!-- ELSE_IF [{information_type}/eq/warning] -->
+				<span class="acms-icon-attention" aria-hidden="true"></span><!-- ELSE -->
+				<span class="acms-icon-news" aria-hidden="true"></span><!-- END_IF -->
+			</div>
+			<p class="info-bar-message">{information_message}</p>
+			<p class="info-bar-link-wrap"><a href="{url}" class="info-bar-link"><span class="acms-icon-arrow-right info-bar-link-icon"></span>詳細へ</a></p>
+		</div>
+	</div>
+</div><!-- END entry:loop --><!-- END unit:loop --><!-- END_MODULE Entry_Summary -->
+@endsection
+
+@section("topic-path")
+@endsection
+
+@section("main")
+<main>
+	<div class="js-animation">
+		<!-- トップイメージ -->
+		@include("/include/parts/main-visual.html")
+	</div>
+	<div class="acms-container sp-container js-animation">
+		<div class="section-space">
+			<div class="acms-grid">
+				<!-- 見出し -->
+				<h2 class="section-heading acms-text-center">サービス内容</h2>
+				<!-- エントリーヘッドライン（トップ用） -->
+				@include("/include/field/module/field-group.html", {"module_id": "MF_about_service"})
+			</div>
+		</div>
+	</div>
+
+	<div class="section-bg js-animation">
+		<div class="acms-container sp-container">
+			@include("/include/entry/body-content-only.html", {"module_id": "body_top"})
+		</div>
+	</div>
+
+	<div class="js-animation">
+		<!-- スライダー -->
+		@include("/include/siteparts/banner-slider.html")
+	</div>
+
+	<div class="acms-container sp-container js-animation">
+		<div class="acms-grid">
+			<div class="section-space">
+				<h2 class="section-heading acms-text-center">製品情報</h2>
+				<!-- エントリーサマリー -->
+				@include("/include/entry/summary-thumbnail.html", {"module_id": "summary_product"})
+			</div>
+		</div>
+	</div>
+
+	<div class="section-bg js-animation">
+		<div class="acms-container sp-container">
+			<div class="acms-grid">
+				<div class="acms-col-md-8 section-center-col">
+					<h2 class="section-heading acms-text-center">お知らせ</h2>
+					<!-- エントリーヘッドライン（トップ用） -->
+					@include("/include/entry/headline.html", {"module_id": "headline_news"})
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 確認用テンプレート -->
+	@include("/include/check-seo.html")
+</main>
+
+<!-- モバイル：ナビゲーションメニュー -->
+<div class="acms-hide-pc">
+@include("/include/parts/mobile-nav.html")
+</div>
+@endsection
+
+@section("footer-above")
+<!-- お問い合わせ -->
+<div class="js-animation">
+	@include("/include/footer/suggest-center.html")
+</div>
+@endsection
+
+@section("body-end")
+@endsection

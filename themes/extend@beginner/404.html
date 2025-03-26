@@ -1,0 +1,25 @@
+<!-- /_layouts/base.html テンプレートを継承 -->
+@extends("/_layouts/base.html")
+
+<!-- /_layouts/base.html の「section("page-title")」を上書き -->
+@section("page-title")
+<div class="page-title-wrapper">
+	<div class="page-title-filter"></div>
+	<div class="page-title-inner">
+		<div class="acms-container"><h1 class="page-title">404</h1></div>
+	</div>
+</div>
+@endsection
+
+<!-- /_layouts/base.html の「section("main")」を上書き -->
+@section("main")
+<article class="acms-entry clearfix">
+	<header class="entry-header clearfix">
+		<h2 class="entry-title">お探しのページは見つかりませんでした。</h2>
+	</header>
+	<div class="entry-column">
+		<p>お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。</p>
+		<p><a href="%{BASE_URL}">→ トップページへ戻る</a></p>
+	</div>
+</article>
+@endsection

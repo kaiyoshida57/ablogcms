@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+// 条件設定
+$admin: false;
+
+// Base
+@forward "../../../../system/src/scss/global/functions.scss";
+@forward "../../../../system/src/scss/global/variables";
+@forward "../../../../system/src/scss/global/variables-fonts";
+@forward "../../../../system/src/scss/global/mixins.scss";
+
+// Core CSS
+@use "../../../../system/src/scss/grid.scss";
+
+//@use "../../../../system/src/scss/button.scss";
+//@use "../../../../system/src/scss/type.scss";
+//@use "../../../../system/src/scss/code.scss";
+//@use "../../../../system/src/scss/form.scss";
+//@use "../../../../system/src/scss/table.scss";
+//@use "../../../../system/src/scss/title.scss";
+//@use "../../../../system/src/scss/list-group.scss";
+//@use "../../../../system/src/scss/label.scss";
+//@use "../../../../system/src/scss/badge.scss";
+//@use "../../../../system/src/scss/panel.scss";
+
+// Unit
+@use "../../../../system/src/scss/unit.scss";
+
+//Components
+//@use "../../../../system/src/scss/thumbnails.scss";
+//@use "../../../../system/src/scss/summary.scss";
+//@use "../../../../system/src/scss/navbar.scss";
+//@use "../../../../system/src/scss/sidebar.scss";
+//@use "../../../../system/src/scss/topicpath.scss";
+//@use "../../../../system/src/scss/pager.scss";
+//@use "../../../../system/src/scss/alert.scss";
+//@use "../../../../system/src/scss/timeline.scss";
+//@use "../../../../system/src/scss/dropdown.scss";
+//@use "../../../../system/src/scss/tooltip.scss";
+//@use "../../../../system/src/scss/tabs.scss";
+//@use "../../../../system/src/scss/tab-select.scss";
+//@use "../../../../system/src/scss/progress-bar.scss";
+//@use "../../../../system/src/scss/icon-fonts.scss";
+//@use "../../../../system/src/scss/offcanvas.scss";
+//@use "../../../../system/src/scss/modules.scss";
+
+//Animation
+//@use "../../../../system/src/scss/animation.scss";
+
+//Utility Classes
+//@use "../../../../system/src/scss/utilities.scss";

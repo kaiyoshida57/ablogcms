@@ -1,0 +1,52 @@
+@extends("/_layouts/one-column.html")
+
+@section("head-link")
+@parent
+<link href="/js/slick/slick.css" rel="stylesheet">
+@endsection
+
+@section("head-js")
+@parent
+<script src="/js/slick/slick.js" charset="UTF-8"></script>
+<script src="/js/top.js" charset="UTF-8"></script>
+@endsection
+
+@section("topic-path")
+@endsection
+
+@section("main")
+<main>
+	<!-- ※レイアウトモジュール用　管理用パーツ -->
+	<div class="acms-container">
+		@include("/admin/layout/action.html")
+	</div>
+
+	<!-- レイアウトモジュール -->
+	<!-- BEGIN_MODULE Layout id="topLayout" -->
+		<!-- BEGIN display -->
+		@include("/include/layout.html")
+		<!-- END display -->
+		<!-- BEGIN edit -->
+		<div class="acms-container">
+			@include("/admin/layout/edit.html")
+		</div>
+		<!-- END edit -->
+	<!-- END_MODULE Layout -->
+
+	<!-- 確認用テンプレート -->
+	@include("/include/check-seo.html")
+</main>
+
+<!-- モバイル：ナビゲーションメニュー -->
+<div class="acms-hide-pc">
+@include("/include/parts/mobile-nav.html")
+</div>
+@endsection
+
+@section("footer-above")
+<!-- お問い合わせ -->
+@include("/include/footer/suggest-layout.html")
+@endsection
+
+@section("body-end")
+@endsection

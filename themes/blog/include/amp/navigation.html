@@ -1,0 +1,21 @@
+<amp-sidebar id="sidebar" layout="nodisplay" side="right" class="amp-offcanvas">
+	<!-- BEGIN_MODULE Links id="" -->
+	<nav>
+		<div id="nav-list-wrap">
+			<ul class="nav-sp-list">
+				<!-- BEGIN loop -->
+				<li class="nav-sp-item"><a href="{url}">{name}</a></li>
+				<!-- END loop -->
+			</ul>
+		</div>
+	</nav>
+	<!-- END_MODULE Links -->
+	<div class="nav-sp-btn-wrap">
+		<button class="amp-offcanvas-btn" on='tap:sidebar.toggle'>
+			<span class="amp-offcanvas-btn-line"></span>
+			<span class="amp-offcanvas-btn-line"></span>
+			<span class="amp-offcanvas-btn-line"></span>
+			<span class="acms-hide-visually">メニューを閉じる</span>
+		</button>
+	</div>
+</amp-sidebar>

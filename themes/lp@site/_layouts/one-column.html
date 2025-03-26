@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	@section("head-meta")
+	@include("/include/head/meta.html")
+	@endsection
+
+	@section("head-link")
+	@include("/include/head/link.html")
+	@endsection
+
+	@section("head-js")
+	@include("/include/head/js.html")
+  <script src="/js/lp.js" async></script>
+	@endsection
+</head>
+<body id="top">
+@section("body-start")
+@include("/include/body-start.html", {"sns_official_btn":"true"})
+@endsection
+
+<!-- BEGIN_MODULE Entry_Body --><!-- BEGIN entry:loop --><!-- BEGIN enable_appearance:loop -->
+@section("header")<!-- BEGIN_IF [{enable_appearance}/eq/header] -->
+<!-- ヘッダー -->
+@include("/include/header.html")<!-- END_IF -->
+@endsection
+
+@section("page-title")<!-- BEGIN_IF [{enable_appearance}/eq/page_title] -->
+<!-- ページタイトル -->
+@include("/include/header/page-title.html")<!-- END_IF -->
+@endsection
+
+@section("topic-path")<!-- BEGIN_IF [{enable_appearance}/eq/topicpath] -->
+<!-- トピックパス -->
+@include("/include/header/topicpath.html")<!-- END_IF -->
+@endsection
+<!-- END enable_appearance:loop --><!-- END entry:loop -->
+
+<div class="acms-container">
+	@section("admin-part")
+	<!-- ※管理用パーツ -->
+	@include("/admin/action.html")
+	@include("/admin/switch-user.html")
+	@endsection
+</div>
+
+@section("main")
+<p>継承してメインコンテンツを設定してください</p>
+@endsection
+
+<div class="acms-hide-pc">
+	<div id="mobile-nav" class="js-mobile-nav mobile-nav">
+		<div class="mobile-nav-inner">
+			<nav aria-label="メインメニュー" class="mobile-navbar">
+				@section(sp-global-nav)
+				<!-- スマートフォン用 グローバルナビ -->
+				@include("/include/header/sp-global-nav.html")
+				@endsection
+
+				@section(sp-nav-footer")
+				<div class="mobile-navbar-footer">
+					<!-- SNSアカウントへのリンク -->
+					@include("/include/footer/sns-link.html")
+				</div>
+				@endsection
+			</nav>
+		</div>
+	</div>
+</div>
+
+<!-- BEGIN entry:loop -->
+<!-- BEGIN enable_appearance:loop -->
+@section("footer-above")
+<!-- BEGIN_IF [{enable_appearance}/eq/contact] -->
+<!-- お問い合わせ -->
+@include("/include/footer/suggest-center.html")<!-- END_IF -->
+@endsection
+
+@section("footer")
+<!-- BEGIN_IF [{enable_appearance}/eq/footer] -->
+<!-- フッター -->
+@include("/include/footer.html")<!-- END_IF -->
+@endsection
+
+<!-- END enable_appearance:loop --><!-- END entry:loop -->
+<!-- END_MODULE Entry_Body -->
+
+@section("body-end")
+@include("/include/body-end.html")
+@endsection
+</body>
+</html>

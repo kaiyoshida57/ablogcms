@@ -1,0 +1,169 @@
+<style>
+	h2 {
+		margin-top: 100px;
+	}
+	h3 {
+		margin-top: 50px;
+	}
+	h4 {
+		margin-top: 30px;
+	}
+</style>
+
+<h2>バンドル環境の使い方</h2>
+<h3>インストール</h3>
+<p><strong>themes/develop/</strong> に移動して、下記のコマンドを実行します。実行することでビルドに必要なツールなどがインストールされます。</p>
+<pre class="prettyprint linenums">
+$ npm install
+</pre>
+
+
+<h3>設定</h3>
+<ul>
+	<li>テーマ名（デフォルト: develop）を変更した場合は、<strong>package.json</strong> の <strong>config.theme</strong> を変更してください。
+	</li>
+	<li>もし、<strong>LiveReload</strong> を行う場合は、実行しているローカル環境のアドレスに合わせて <strong>config.local</strong> に <strong>ドメイン</strong> を設定してください。
+	</li>
+</ul>
+<pre class="prettyprint linenums">
+"config": {
+  "local": "localhost",
+  "theme": "テーマ名"
+},
+</pre>
+
+
+<h3>ビルドコマンド</h3>
+<h4>本番用ビルド</h4>
+<p>cssのbuildとjsのbuildを行います。 <strong>納品時にはこのコマンドを実行して納品してください。</strong> JavaScriptが productionビルド となります。</p>
+<pre class="prettyprint linenums">
+$ npm run build
+</pre>
+
+<h4>開発用ビルド</h4>
+<p>以下のコマンドを実行すると、cssとjsの変更をwatchしてビルドを行います。余分なコードが入ったり、最適化されないため<strong>納品時には必ず npm run build </strong>しましょう。</p>
+
+<h5>Watchのみ</h5>
+<pre class="prettyprint linenums">
+$ npm run dev
+</pre>
+
+<h5>LiveReloadを行う場合</h5>
+<pre class="prettyprint linenums">
+$ npm run start
+</pre>
+
+
+
+
+<h2>JavaScriptの読み込みについて</h2>
+<p>JavaScriptは、<stron>include/head/js.html</stron> で読んでいます。<br>標準では以下の記述により組み込みJSを読み込むようにしています。</p>
+<pre class="prettyprint linenums">
+&lt;script src=&quot;&#37;{JS_LIB_JQUERY_DIR}jquery-&#37;{JS_LIB_JQUERY_DIR_VERSION}.min.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;!-- BEGIN_MODULE Js --&gt;
+&lt;script src=&quot;/acms.js{arguments}&quot; charset=&quot;UTF-8&quot; id=&quot;acms-js&quot;&gt;&lt;/script&gt;&lt;!-- END_MODULE Js --&gt;
+</pre>
+
+<h3>組み込みJSを使わない場合</h3>
+<p>もしパフォーマンス向上のために、組み込みJSを外す場合は、<strong>Touch_SessionWithContribution</strong>を使って、投稿者以上以上の場合だけ読み込むようにします。</p>
+<pre class="prettyprint linenums">
+&lt;!-- BEGIN_MODULE Touch_SessionWithContribution --&gt;
+&lt;script src=&quot;&#37;{JS_LIB_JQUERY_DIR}jquery-&#37;{JS_LIB_JQUERY_DIR_VERSION}.min.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;&lt;!-- BEGIN_MODULE Js --&gt;
+&lt;script src=&quot;/acms.js{arguments}&quot; charset=&quot;UTF-8&quot; id=&quot;acms-js&quot;&gt;&lt;/script&gt;&lt;!-- END_MODULE Js --&gt;
+&lt;!-- END_MODULE Touch_SessionWithContribution --&gt;
+</pre>
+<p>
+	組み込みJSを読まないようにすると、スライダーや、画像ビューワーなどすべての組み込みJSが動作しなくなりますのでご注意ください。<br>
+	必要な機能やライブラリは、自分でインストール、実装する必要があります。<br>
+	バンドル環境が整っていますので、 npm経由でライブラリをもってきて、 importする方式をお勧めします。以下 lazy load を実装する例になります。
+</p>
+<pre class="prettyprint linenums">
+$ npm i vanilla-lazyload
+</pre>
+<pre class="prettyprint linenums">
+import LazyLoad from 'vanilla-lazyload';
+
+domContentLoaded(() => {
+  new LazyLoad({elements_selector: '.js-lazy-load'});
+});
+</pre>
+
+
+
+
+<h2>スタイル（CSS）の読み込みについて</h2>
+<p>カスタムスタイルは、<stron>include/head/preload.html</stron> で読んでいます。<br>
+	以下記述のように <strong>preload</strong> 属性を使って読み込むようにしており、非同期でスタイルを読み込んでいます。</p>
+<pre class="prettyprint linenums">
+&lt;link rel=&quot;preload&quot; href=&quot;/dest/bundle.css&quot; as=&quot;style&quot; onload=&quot;this.onload=null;this.rel=&#039;stylesheet&#039;&quot;&gt;
+&lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/dest/bundle.css&quot;&gt;&lt;/noscript&gt;
+</pre>
+
+<h3>Above the fold（ファーストビュー）に含まれる CSS のインライン化</h3>
+<p>preload属性を使って、非同期にスタイルを読むようにしたことで、スタイル読み込みでブロックされずレンダリングが速くなりました。<br>
+	ただその影響で、スタイルが当たっていないHTMLが一瞬表示されるようになってしまいます。これを解決するために、<strong>Above the fold（ファーストビュー）</strong>のCSSをインライン化して読み込む方法を以下に示します。
+</p>
+<ol>
+	<li>ファーストビューのスタイルが完成したら、<strong>themes/develop/src/index.html</strong> に 現在のソース貼り付けます。（ブラウザで表示したときのソースを貼り付ける）</li>
+	<li><strong>npm run build</strong> コマンドを実行します。</li>
+	<li>ビルドコマンドを実行すると、<strong>themes/develop/dest/index.html</strong> にファイルができます。</li>
+	<li><strong>dest/index.html</strong> にインラインCSSが書き出されているので、このCSSを、<strong>include/head/preload.html</strong> に設置します。</li>
+</ol>
+<pre class="prettyprint linenums">
+&lt;style&gt;
+&lt;!-- ファーストビュー（above the fold ）のインラインCSS を挿入。インラインCSSは webpackでbuildすると、dest/index.html に生成される。 --&gt;
+&lt;/style&gt;
+</pre>
+
+
+
+
+<h2>アイコン（fontawesome）の使い方</h2>
+<p>
+	アイコンの利用を考え、developテーマでは、<strong>Font Awesome 6 の SVG with JavaScript</strong> が利用できるようになっています。
+</p>
+<h3>使い方</h3>
+<p><strong>themes/develop/src/fonts.js</strong> をカスタマイズしていきます。</p>
+<h4>アイコンのインポート</h4>
+<p>SVG with JavaScript では必要なアイコンのみインポートして利用します。<br>
+	アイコンの種類により、インポートするパッケージが違うので気をつけてください。例えばブランドアイコン系は、<strong>@fortawesome/free-brands-svg-icons</strong> から読み込みます。
+</p>
+<pre class="prettyprint linenums">
+import { faUser, faSignOutAlt } from &#039;@fortawesome/free-solid-svg-icons&#039;;
+import { faFacebook, faTwitter, faInstagram } from &#039;@fortawesome/free-brands-svg-icons&#039;;
+</pre>
+<p>
+	命名規則はクラス名（ケバブケース）をキャメルケースにしたものになります。
+</p>
+<p>
+	例: &lt;i class=&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt; のアイコンを使いたい場合は、 <strong>faSignOutAlt</strong> を読み込む。
+</p>
+<pre class="prettyprint linenums">
+import { faSignOutAlt } from &#039;@fortawesome/free-solid-svg-icons&#039;;
+</pre>
+
+<h4>アイコンの登録</h4>
+<p>
+	インポートしたアイコンを以下のように使用できるように登録します。使用するアイコン全てを指定します。
+</p>
+<pre class="prettyprint linenums">
+library.add(faUser, faSignOutAlt, faFacebook, faTwitter, faInstagram);
+</pre>
+
+<h4>アイコンの表示</h4>
+<p>
+	あとは、以下のようにアイコンを表示させることができます。
+</p>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-facebook"></i>
+<i class="fas fa-sign-out-alt"></i>
+<pre class="prettyprint linenums">
+&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fab fa-facebook&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt;
+</pre>
+
+<div style="margin-bottom: 500px;"></div>
+
+
+<script src="%{JS_LIB_DIR}google-code-prettify/prettify.js" onload="PR.prettyPrint()"></script>
+<link rel="stylesheet" href="%{JS_LIB_DIR}google-code-prettify/styles/prettify.css">

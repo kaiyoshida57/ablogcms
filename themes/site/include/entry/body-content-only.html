@@ -1,0 +1,45 @@
+<!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
+<div class="main-inner is-space-center">
+	<!-- BEGIN notFound -->
+	<section class="acms-entry entry-column" aria-labelledby="entry-body-{{module_id}}">
+		<h1 id="entry-body-{{module_id}}" class="not-found-title">Not found</h1>
+		<p>お探しの記事は見つかりませんでした。</p>
+	</section>
+	<!-- END notFound -->
+
+	<!-- 1記事▼▼ -->
+	<!-- BEGIN entry:loop -->
+	<div class="acms-box-medium">
+	@include("/admin/entry/revision-info.html")
+	</div>
+	<section class="clearfix {entry:loop.class}" aria-labelledby="entry-body-{{module_id}}-{entry:loop.eid}">
+		@include("/admin/entry/title.html")
+
+		<!-- BEGIN entry-column:veil -->
+		<div class="acms-entry entry-style entry-style-top">
+			<div class="acms-grid entry-style-grid">
+				<!-- BEGIN unit:veil -->
+				@include("/include/unit.html")
+				<hr class="clearHidden" />
+				<!-- END unit:veil -->
+				<!-- 続きを読む -->
+				@include("/include/parts/continue.html")
+			</div>
+		</div>
+		<!-- END entry-column:veil -->
+
+		<!-- BEGIN formBody -->
+		@include("/include/form/unit.html")
+		<hr class="clearHidden" />
+		<!-- END formBody -->
+
+		@include("/admin/entry/edit-%{IS_ADMIN}.html")
+
+		<div class="acms-box-medium">
+		@include("/admin/entry/action.html")
+		</div>
+	</section>
+	<!-- END entry:loop -->
+	<!-- 1記事▲▲ -->
+</div>
+<!-- END_MODULE Entry_Body -->

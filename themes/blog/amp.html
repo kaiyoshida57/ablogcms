@@ -1,0 +1,34 @@
+@extends("/_layouts/amp.html")
+
+@section("main")
+	<!-- タグフィルター -->
+	@include("/include/tag/filter.html")
+	<!-- エントリーボディ（日付無し） -->
+	@include("/include/amp/entry-body.html", {"module_id": "body_no_date"})
+@endsection
+
+@section("sub")
+	<!-- エントリー一覧 -->
+	@include("/include/amp/entry-list-thumbnail.html")
+
+	<!-- エントリー一覧（画像なし） -->
+	<!-- @include("/include/entry-list.html") -->
+
+	<!-- エントリー一覧（画像大きめ） -->
+	<!-- @include("/include/amp/thumbnail.html") -->
+
+	<!-- カテゴリー一覧 -->
+	@include("/include/category-list.html")
+
+	<!-- アーカイブ -->
+	@include("/include/archive-list.html")
+
+	<!-- タグクラウド -->
+	@include("/include/tag-cloud.html")
+
+	<!-- 検索フォーム -->
+	@include("/include/amp/search.html")
+
+	<!-- バナー一覧 -->
+	@include("/include/amp/banner.html")
+@endsection

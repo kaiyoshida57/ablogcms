@@ -1,0 +1,46 @@
+<!-- /_layouts/base.html テンプレートを継承 -->
+@extends("/_layouts/base.html")
+
+<!-- /_layouts/base.html の「section("head-link")」を上書き -->
+@section("head-link")
+@parent <!-- /_layouts/base.html の「section("head-link")」を挿入 -->
+<!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- サイトトップページ用 構造化データ -->
+@include("/include/head/structured-data-sitetop.html")
+<!-- END_MODULE Touch_RootBlog -->
+<link href="/js/slick/slick.css" rel="stylesheet">
+@endsection
+
+<!-- /_layouts/base.html の「section("head-js")」を上書き -->
+@section("head-js")
+@parent <!-- /_layouts/base.html の「section("head-js")」を挿入 -->
+<script src="/js/slick/slick.js" charset="UTF-8"></script>
+<script src="/js/top.js" charset="UTF-8"></script>
+@endsection
+
+<!-- /_layouts/base.html の「section("page-title")」を上書きして空に設定 -->
+@section("page-title")
+@endsection
+
+<!-- /_layouts/base.html の「section("topic-path")」を上書きして空に設定 -->
+@section("topic-path")
+@endsection
+
+<!-- /_layouts/base.html の「section("main-image")」を上書き -->
+@section("main-image")
+<!-- トップイメージ -->
+@include("/include/header/top-image.html")
+@endsection
+
+<!-- /_layouts/base.html の「section("main")」を上書き -->
+@section("main")
+<!-- エントリーヘッドライン（トップ用） -->
+@include("/include/entry/headline-top.html")
+
+<!-- エントリーサマリー -->
+@include("/include/entry/summary-top.html")
+@endsection
+
+<!-- /_layouts/base.html の「section("sub")」を上書きして空に設定 -->
+@section("sub")
+@endsection

@@ -1,0 +1,68 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ベース
+------------------------------ */
+html {
+  line-height: 1.5;
+}
+
+body {
+	color: global.$text-color-base;
+	font-family: global.$font-family;
+	background: #FFF;
+
+	@include acms.font-size(14);
+}
+
+/* リンクの設定 */
+a {
+	color: global.$link-color;
+	text-decoration: none;
+	border: none;
+}
+
+a:visited {
+	color: global.$link-color-visited;
+	text-decoration: none;
+}
+
+a:active {
+	color: global.$link-color-active;
+	text-decoration: none;
+}
+
+a:hover {
+	color: global.$link-color-hover;
+	text-decoration: underline;
+}
+
+/* コンテナー */
+.acms-container {
+	max-width: global.$container;
+	padding-right: math.div(acms.$grid-space, 2);
+	padding-left: math.div(acms.$grid-space, 2);
+
+	@if  global.$enable-iphonex == true {
+		padding-right: calc(#{math.div(acms.$grid-space, 2)} + constant(safe-area-inset-right));
+		padding-left: calc(#{math.div(acms.$grid-space, 2)} + constant(safe-area-inset-left));
+	}
+
+	.acms-container {
+		padding: 0;
+	}
+}
+
+.narrow-container {
+	max-width: global.$narrow-container;
+	margin: 0 auto;
+	padding-right: math.div(acms.$grid-space, 2);
+	padding-left: math.div(acms.$grid-space, 2);
+
+	@if  global.$enable-iphonex == true {
+		padding-right: calc(#{math.div(acms.$grid-space, 2)} + constant(safe-area-inset-right));
+		padding-left: calc(#{math.div(acms.$grid-space, 2)} + constant(safe-area-inset-left));
+	}
+}

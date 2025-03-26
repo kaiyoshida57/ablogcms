@@ -1,0 +1,97 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　提案エリア
+------------------------------ */
+
+/* お問い合わせ提案エリア */
+.suggest-box {
+	background: #DDD;
+}
+
+.suggest-inner {
+	display: table;
+	width: 100%;
+	padding: 15px 0;
+}
+
+.suggest-item {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.suggest-text {
+	margin: 0 0 10px;
+	line-height: 1.5;
+
+	@include acms.font-size(14);
+}
+
+.suggest-tel {
+	margin: 0 0 10px;
+	color: #666;
+	font-weight: bold;
+
+	@include acms.font-size(24);
+
+	a {
+		color: inherit;
+	}
+}
+
+.suggest-btn {
+	margin: 0;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min){
+	.suggest-inner {
+		padding: 0;
+	}
+
+	.suggest-item {
+		padding: 30px 10px;
+	}
+
+	.suggest-tel {
+		margin: 0;
+	}
+
+	.suggest-half {
+		display: table-cell;
+		width: 50%;
+		vertical-align: middle;
+	}
+}
+
+
+/* お問い合わせ提案エリア 中央寄せ */
+.suggest-center-box {
+	padding: 20px 0;
+}
+
+.suggest-center-item + .suggest-center-item {
+	margin: 50px 0 0;
+}
+
+.suggest-center-text {
+	margin: 30px 0 10px;
+}
+
+.suggest-center-tel {
+	margin: 0;
+	color: #C38A00;
+	font-weight: bold;
+	font-size: 34px;
+
+	a {
+		color: #C38A00;
+	}
+}
+
+@media (min-width: acms.$breakpoint-md-min){
+	.suggest-center-box {
+		padding: 50px 0;
+	}
+}

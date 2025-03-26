@@ -1,0 +1,43 @@
+<!-- BEGIN_MODULE Ogp -->
+<!-- BEGIN_SetRendered id="title" -->{title}<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="description" -->{description}[mb_trim(350, '...')|delnl|escape]<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="image_url" --><!-- BEGIN_IF [{image@type}/eq/media] -->%{HTTP_MEDIA_ARCHIVES_DIR}{image}<!-- ELSE -->%{HTTP_ARCHIVES_DIR}{image}<!-- END_IF --><!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="image_width" -->{image@x}<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="image_height" -->{image@y}<!-- END_SetRendered -->
+<!-- END_MODULE Ogp -->
+<title><!-- GET_Rendered id="title" --></title>
+<link rel="canonical" href="%{CANONICAL_URL}" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+@include("/include/head/robots.html")
+<!-- BEGIN_MODULE Touch_Entry -->
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		"mainEntityOfPage": "%{CANONICAL_URL}",
+		"headline": "<!-- GET_Rendered id="title" -->",
+		"description": "<!-- GET_Rendered id="description" -->",<!-- BEGIN_MODULE Entry_Body --><!-- BEGIN entry:loop -->
+		"datePublished": "{date#Y}-{date#m}-{date#d}T{date#H}:{date#i}:{date#s}+09:00",
+		"dateModified": "{udate#Y}-{udate#m}-{udate#d}T{udate#H}:{udate#i}:{udate#s}+09:00",
+		"author": {
+			"@type": "Person",
+			"name": <!-- BEGIN userField -->"{fieldUserName}"<!-- END userField -->
+		},<!-- END entry:loop --><!-- END_MODULE Entry_Body --><!-- BEGIN_MODULE Blog_Field -->
+		"publisher": {
+			"@type": "Organization",
+			"name": "{amp_organization_name}",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "%{HTTP_MEDIA_ARCHIVES_DIR}{amp_organization_logo@path}",
+				"width": {amp_organization_logo@imageSize}[split(' ', 0)],
+				"height": {amp_organization_logo@imageSize}[split(' ', 2)]
+			}
+		},<!-- END_MODULE Blog_Field -->
+		"image": {
+			"@type": "ImageObject",
+			"url": "<!-- GET_Rendered id="image_url" -->",
+			"width": <!-- GET_Rendered id="image_width" -->,
+			"height": <!-- GET_Rendered id="image_height" -->
+		}
+	}
+</script><!-- END_MODULE Touch_Entry -->

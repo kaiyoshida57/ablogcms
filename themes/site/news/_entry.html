@@ -1,0 +1,14 @@
+@extends("/_layouts/basic.html")
+
+@section("main")
+<!-- エントリーボディ -->
+@include("/include/entry/body.html")
+<!-- エントリーサマリー：関連エントリーの表示 -->
+<!--
+    @include("/include/entry/summary.html", {"module_id": "summary_related"})
+-->
+
+<!-- タグリレーショナル：タグによる関連エントリーの表示 -->
+@include("/include/entry/tag-relational.html", {"module_id": "tag_relational"})
+@endsection
+

@@ -1,0 +1,26 @@
+@extends("/_layouts/unit.html")
+
+@section(quote-unit)
+<!-- 引用URL -->
+<div class="column-quote-{align}"{display_size}[raw]>
+	<!-- BEGIN html:veil -->
+	{quote_html}[raw]
+	<!-- END html:veil -->
+	<!-- BEGIN_IF [{quote_title}/nem/] -->
+	<blockquote class="quote">
+		<a href="{quote_url}" class="quoteLink" target="_blank">
+			<div class="quote-maincontents">
+				<div class="quoteTitle-wrap">
+					<p class="quoteTitle">{quote_title}</p><!-- BEGIN site_name:veil -->
+					<p class="quoteSiteName">{quote_site_name}</p><!-- END site_name:veil -->
+				</div><!-- BEGIN image:veil -->
+				<div class="quoteImageContainer">
+					<img src="{quote_image}" class="quoteImage" width="150" alt="">
+				</div><!-- END image:veil -->
+			</div><!-- BEGIN description:veil -->
+			<p class="quoteDescription">{quote_description}[raw|trim(180, '...')]</p><!-- END description:veil -->
+		</a>
+	</blockquote>
+	<!-- END_IF -->
+</div>
+@endsection

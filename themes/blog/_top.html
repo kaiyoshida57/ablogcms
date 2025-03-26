@@ -1,0 +1,44 @@
+@extends("/_layouts/two-column.html")
+
+@section("head-link")
+@parent
+<!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- サイトトップページ用 構造化データ -->
+@include("/include/head/structured-data-sitetop.html")
+<!-- END_MODULE Touch_RootBlog -->
+@endsection
+
+@section("main")
+<div class="main-wrap">
+  <!-- エントリーボディ -->
+  @include("/include/entry-body-index.html")
+
+  <!-- 確認用テンプレート -->
+  @include("/include/check-seo.html")
+</div>
+@endsection
+
+@section("sub")
+
+<!-- プロフィール -->
+@include("/include/user-profile.html")
+
+<!-- カレンダー -->
+@include("/include/calendar-month.html")
+
+<!-- カテゴリー一覧 -->
+@include("/include/category-list.html")
+
+<!-- アーカイブ -->
+@include("/include/archive-list.html")
+
+<!-- タグクラウド -->
+@include("/include/tag-cloud.html")
+
+<!-- 検索フォーム -->
+@include("/include/search.html")
+
+<!-- バナー一覧 -->
+@include("/include/banner.html")
+
+@endsection

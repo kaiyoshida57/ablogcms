@@ -1,0 +1,44 @@
+<h3 class="acms-admin-admin-title2">メインビジュアル設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>メインイメージ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メインビジュアルで使用する背景画像を設定します。"></i></th>
+		<td class="js-media-field">
+			<div class="js-droparea" data-thumbnail="{main_visual_image@thumbnail}" data-type="image" style="width:200px"></div>
+			<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+			<div class="acms-admin-margin-top-mini">
+				<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+			</div>
+			<input type="hidden" name="main_visual_image" value="{main_visual_image}" class="js-value" />
+			<input type="hidden" name="field[]" value="main_visual_image" />
+			<input type="hidden" name="main_visual_image:extension" value="media" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-main_visual_copy">コピー</label><i data-acms-tooltip="メインビジュアルで使用するコピーを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<input type="text" name="main_visual_copy" value="{main_visual_copy}" id="input-text-main_visual_copy" class="acms-admin-form-width-large" />
+			<input type="hidden" name="field[]" value="main_visual_copy" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-main_visual_desc">概要文</label><i data-acms-tooltip="カテゴリーの 説明文を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<textarea name="main_visual_desc" rows="5" id="input-text-main_visual_desc" style="width:80%;">{main_visual_desc}</textarea>
+			<input type="hidden" name="field[]" value="main_visual_desc" />
+		</td>
+	</tr>
+	<tr>
+		<th>ボタン<i data-acms-tooltip="メインビジュアルで使用するボタンを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-margin-bottom-small">
+				<label for="input-text-main_visual_btn_text"><strong>ボタンのテキスト</strong></label>
+				<input type="text" name="main_visual_btn_text" value="{main_visual_btn_text}" id="input-text-main_visual_btn_text" class="acms-admin-form-width-large" />
+				<input type="hidden" name="field[]" value="main_visual_btn_text" />
+			</div>
+
+			<label for="input-text-main_visual_btn_url"><strong>リンク先URL</strong></label>
+			<input type="text" name="main_visual_btn_url" value="{main_visual_btn_url}" id="input-text-main_visual_btn_url" class="acms-admin-form-width-large" />
+			<input type="hidden" name="field[]" value="main_visual_btn_url" />
+		</td>
+	</tr>
+</table>

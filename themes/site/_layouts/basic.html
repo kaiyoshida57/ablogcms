@@ -1,0 +1,16 @@
+@extends("/_layouts/two-column.html")
+
+@section("main")
+@endsection
+
+@section("side")
+
+<!-- エントリーリスト -->
+@include("/include/entry/list.html", {"module_id": "entry_list"})
+<!-- カテゴリーリスト -->
+@include("/include/category/list.html", {"module_id": "category_list"})
+
+<!-- 親テンプレートから引き継ぎ -->
+@parent
+
+@endsection

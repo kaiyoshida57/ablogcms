@@ -1,0 +1,47 @@
+@use "cart-mixins" as global;
+
+/* ------------------------------
+　　検索
+------------------------------ */
+
+.cart-search dt {
+	margin-bottom: 20px;
+	color: #333;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.cart-search dd {
+	margin-left: 10px;
+}
+
+.cart-search select {
+	margin-bottom: 10px;
+}
+
+.cart-search .acms-form-radio {
+	margin-bottom: 10px;
+}
+
+.cart-search .acms-form-checkbox {
+	margin-bottom: 10px;
+}
+
+.cart-search-text {
+	margin: 0 0 10px;
+	color: #333;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.cart-search-select-text {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.cart-search-btn {
+	@include global.btn(#949494, #333333);
+
+	width: 100%;
+	margin: 10px auto 40px;
+}

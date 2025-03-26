@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Media_Banner id="banner_slider" -->
+<div class="module-section">
+	@include("/admin/module/setting.html")
+	<div class="js-slider fix-height">
+		<!-- BEGIN banner:loop --><div class="{banner:loop.class}">
+			<!-- BEGIN banner#src -->
+			{src}[raw]
+			<!-- END banner#src -->
+			<!-- BEGIN banner#img -->
+			<div class="main-slider-image js-biggerlink " style="background-image: url(%{MEDIA_ARCHIVES_DIR}{img});"><a href="{url}" target="{target}" tabindex="-1">
+			<div class="acms-container sp-container main-slider-text-outer">
+				<div class="main-slider-text-wrap">
+					<div class="main-slider-text-inner">
+						<p class="main-slider-main-copy">{attr1}[raw]</p>
+						<p class="main-slider-side-copy">{attr2}[raw]</p>
+					</div>
+				</div>
+			</div></a>
+			</div>
+			<!-- END banner#img -->
+		</div><!-- END banner:loop -->
+	</div>
+</div>
+<!-- END_MODULE Media_Banner -->

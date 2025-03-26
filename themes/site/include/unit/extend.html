@@ -1,0 +1,31 @@
+<!-- BEGIN unit#custom_product -->
+<section aria-labelledby="custom_unit-{utid}">
+	<h3 id="custom_unit-{utid}">%{ENTRY_TITLE}のスペック</h3>
+	<!-- BEGIN product_image:veil -->
+	<div class="column-image-left js_notStyle acms-col-md-4">
+		<img src="%{MEDIA_ARCHIVES_DIR}{product_image@path}" alt="" class="acms-img-responsive">
+	</div><!-- END product_image:veil -->
+	<!-- BEGIN custom_table:veil -->
+	<div class="acms-col-md-8">
+		<div class="entry-container">
+			<table class="entry-custom-table">
+				<!-- BEGIN product_price:veil -->
+				<tr>
+					<th>商品価格</th>
+					<td>{product_price}円</td>
+				</tr><!-- END product_price:veil -->
+				<!-- BEGIN product_price:veil -->
+				<tr>
+					<th>サイズ</th>
+					<td>{product_size}</td>
+				</tr><!-- END product_price:veil -->
+				<!-- BEGIN product_amount:veil -->
+				<tr>
+					<th>重量</th>
+					<td>{product_amount}</td>
+				</tr><!-- END product_amount:veil -->
+			</table>
+		</div>
+	</div><!-- END custom_table:veil -->
+</section>
+<!-- END unit#custom_product -->

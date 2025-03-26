@@ -1,0 +1,54 @@
+<header class="head-wrapper" role="banner">
+  <div class="acms-container">
+    <div class="header">
+      <!-- BEGIN_MODULE Blog_Field ctx="bid/1"-->
+      <div class="header-logo">
+        <div class="header-logo-inner">
+          <!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --><h1 class="site-name"><!-- ELSE --><p class="site-name"><!-- END_IF --><a href="%{BASE_URL}" id="pageTop">
+            <!-- BEGIN site_logo:veil --><img src="%{MEDIA_ARCHIVES_DIR}{site_logo@path}" alt="" class="site-logo"><!-- END site_logo:veil --><!-- BEGIN site_name:veil --><span class="site-name-text">{site_name}</span><!-- END site_name:veil --></a>
+          <!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --></h1><!-- ELSE --></p><!-- END_IF -->
+          <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+          <p class="acms-admin-module-edit"><a href="/bid/{id}/admin/blog_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">編集</a></p>
+          <!-- END_MODULE Touch_SessionWithAdministration -->
+        </div>
+
+        <!-- モバイル：ヘッダーメニュー -->
+        <div class="acms-hide-lg acms-hide-xl">
+          <nav class="site-header" aria-label="ヘッダーメニュー">
+            <a id="nav-open-btn" href="#mobile-nav" data-target="#mobile-nav" class="nav-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="icon-toggle-menu"></span><span class="nav-menu-btn-text">メニュー</span></a>
+            <!-- BEGIN_MODULE Links id="links_header_icon_nav" -->
+            <div class="acms-inline-block acms-float-right">
+              <!--#include file="/admin/module/setting.html"-->
+              <ul class="nav-menu-action">
+                <!-- BEGIN loop -->
+                <li class="nav-menu-action-item"><a href="{url}" class="nav-menu-action-link head-access">{name}[raw]</a></li>
+                <!-- END loop -->
+              </ul>
+            </div>
+            <!-- END_MODULE Links -->
+          </nav>
+        </div>
+      </div>
+      <!-- END_MODULE Blog_Field -->
+      <div class="header-nav">
+        <div class="navbar-side"><!-- BEGIN_MODULE Links id="links_header_nav" -->
+          @include("/admin/module/setting.html", {"class":"acms-admin-module-edit-btn"})
+          <ul class="navbar-side-list">
+            <!-- BEGIN loop -->
+            <li class="navbar-side-item">
+              <a href="{url}" class="navbar-side-link">
+                <span class="acms-icon-arrow-small-right"></span>
+                {name}
+              </a>
+            </li>
+            <!-- END loop -->
+          </ul><!-- END_MODULE Links -->
+        </div>
+        <div class="acms-grid">
+          <!-- グローバルナビ -->
+          @include("/include/header/global-nav.html")
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

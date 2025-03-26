@@ -1,0 +1,14 @@
+<!-- /_layouts/base.html テンプレートを継承 -->
+@extends("/_layouts/base.html")
+
+<!-- /_layouts/base.html の「section("main")」を上書き -->
+@section("main")
+<!-- タグフィルター -->
+@include("/include/tag/filter.html")
+
+<!-- エントリーボディ -->
+@include("/include/entry/body.html")
+
+<!-- 確認用テンプレート -->
+@include("/include/check-seo.html")
+@endsection

@@ -1,0 +1,18 @@
+<div class="suggest-center-box">
+	<div class="narrow-container sp-container">
+		<div class="suggest-center-item acms-text-center">
+			<p class="suggest-center-btn"><a href="%{HTTP_ROOT}contact/" class="btn-attention-block-large btn-shadow">資料請求 / お問い合わせ</a></p>
+			<!-- BEGIN_MODULE Blog_Field　ctx="bid/1" -->
+			<div><!-- BEGIN tel_wrap:veil -->
+				<p class="suggest-center-text">お電話でのお問い合せはこちら<!-- BEGIN tel_time:veil --><br class="acms-hide-md acms-hide-lg acms-hide-xl">（{tel_time}）<!-- END tel_time:veil --></p>
+				<!-- BEGIN tel:veil --><p class="suggest-center-tel"><a href="tel:{tel}">{tel}</a></p><!-- END tel:veil -->
+				<!-- END tel_wrap:veil -->
+				<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+				<p class="acms-admin-module-edit"><a href="/bid/{id}/admin/blog_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">編集</a></p>
+				<!-- END_MODULE Touch_SessionWithAdministration -->
+			</div>
+			<!-- END_MODULE Blog_Field -->
+		</div>
+		@include("/include/siteparts/banner-footer.html", {"module_id":"banner_footer"})
+	</div>
+</div>

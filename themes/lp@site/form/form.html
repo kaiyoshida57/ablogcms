@@ -1,0 +1,124 @@
+<!-- BEGIN_MODULE Form -->
+<div class="lp-content-container">
+	<!-- BEGIN step -->
+	<!-- フォームステップ：初期 -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<div class="acms-grid">
+				<h2 class="lp-heading-lg-02">ご注文フォーム</h2>
+				<!-- フォームステップ -->
+				@include("/form/step.html")
+				<p class="lp-text-center">ご質問やご要望がありましたら、お気軽にお問い合わせください。</p>
+			</div>
+
+			<form action="?step=reapply#orderForm" method="post" class="js-unload_alert js-validator acms-form" enctype="multipart/form-data">
+				@include("/form/input.html")
+				<!-- BEGIN_MODULE Category_Field -->
+				<div class="acms-grid">
+					<p>{contact_supplementary}[nl2br]</p>
+					<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+					<p class="acms-admin-module-edit"><a href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">編集</a></p>
+					<!-- END_MODULE Touch_SessionWithAdministration -->
+				</div><!-- END_MODULE Category_Field -->
+				<div class="form-btn-box clearfix">
+					<input type="hidden" name="step" value="confirm" />
+					<input type="hidden" name="error" value="reapply" />
+
+					<input type="hidden" name="id" value="orderForm" />
+					<input type="submit" name="ACMS_POST_Form_Confirm" value="送信内容の確認へ" id="btnConfirm" class="btn-attention-block-large btn-shadow" />
+					<hr class="clearHidden" />
+				</div>
+			</form>
+		</section>
+	</div>
+	<!-- END step -->
+
+	<!-- BEGIN step#reapply -->
+	<!-- フォームステップ：修正・エラー -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<h2 class="lp-heading-lg-02">ご注文フォーム</h2>
+			<!-- フォームステップ -->
+			@include("/form/step.html")
+			<p class="lp-text-center">入力内容を、もう一度ご確認下さい。</p>
+
+			<form action="?step=reapply#orderForm" method="post" class="js-unload_alert js-validator acms-form" enctype="multipart/form-data">
+				@include("/form/input.html")
+				<div class="form-btn-box clearfix">
+					<input type="hidden" name="step" value="confirm" />
+					<input type="hidden" name="error" value="reapply" />
+
+					<input type="hidden" name="id" value="orderForm" />
+					<input type="submit" name="ACMS_POST_Form_Confirm" value="送信内容の確認へ" id="btnConfirm" class="btn-attention-block-large" />
+					<hr class="clearHidden" />
+				</div>
+			</form>
+		</section>
+	</div>
+	<!-- END step#reapply -->
+
+
+	<!-- BEGIN step#confirm -->
+	<!-- フォームステップ：確認画面 -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<h2 class="lp-heading-lg-02">ご注文フォーム</h2>
+			<!-- フォームステップ -->
+			@include("/form/step.html")
+			<p class="lp-text-center">内容に誤りがないか、よくご確認ください。</p>
+			@include("/form/confirm.html")
+			<div class="form-btn-box clearfix">
+				<form action="" method="post" class="js-unload_alert form-btn form-btn-return">
+					<input type="hidden" name="step" value="reapply" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<input type="submit" name="ACMS_POST_Form_Chain" value="戻る" id="btnToInput" class="btn-large" />
+				</form>
+
+				<form action="thanks.html" method="post" class="js-unload_alert form-btn form-btn-send" enctype="multipart/form-data">
+					<input type="hidden" name="To[]" value="{email}" />
+					<input type="hidden" name="AdminReply-To[]" value="{email}" />
+					<input type="hidden" name="AdminFrom[]" value="{email}" />
+					<input type="hidden" name="step" value="result" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<input type="hidden" name="id" value="orderForm" />
+					<input type="submit" name="ACMS_POST_Form_Submit" value="送信する" id="btnSubmit" class="btn-attention-block-large" />
+				</form>
+			</div>
+		</section>
+	</div>
+	<!-- END step#confirm -->
+
+	<!-- BEGIN step#result -->
+	<!-- フォームステップ：完了画面 -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<h2 class="lp-heading-lg-02">ご注文フォーム</h2>
+			<p class="lp-text-center">ご注文ありがとうございました。以下の内容で送信しました。</p>
+			@include("/form/confirm.html")
+		</section>
+	</div>
+	<!-- END step#result -->
+
+	<!-- BEGIN step#forbidden -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<h2 class="lp-heading-lg-02">不正なアクセスです。</h2>
+			<p class="lp-text-center">お手数ですが、はじめからやり直して下さい。</p>
+		</section>
+	</div>
+	<!-- END step#forbidden -->
+
+	<!-- BEGIN step#repeated -->
+	<div class="contact-box">
+		<section id="orderForm">
+			<h2 class="lp-heading-lg-02">連続投稿は禁止されています。</h2>
+			<p class="lp-text-center">お手数ですが、はじめからやり直して下さい。</p>
+		</section>
+	</div>
+	<!-- END step#repeated -->
+
+	<!-- BEGIN error -->
+	<!-- フォームID : {formID} / エラー項目 : {errorKey} -->
+	<!-- END error -->
+</div>
+<!-- END_MODULE Form -->

@@ -1,0 +1,53 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　テキストユニットのエディターの設定
+------------------------------ */
+
+/* エントリー内ボタン */
+.#{acms.$entry-class},
+.entryFormLiteEditor {
+	.entry-btn-default {
+		background: global.$btn-default-color;
+
+		@include global.btn-base;
+		@include global.btn-small;
+
+		&:hover {
+			@include global.btn-colors(global.$btn-start-color, global.$btn-end-color, #FFF);
+		}
+
+		&:active,
+		&:focus {
+			background: global.$btn-active-color;
+		}
+	}
+
+	/* 色付きボタン */
+	.entry-btn-attention {
+		background: global.$btn-attention-default-color;
+
+		@include global.btn-base;
+		@include global.btn-small;
+
+		&:hover {
+			@include global.btn-colors(global.$btn-attention-start-color, global.$btn-attention-end-color, #FFF);
+		}
+
+		&:active,
+		&:focus {
+			background: global.$btn-attention-active-color;
+		}
+	}
+
+
+	/* ボタン内のアイコン */
+	.entry-btn-icon-before {
+		margin: 0 10px 0 0;
+	}
+
+	.entry-btn-icon-after {
+		margin: 0 0 0 10px;
+	}
+}

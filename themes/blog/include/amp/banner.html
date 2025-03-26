@@ -1,0 +1,14 @@
+<!-- BEGIN_MODULE Media_Banner id="" -->
+<div>
+<ul class="banner">
+	<!-- BEGIN banner:loop -->
+	<!-- BEGIN banner#src -->
+	<li>{src}[raw]</li>
+	<!-- END banner#src -->
+	<!-- BEGIN banner#img -->
+	<li {attr1}[raw]><a href="{url}" target="{target}"><amp-img src="%{MEDIA_ARCHIVES_DIR}{img}[resizeImg(300)]" width="300" height="{img}[imageRatioSizeH(300)]" layout="responsive" alt="{alt}" style="max-width: 300px;" /></a></li>
+	<!-- END banner#img -->
+	<!-- END banner:loop -->
+</ul>
+</div>
+<!-- END_MODULE Media_Banner -->

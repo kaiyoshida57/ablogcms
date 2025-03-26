@@ -1,0 +1,8 @@
+@extends("/_layouts/basic.html")
+
+@section("main")
+<!-- タグフィルター -->
+@include("/include/tag/filter.html")
+<!-- エントリーボディ（日付無し） -->
+@include("/include/entry/body.html", {"module_id": "body_no_date"})
+@endsection

@@ -1,0 +1,29 @@
+<ul class="cart-flow-list">
+	<li class="flowBack"><span class="cart-flow-list-number">1</span>ご注文商品一覧</li>
+	<li class="flowBack"><span class="cart-flow-list-number">2</span>ご住所のご確認</li>
+	<li class="flowBack"><span class="cart-flow-list-number">3</span>配送・お支払い方法</li>
+	<li class="flowBack"><span class="cart-flow-list-number">4</span>ご注文内容の確認</li>
+	<li class="current"><span class="cart-flow-list-number">5</span>ご注文完了</li>
+</ul>
+
+<!-- 各決済ページコンテンツ▼ -->
+<h2>5. ご注文ありがとうございます</h2>
+<div id="container">
+<!-- BEGIN default -->
+<div>
+	<p>ご登録のメールアドレスに、今回のご注文についての確認メールを送信いたしました。</p>
+	<p>今回のご注文の伝票番号は <strong>{code}</strong> です。<br />
+	   お問い合わせの際には、この番号をおしらせください。</p>
+</div>
+@include("/order/payment.html")
+<!-- END default -->
+
+<!-- BEGIN card -->
+	<p>カード支払いを実装。ご利用カード決済サービスに合わせて実装ください。</p>
+	@include("/order/payment.html")
+<!-- END card -->
+
+<!-- BEGIN_MODULE Shop2_Form_Tracking -->
+<!-- END_MODULE Shop2_Form_Tracking -->
+<p id="topBack"><a href="/">TOPページに戻る</a></p>
+</div>

@@ -1,0 +1,32 @@
+<!-- BEGIN_MODULE Topicpath id="topicpath" -->
+<nav class="topicpath" aria-label="現在位置">
+	<ol class="topicpath-list acms-container sp-container clearfix">
+		<!-- BEGIN blog:loop -->
+		<li class="topicpath-item">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpath-link js-viewing-indelible"<!-- BEGIN_IF [{url}/eq/%{CURRENT_URL}] --> aria-current="page"<!-- END_IF -->>{name}</a>
+		</li>
+		<!-- END blog:loop -->
+
+		<!-- BEGIN category:loop -->
+		<li class="topicpath-item">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpath-link js-viewing-indelible"<!-- BEGIN_IF [{url}/eq/%{CURRENT_URL}] --> aria-current="page"<!-- END_IF -->>{name}</a>
+		</li>
+		<!-- END category:loop -->
+
+		<!-- BEGIN entry -->
+		<li class="topicpath-item">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpath-link js-viewing-indelible"<!-- BEGIN_IF [{url}/eq/%{CURRENT_URL}] --> aria-current="page"<!-- END_IF -->>{title}</a>
+		</li>
+		<!-- END entry --><!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
+		<li class="topicpath-item">
+			<a href="%{HTTP_ROOT}404.html" class="topicpath-link js-viewing-indelible" aria-current="page">お探しのページは見つかりませんでした</a>
+		</li><!-- END_IF -->
+	</ol>
+</nav>
+<!-- END_MODULE Topicpath -->

@@ -1,0 +1,63 @@
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+本メールはシステムからの自動配信メールです。
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+%{BLOG_NAME} より、お客様からのご注文をお知らせします。
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+■ お客様情報
+お名前：{name#1} ( {ruby#1} ) 様
+ご住所：〒{zip#1} {prefecture#1} {city#1} {field_1#1} {field_2#1}
+お電話：{telephone#1}
+メールアドレス：{mail}
+
+■ お届け先
+お名前：{name#2} ( {ruby#2} ) 様
+ご住所：〒{zip#2} {prefecture#2} {city#2} {field_1#2} {field_2#2}
+お電話：{telephone#2}
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+[注文番号] {code}
+[決済方法] {payment}
+[配送方法] {deliver}<!-- BEGIN request_date:veil -->
+[配送希望日] {request_date}<!-- END request_date:veil --><!-- BEGIN request_time:veil -->
+[配送希望時間] {request_time}<!-- END request_time:veil --><!-- BEGIN request_others:veil -->
+[その他オプション] {request_others}<!-- END request_others:veil -->
+
+[ご注文の内容] <!-- BEGIN_IF [{tax-omit8}/neq/0] -->※印は軽減対象<!-- END_IF -->
+{cart}[raw]
+
+商品点数 : {amount}点
+
+税込商品合計 : ￥{subtotal}[number_format]
+<!-- BEGIN note:veil -->
+[備考]
+{note}<!-- END note:veil -->
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+ご配送の諸費用 : ￥{charge#deliver}[number_format] (￥{charge#deliver-tax}[number_format])<!-- BEGIN item_except:touch#on -->
+( 例外送料が指定された商品が含まれています。お客様に正確な送料を伝えてください。 )<!-- END item_except:touch#on --><!-- BEGIN charge#payment:veil -->
+お支払い手数料 : ￥{charge#payment}[number_format] (￥{charge#payment-tax}[number_format])<!-- END charge#payment:veil --><!-- BEGIN charge#others:veil -->
+その他の手数料 : ￥{charge#others}[number_format] (￥{charge#others-tax}[number_format])<!-- END charge#others:veil -->
+
+合計 : ￥{total}[number_format]
+
+<!-- BEGIN_IF [{total}/neq/{total-owner}] -->一部手数料を除いた合計 : ￥{total-owner}[number_format]<!-- END_IF -->
+
+<!-- BEGIN shop_tax_no:veil -->適格請求書発行事業者 登録番号 : {shop_tax_no}<!-- END shop_tax_no:veil -->
+
+<!-- BEGIN_IF [{tax-omit8}/neq/0] -->8%対象 税別合計 : ￥{tax-omit8}[number_format]
+8%消費税額 : ￥{tax-only8}[number_format]
+<!-- END_IF --><!-- BEGIN_IF [{tax-omit10}/neq/0] -->10%対象 税別合計 : ￥{tax-omit10}[number_format]
+10%消費税額 : ￥{tax-only10}[number_format]
+<!-- END_IF -->
+
+※ 商品の消費税計算については <!-- BEGIN_IF [{shop_tax_calculate}/eq/intax] -->内税<!-- ELSE -->外税<!-- END_IF -->で<!-- BEGIN_IF [{shop_tax_calc_method}/eq/pileup] -->商品毎<!-- ELSE -->税別小計毎<!-- END_IF -->に<!-- BEGIN_IF [{shop_tax_rounding}/eq/floor] -->切り捨て<!-- ELSE_IF [{shop_tax_rounding}/eq/round] -->四捨五入<!-- ELSE -->切り上げ<!-- END_IF -->で計算を行っております。
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+以上

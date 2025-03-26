@@ -1,0 +1,11 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　サイドカラム
+------------------------------ */
+.side-title {
+	margin-top: 0;
+
+	@include acms.font-size(18);
+}

@@ -1,0 +1,11 @@
+<!-- BEGIN_MODULE Module_Field id="MF_main_visual" -->
+<section class="main-visual"<!-- BEGIN main_visual_image:veil --> style="background-image:url('%{MEDIA_ARCHIVES_DIR}{main_visual_image@path}');"<!-- END main_visual_image:veil -->>
+	@include("/include/edit/module-custom.html", {"hash": "#acms_box3"})
+	<div class="acms-container">
+		<!-- BEGIN main_visual_copy:veil -->
+		<h1 class="main-visual-title">{main_visual_copy}</h1><!-- END main_visual_copy:veil --><!-- BEGIN main_visual_desc:veil -->
+		<p class="main-visual-text">{main_visual_desc}[nl2br]</p><!-- END main_visual_desc:veil --><!-- BEGIN_IF [{main_visual_btn_text}/nem] -->
+		<p class="main-visual-center-btn"><a href="{main_visual_btn_url}" class="btn-attention-block-large btn-shadow">{main_visual_btn_text}</a></p><!-- END_IF -->
+	</div>
+</section>
+<!-- END_MODULE Module_Field -->

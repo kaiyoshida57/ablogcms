@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+// グローバルメンバーファイル acms.css兼用
+@forward "global/acms-common";
+
+// グローバルメンバーファイル テーマ専用
+@forward "global/common";
+
+// グローバルメンバーファイル ランディングページ専用
+@forward "lp/common";
+
+// コンテンツ
+@use "_lp";
+@use "../../../system/src/scss/icon-fonts";

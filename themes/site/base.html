@@ -1,0 +1,54 @@
+@extends("/_layouts/one-column.html")
+
+@section("head-meta")
+@parent
+<meta name="robots" content="noindex,nofollow,noarchive">
+@endsection
+
+@section("head-link")
+@parent
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+@endsection
+
+@section("head-js")
+@parent
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/js/top.js" charset="UTF-8"></script>
+@endsection
+
+@section("main")
+<!-- メインイメージ -->
+@include("/include/parts/main-visual.html")
+
+<div class="acms-container sp-container js-pretty-scroll-container">
+	<div class="acms-grid">
+		<!-- メイン -->
+		<main class="acms-col-md-9 main">
+			<div class="main-inner is-space-right">
+				<!-- エントリーヘッドライン（トップ用） -->
+				@include("/include/entry/headline.html", {"module_id": "top_headline"})
+
+				<!-- エントリーサマリー -->
+				@include("/include/entry/summary.html", {"module_id": "top_summary"})
+
+				<!-- エントリーサマリー（画像メイン表示） -->
+				@include("/include/entry/summary-image.html", {"module_id": "summary_index", "message": "ここにメッセージを入れることができます。"})
+
+				<!-- エントリーボディ（日付無し） -->
+				@include("/include/entry/body.html", {"module_id": "body_no_date"})
+			</div>
+		</main>
+		<div class="acms-col-md-3 side">
+			<div class="js-pretty-scroll">
+				<!-- エントリーリスト -->
+				@include("/include/entry/list.html", {"module_id": "entry_list"})
+				<!-- カテゴリーリスト -->
+				@include("/include/category/list.html", {"module_id": "category_list"})
+				<!-- モバイル：ナビゲーションメニュー -->
+				@include("/include/parts/mobile-nav.html")
+			</div>
+		</div>
+	</div>
+</div>
+@endsection

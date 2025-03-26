@@ -1,0 +1,2 @@
+<!-- BEGIN item:loop -->
+<!-- BEGIN item_code:veil -->[{item_code}]<!-- END item_code:veil -->{item_name} {item_color} {item_size}：価格 ￥{item_price}[number_format] x 数量 {item_quantity} = ￥{item_price#sum}[number_format] <!-- BEGIN_IF [{item_price#tax}/nem] -->(￥{item_price#tax}[number_format])<!-- END_IF --><!-- BEGIN_IF [{item_price#rate}/eq/8] --> ※<!-- END_IF --><!-- END item:loop -->

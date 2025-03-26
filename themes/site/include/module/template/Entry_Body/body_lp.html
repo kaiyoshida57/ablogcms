@@ -1,0 +1,75 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Body -->
+<div class="main-inner is-space-center">
+	<!-- BEGIN notFound -->
+	<section class="acms-entry" aria-labelledby="layout-entry_body_lp">
+		<h1 id="layout-entry_body_lp" class="not-found-title">Not found</h1>
+		<p>お探しの記事は見つかりませんでした。</p>
+	</section>
+	<!-- END notFound -->
+
+	<!-- 1記事▼▼ -->
+	<!-- BEGIN entry:loop -->
+	<div class="acms-box-medium">
+	@include("/admin/entry/revision-info.html")
+	</div>
+	<article class="clearfix {entry:loop.class}" aria-labelledby="layout-entry_body_lp_{entry:loop.eid}">
+		@include("/admin/entry/title.html")
+
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<!-- BEGIN title:veil -->
+		<header>
+			<h2 id="layout-entry_body_lp_{entry:loop.eid}" class="section-heading acms-text-center"><a href="{titleUrl}">{title}</a></h2>
+		</header>
+		<!-- END title:veil -->
+
+		<!-- BEGIN entry-column:veil -->
+		<div class="acms-entry entry-column">
+			<div class="acms-grid">
+				<!-- BEGIN unit:veil -->
+				@include("/include/unit.html")
+				<hr class="clearHidden" />
+				<!-- END unit:veil -->
+				<!-- 続きを読む -->
+				@include("/include/parts/continue.html")
+			</div>
+		</div>
+		<!-- END entry-column:veil -->
+
+		<!-- BEGIN formBody -->
+		@include("/include/form/unit.html")
+		<hr class="clearHidden" />
+		<!-- END formBody -->
+
+		@include("/admin/entry/edit-%{IS_ADMIN}.html")
+
+		<div class="acms-box-medium">
+		@include("/admin/entry/action.html")
+		</div>
+	</article>
+	<!-- END entry:loop -->
+	<!-- 1記事▲▲ -->
+</div>
+<!-- END_MODULE Entry_Body -->
+<!-- END layout#display -->
+<!-- BEGIN layout#dummy -->
+<div class="acms-col-md-9 center-col">
+
+	<!-- 1記事▼▼ -->
+	<article class="clearfix ">
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<header>
+			<h2 class="section-heading acms-text-center"><a href="#">ここにはエントリーのタイトルが入ります</a></h2>
+		</header>
+
+		<div class="acms-entry entry-column">
+			<div class="acms-grid">
+				<p>ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。</p>
+				<p>ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。ここにはエントリーの本文が入ります。</p>
+				<hr class="clearHidden">
+			</div>
+		</div>
+	</article>
+	<!-- 1記事▲▲ -->
+</div>
+<!-- END layout#dummy -->

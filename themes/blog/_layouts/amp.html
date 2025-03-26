@@ -1,0 +1,80 @@
+<!doctype html>
+<html amp lang="ja">
+<head>
+	<meta charset="utf-8">
+	@include("/include/head/amp-meta.html")
+	<!-- ※カスタマイズ用のCSS -->
+	<style amp-custom>
+		@include("/dest/amp.min.css")<!-- BEGIN_MODULE Blog_Field --><!-- BEGIN style:veil -->
+			/* キーカラーとのコントラスト比がより高い方の色を取得 */ <!-- BEGIN_SetRendered id="contrast_color" -->
+		{key_color}[contrastColor('#666666','#FFFFFF')]  <!-- END_SetRendered -->
+		@include("/include/style/custom.css")<!-- END style:veil --><!-- END_MODULE Blog_Field -->
+	</style>
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+	<!-- BEGIN_IF [<!-- BEGIN_MODULE Blog_Field -->{enable_amp_analytics}<!-- END_MODULE Blog_Field -->/eq/true] -->
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script><!-- END_IF -->
+	<!-- GET_Rendered id="load_amp_script" -->
+	@include("/include/head/amp-twitter-card.html")
+</head>
+<body>
+@section("body-start")<!-- BEGIN_MODULE Blog_Field -->
+<!-- BEGIN_IF [{enable_amp_analytics}/eq/true] -->
+<amp-analytics <!-- BEGIN amp_vendor:veil -->type="{amp_vendor}" <!-- END amp_vendor:veil --><!-- BEGIN amp_config:veil -->config="{amp_config}" <!-- END amp_config:veil --><!-- BEGIN amp_data_credentials:veil -->data-credentials="{amp_data_credentials}"<!-- END amp_data_credentials:veil -->><!-- BEGIN_IF [{amp_json}[delnl]/nem] -->
+	<script type="application/json">{amp_json}[raw]</script><!-- END_IF --><!-- END_MODULE Blog_Field -->
+</amp-analytics><!-- END_IF -->
+@endsection
+
+<div class="header-nav-wrap">
+	@section("header")
+	@include("/include/amp/header.html")
+	@endsection
+</div>
+
+@section("navigation")
+@include("/include/amp/navigation.html")
+@endsection
+
+<main class="base-container-onecolumn">
+
+	@section("topic-path")
+	@include("/include/amp/topicpath.html")
+	@endsection
+
+	<div class="base-container-grid">
+		<div class="main-column is-onecolumn">
+			@section("admin-part")
+			@endsection
+
+			@section("main")
+				<h1>継承してメインコンテンツを設定してください</h1>
+			@endsection
+
+			@section("sub")
+			@endsection
+			<div class="js-offcanvas" id="offcanvas">
+				<nav aria-label="メニュー">
+					@section("offcanvas")
+
+					@endsection
+				</nav>
+			</div>
+		</div>
+	</div>
+</main>
+@section("footer")
+<!-- フッター -->
+<div class="footer-wrap">
+	<div class="base-container-onecolumn">
+		@include("/include/footer.html")
+	</div>
+</div>
+@endsection
+</body>
+</html>

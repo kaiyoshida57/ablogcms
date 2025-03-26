@@ -1,0 +1,775 @@
+<!-- BEGIN custom_cover_image -->
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>画像</th>
+		<td class="js-media-field">
+			<div class="acms-admin-margin-bottom-small">
+				<div class="js-droparea" data-thumbnail="{cover_image@thumbnail}" data-type="image" style="width:200px"></div>
+				<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+				<div class="acms-admin-margin-top-mini">
+					<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+				</div>
+				<input type="hidden" name="cover_image{id}" value="{cover_image}" class="js-value" />
+				<input type="hidden" name="unit{id}[]" value="cover_image{id}" />
+				<input type="hidden" name="cover_image{id}:extension" value="media" />
+			</div>
+			<div class="edit-group">
+				<label for="cover_image_color_picker_bg{id}" class="acms-admin-margin-right-small">背景色</label>
+				<input type="text" id="cover_image_color_picker_bg{id}" name="cover_image_bg_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{cover_image_bg_color}/nem] -->{cover_image_bg_color}<!-- ELSE -->#000<!-- END_IF -->">
+				<input type="hidden" name="unit{id}[]" value="cover_image_bg_color{id}" />
+			</div>
+			<div class="edit-group">
+				<label for="cover_image_color_picker_text{id}" class="acms-admin-margin-right-small">文字色</label>
+				<input type="text" id="cover_image_color_picker_text{id}" name="cover_image_text_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{cover_image_text_color}/nem] -->{cover_image_text_color}<!-- ELSE -->#000<!-- END_IF -->">
+				<input type="hidden" name="unit{id}[]" value="cover_image_text_color{id}" />
+			</div>
+			<fieldset>
+				<legend>高さ</legend>
+				<div class="acms-admin-form-radio">
+					<input type="radio" name="cover_image_height{id}" value="match"{cover_image_height:checked#match} id="input-radio-cover_image_height-match-{id}" />
+					<label for="input-radio-cover_image_height-match-{id}"><i class="acms-admin-ico-radio"></i>合わせた高さ</label>
+				</div>
+				<div class="acms-admin-form-radio">
+					<input type="radio" name="cover_image_height{id}" value="half"{cover_image_height:checked#half} id="input-radio-cover_image_height-half-{id}" />
+					<label for="input-radio-cover_image_height-half-{id}"><i class="acms-admin-ico-radio"></i>半分の高さ</label>
+				</div>
+				<div class="acms-admin-form-radio">
+					<input type="radio" name="cover_image_height{id}" value="overall"{cover_image_height:checked#overall} id="input-radio-cover_image_height-overall-{id}" />
+					<label for="input-radio-cover_image_height-overall-{id}"><i class="acms-admin-ico-radio"></i>全高</label>
+				</div>
+				<input type="hidden" name="unit{id}[]" value="cover_image_height{id}" />
+			</fieldset>
+		</td>
+	</tr>
+	<tr>
+		<th>タイトル</th>
+		<td>
+			<input type="text" name="cover_image_title{id}" value="{cover_image_title}" class="acms-admin-form-width-full"/>
+			<input type="hidden" name="unit{id}[]" value="cover_image_title{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>概要</th>
+		<td>
+			<textarea name="cover_image_summary{id}" class="acms-admin-form-width-full">{cover_image_summary}</textarea>
+			<input type="hidden" name="unit{id}[]" value="cover_image_summary{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>ボタン</th>
+		<td>
+			<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+				<label for="cover_image_label{id}" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+				<input type="text" name="cover_image_btn_label{id}" value="{cover_image_btn_label}" id="cover_image_label{id}" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="cover_image_btn_label{id}" />
+			<div class="acms-admin-form-action">
+				<label for="cover_image_url{id}" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+				<input type="text" name="cover_image_btn_url{id}" value="{cover_image_btn_url}" id="cover_image_url{id}" class="acms-admin-form-width-full" placeholder="http://"/>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="cover_image_btn_url{id}" />
+		</td>
+	</tr>
+</table>
+<!-- END custom_cover_image -->
+<!-- BEGIN custom_split_image -->
+<table class="acms-admin-table-admin-edit edit-th-size-100">
+	<tr>
+	<th>高さ</th>
+		<td>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="split_image_height{id}" value="match"{split_image_height:checked#match} id="input-radio-split_image_height-match-{id}" />
+				<label for="input-radio-split_image_height-match-{id}"><i class="acms-admin-ico-radio"></i>合わせた高さ</label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="split_image_height{id}" value="half"{split_image_height:checked#half} id="input-radio-split_image_height-half-{id}" />
+				<label for="input-radio-split_image_height-half-{id}"><i class="acms-admin-ico-radio"></i>半分の高さ</label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="split_image_height{id}" value="overall"{split_image_height:checked#overall} id="input-radio-split_image_height-overall-{id}" />
+				<label for="input-radio-split_image_height-overall-{id}"><i class="acms-admin-ico-radio"></i>全高</label>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="split_image_height{id}" />
+		</td>
+	</tr>
+</table>
+<div class="acms-admin-grid">
+	<div class="acms-admin-col-md-6">
+		<table class="acms-admin-table-admin-edit edit-th-size-100">
+			<tr>
+				<th>画像</th>
+				<td>
+					<div class="js-media-field">
+						<div class="js-droparea" data-thumbnail="{split01_image@thumbnail}" data-type="image" style="width:200px"></div>
+						<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+						<div class="acms-admin-margin-top-mini">
+							<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+						</div>
+						<input type="hidden" name="split01_image{id}" value="{split01_image}" class="js-value" />
+						<input type="hidden" name="unit{id}[]" value="split01_image{id}" />
+						<input type="hidden" name="split01_image{id}:extension" value="media" />
+						<p><small>※推奨サイズ1200px x 850px</small></p>
+					</div>
+					<div class="edit-group">
+						<label for="split01_color_picker_bg{id}" class="acms-admin-margin-right-small">背景色</label>
+						<input type="text" id="split01_color_picker_bg{id}" name="split01_bg_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{split01_bg_color}/nem] -->{split01_bg_color}<!-- ELSE -->#000<!-- END_IF -->">
+						<input type="hidden" name="unit{id}[]" value="split01_bg_color{id}" />
+					</div>
+					<div class="edit-group">
+						<label for="split01_color_picker_text{id}" class="acms-admin-margin-right-small">文字色</label>
+						<input type="text" id="split01_color_picker_text{id}" name="split01_text_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{split01_text_color}/nem] -->{split01_text_color}<!-- ELSE -->#000<!-- END_IF -->">
+						<input type="hidden" name="unit{id}[]" value="split01_text_color{id}" />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>タイトル</th>
+				<td>
+					<input type="text" name="split01_image_title{id}" value="{split01_image_title}" class="acms-admin-form-width-full"/>
+					<input type="hidden" name="unit{id}[]" value="split01_image_title{id}" />
+				</td>
+			</tr>
+			<tr>
+				<th>概要</th>
+				<td>
+					<textarea name="split01_image_summary{id}" class="acms-admin-form-width-full" rows="4">{split01_image_summary}</textarea>
+					<input type="hidden" name="unit{id}[]" value="split01_image_summary{id}" />
+				</td>
+			</tr>
+			<tr>
+				<th>ボタン</th>
+				<td>
+					<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+						<label for="split01_image_label{id}" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+						<input type="text" name="split01_image_btn_label{id}" value="{split01_image_btn_label}" id="split01_image_label{id}" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+					</div>
+					<input type="hidden" name="unit{id}[]" value="split01_image_btn_label{id}" />
+					<div class="acms-admin-form-action">
+						<label for="split01_image_url{id}" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+						<input type="text" name="split01_image_btn_url{id}" value="{split01_image_btn_url}" id="split01_image_url{id}" class="acms-admin-form-width-full" placeholder="http://"/>
+					</div>
+					<input type="hidden" name="unit{id}[]" value="split01_image_btn_url{id}" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="acms-admin-col-md-6">
+		<table class="acms-admin-table-admin-edit edit-th-size-100">
+			<tr>
+				<th>画像</th>
+				<td>
+					<div class="js-media-field">
+						<div class="js-droparea" data-thumbnail="{split02_image@thumbnail}" data-type="image" style="width:200px"></div>
+						<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+						<div class="acms-admin-margin-top-mini">
+							<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+						</div>
+						<input type="hidden" name="split02_image{id}" value="{split02_image}" class="js-value" />
+						<input type="hidden" name="unit{id}[]" value="split02_image{id}" />
+						<input type="hidden" name="split02_image{id}:extension" value="media" />
+						<p><small>※推奨サイズ1200px x 850px</small></p>
+					</div>
+					<div class="edit-group">
+						<label for="split02_color_picker_bg{id}" class="acms-admin-margin-right-small">背景色</label>
+						<input type="text" id="split02_color_picker_bg{id}" name="split02_bg_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{split02_bg_color}/nem] -->{split02_bg_color}<!-- ELSE -->#000<!-- END_IF -->">
+						<input type="hidden" name="unit{id}[]" value="split02_bg_color{id}" />
+					</div>
+					<div class="edit-group">
+						<label for="split01_color_picker_text{id}" class="acms-admin-margin-right-small">文字色</label>
+						<input type="text" id="split02_color_picker_text{id}" name="split02_text_color{id}" class="js-colorpicker js-colorpicker-bg" data-format="rgb" data-opacity="1" data-swatches="#fff|#000" value="<!-- BEGIN_IF [{split02_text_color}/nem] -->{split02_text_color}<!-- ELSE -->#000<!-- END_IF -->">
+						<input type="hidden" name="unit{id}[]" value="split02_text_color{id}" />
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>タイトル</th>
+				<td>
+					<input type="text" name="split02_image_title{id}" value="{split02_image_title}" class="acms-admin-form-width-full"/>
+					<input type="hidden" name="unit{id}[]" value="split02_image_title{id}" />
+				</td>
+			</tr>
+			<tr>
+				<th>概要</th>
+				<td>
+					<textarea name="split02_image_summary{id}" class="acms-admin-form-width-full" rows="4">{split02_image_summary}</textarea>
+					<input type="hidden" name="unit{id}[]" value="split02_image_summary{id}" />
+				</td>
+			</tr>
+			<tr>
+				<th>ボタン</th>
+				<td>
+					<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+						<label for="split02_image_label{id}" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+						<input type="text" name="split02_image_btn_label{id}" value="{split02_image_btn_label}" id="split02_image_label{id}" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+					</div>
+					<input type="hidden" name="unit{id}[]" value="split02_image_btn_label{id}" />
+					<div class="acms-admin-form-action">
+						<label for="split02_image_url{id}" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+						<input type="text" name="split02_image_btn_url{id}" value="{split02_image_btn_url}" id="split02_image_url{id}" class="acms-admin-form-width-full" placeholder="http://"/>
+					</div>
+					<input type="hidden" name="unit{id}[]" value="split02_image_btn_url{id}" />
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<!-- END custom_split_image -->
+<!-- BEGIN custom_media_image -->
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>画像のレイアウト</th>
+		<td>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="media_image_direction{id}" value="left"{media_image_direction:checked#left} id="input-radio-media_image_direction-left-{id}" />
+				<label for="input-radio-media_image_direction-left-{id}"><i class="acms-admin-ico-radio"></i><img src="/themes/lp@site/images/edit/icon_image_left.png" alt="左寄せ" width="90" style="vertical-align: middle;"></label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="media_image_direction{id}" value="right"{media_image_direction:checked#right} id="input-radio-media_image_direction-right-{id}" />
+				<label for="input-radio-media_image_direction-right-{id}"><i class="acms-admin-ico-radio"></i><img src="/themes/lp@site/images/edit/icon_image_right.png" alt="右寄せ" width="90" style="vertical-align: middle;"></label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="media_image_direction{id}" value="left_break_through"{media_image_direction:checked#left_break_through} id="input-radio-media_image_direction-left_break_through-{id}" />
+				<label for="input-radio-media_image_direction-left_break_through-{id}"><i class="acms-admin-ico-radio"></i><img src="/themes/lp@site/images/edit/icon_image_left_break_through.png" alt="左寄せ、突き抜け" width="90" style="vertical-align: middle;"></label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="media_image_direction{id}" value="right_break_through"{media_image_direction:checked#right_break_through} id="input-radio-media_image_direction-right_break_through-{id}" />
+				<label for="input-radio-media_image_direction-right_break_through-{id}"><i class="acms-admin-ico-radio"></i><img src="/themes/lp@site/images/edit/icon_image_right_break_through.png" alt="右寄せ、突き抜け" width="90" style="vertical-align: middle;"></label>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="media_image_direction{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>画像</th>
+		<td>
+			<div class="js-media-field">
+				<div class="js-droparea" data-thumbnail="{media_image@thumbnail}" data-type="image" style="width:200px"></div>
+				<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+				<div class="acms-admin-margin-top-mini">
+					<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+				</div>
+				<input type="hidden" name="media_image{id}" value="{media_image}" class="js-value" />
+				<input type="hidden" name="unit{id}[]" value="media_image{id}" />
+				<input type="hidden" name="media_image{id}:extension" value="media" />
+				<p><small>※推奨サイズ1200px x 850px</small></p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>タイトル</th>
+		<td>
+			<input type="text" name="media_image_title{id}" value="{media_image_title}" class="acms-admin-form-width-full"/>
+			<input type="hidden" name="unit{id}[]" value="media_image_title{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>概要</th>
+		<td>
+			<textarea name="media_image_summary{id}" class="acms-admin-form-width-full">{media_image_summary}</textarea>
+			<input type="hidden" name="unit{id}[]" value="media_image_summary{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>ボタン</th>
+		<td>
+			<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+				<label for="media_image_label{id}" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+				<input type="text" name="media_image_btn_label{id}" value="{media_image_btn_label}" id="media_image_label{id}" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="media_image_btn_label{id}" />
+			<div class="acms-admin-form-action">
+				<label for="media_image_url{id}" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+				<input type="text" name="media_image_btn_url{id}" value="{media_image_btn_url}" id="media_image_url{id}" class="acms-admin-form-width-full" placeholder="http://"/>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="media_image_btn_url{id}" />
+		</td>
+	</tr>
+</table>
+<!-- END custom_media_image -->
+<!-- BEGIN custom_feature -->
+<h2 class="acms-admin-admin-title2">表示設定</h2>
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>カラム数</th>
+		<td>
+			<select name="feature_column{id}" class="acms-admin-form-width-small">
+				<option value=""></option>
+				<option value="1"{feature_column:selected#1}>1カラム</option>
+				<option value="2"{feature_column:selected#2}>2カラム</option>
+				<option value="3"{feature_column:selected#3}>3カラム</option>
+			</select>
+			<input type="hidden" name="unit{id}[]" value="feature_column{id}" />
+		</td>
+	</tr>
+</table>
+
+<h2 class="acms-admin-admin-title2">特徴</h2>
+<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+	<thead class="acms-admin-hide-sp">
+	<tr>
+		<th class="acms-admin-table-left acms-admin-admin-config-table-item-handle acms-admin-table-nowrap">&nbsp;</th>
+		<th class="acms-admin-table-left">特徴の内容</th>
+		<th class="acms-admin-table-left acms-admin-admin-config-table-action acms-admin-table-nowrap">削除</th>
+	</tr>
+	</thead>
+	<tbody>
+	<!-- BEGIN group_feature:loop -->
+	<tr class="sortable-item">
+		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
+		<td>
+			<fieldset class="acms-admin-margin-bottom-small js-edit-icon">
+				<legend>アイコン</legend>
+				<div class="acms-admin-grid">
+					<div class="acms-admin-col-3">
+						<div class="edit-feature-icon-wrap js-edit-icon-area"<!-- BEGIN feature_color:veil --> style="<!-- BEGIN feature_bg_color:veil -->background-color: {feature_bg_color};<!-- END feature_bg_color:veil --><!-- BEGIN feature_icon_color:veil -->color: {feature_icon_color};<!-- END feature_icon_color:veil -->"<!-- END feature_color:veil -->>
+							<span class="js-selected-icon {feature_icon}"></span>
+						</div>
+						<table class="acms-admin-table acms-admin-table-none">
+							<tr class="acms-admin-margin-bottom-small">
+								<th style="width: auto;"><label for="feature_color_picker_bg{id}">背景色</label></th>
+								<td>
+									<input type="text" id="feature_color_picker_bg{id}" name="feature_bg_color{id}[]" class="js-colorpicker js-colorpicker-bg" data-format="hex" data-opacity="1" data-swatches="#fff|#000" size="7" value="<!-- BEGIN_IF [{feature_bg_color}/nem] -->{feature_bg_color}<!-- ELSE -->#000<!-- END_IF -->">
+								</td>
+							</tr>
+							<tr>
+								<th style="width: auto;"><label for="feature_color_picker_color{id}">アイコン色</label></th>
+								<td><input type="text" id="feature_color_picker_color{id}" name="feature_icon_color{id}[]" class="js-colorpicker js-colorpicker-text" data-format="hex" data-opacity="1" data-swatches="#fff|#000" size="7" value="<!-- BEGIN_IF [{feature_icon_color}/nem] -->{feature_icon_color}<!-- ELSE -->#000<!-- END_IF -->"></td>
+							</tr>
+						</table>
+					</div>
+					<div class="acms-admin-col-9">
+						<div>
+							<div class="acms-admin-tabs">
+								<ul class="js-acms_tabs">
+									<li><a href="#icon01{i}-{id}" class="js-select-icon-start">リストから選ぶ</a></li>
+									<li><a href="#icon02{i}-{id}">画像挿入</a></li>
+								</ul>
+
+								<div id="icon01{i}-{id}" class="acms-admin-tabs-panel">
+									<ul class="js-select-icon select-area acms-admin-margin-bottom-mini">
+										<!-- アイコンの一覧 -->
+										@include("/admin/module/icon-list.html")
+									</ul>
+									<button class="js-delete-icon acms-admin-btn acms-admin-btn-danger acms-admin-btn-small">削除する</button>
+									<input type="hidden" name="feature_icon{id}[]" value="{feature_icon}" class="js-insert-icon">
+								</div>
+								<div id="icon02{i}-{id}" class="acms-admin-tabs-panel">
+									<div class="js-media-field">
+										<div class="js-droparea" data-thumbnail="{feature_image@thumbnail}" data-type="image" style="width:200px"></div>
+										<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+										<div class="acms-admin-margin-top-mini">
+											<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+										</div>
+										<input type="hidden" name="feature_image{id}[]" value="{feature_image}" class="js-value" />
+										<p style="margin: 0;"><small>※推奨サイズ100px x 100px</small></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="acms-admin-grid">
+				<div class="acms-admin-col-6">
+					<div class="acms-admin-form-group">
+						<label for="feature_title{id}[]">タイトル</label>
+						<input type="text" name="feature_title{id}[]" value="{feature_title}" id="feature_title{id}[]" class="acms-admin-form-width-full"/>
+					</div>
+					<div class="acms-admin-form-group">
+						<label for="feature_summary{id}[]">概要</label>
+						<textarea name="feature_summary{id}[]" id="feature_summary{id}[]" class="acms-admin-form-width-full">{feature_summary}</textarea>
+					</div>
+				</div>
+				<div class="acms-admin-col-6">
+					<fieldset>
+						<legend>ボタン</legend>
+						<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+							<label for="label-feature_btn_label{id}[]" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+							<input type="text" name="feature_btn_label{id}[]" value="{feature_btn_label}" id="label-feature_btn_label{id}[]" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+						</div>
+						<div class="acms-admin-form-action">
+							<label for="label-feature_btn_url{id}[]" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+							<input type="text" name="feature_btn_url{id}[]" value="{feature_btn_url}" id="label-feature_btn_url{id}[]" class="acms-admin-form-width-full" placeholder="http://"/>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<!-- END group_feature:loop -->
+	<tr class="sortable-item item-template">
+		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
+		<td>
+			<fieldset class="acms-admin-margin-bottom-small js-edit-icon">
+				<legend>アイコン</legend>
+				<div class="acms-admin-grid">
+					<div class="acms-admin-col-3">
+						<div class="edit-feature-icon-wrap js-edit-icon-area"<!-- BEGIN feature_color:veil --> style="<!-- BEGIN feature_bg_color:veil -->background-color: {feature_bg_color};<!-- END feature_bg_color:veil --><!-- BEGIN feature_icon_color:veil -->color: {feature_icon_color};<!-- END feature_icon_color:veil -->"<!-- END feature_color:veil -->>
+							<span class="js-selected-icon"></span>
+						</div>
+
+						<table class="acms-admin-table acms-admin-table-none">
+							<tr class="acms-admin-margin-bottom-small">
+								<th style="width: auto;"><label for="feature_color_picker_bg{id}">背景色</label></th>
+								<td>
+									<input type="text" id="feature_color_picker_bg{id}" name="feature_bg_color{id}[]" class="js-colorpicker js-colorpicker-bg" data-format="hex" data-opacity="1" data-swatches="#fff|#000" size="7" value="#000">
+								</td>
+							</tr>
+							<tr class="acms-admin-margin-bottom-small">
+								<th style="width: auto;"><label for="feature_color_picker_color{id}">アイコン色</label></th>
+								<td>
+									<input type="text" id="feature_color_picker_color{id}" name="feature_icon_color{id}[]" class="js-colorpicker js-colorpicker-text" data-format="hex" data-opacity="1" data-swatches="#fff|#000" size="7" value="#FFF">
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="acms-admin-col-9">
+						<div class="acms-admin-tabs">
+							<ul class="js-acms_tabs">
+								<li><a href="#icon01{i}-{id}" class="js-select-icon-start">リストから選ぶ</a></li>
+								<li><a href="#icon02{i}-{id}">画像挿入</a></li>
+							</ul>
+
+							<div id="icon01{i}-{id}" class="acms-admin-tabs-panel">
+								<ul class="js-select-icon select-area">
+									<!-- アイコンの一覧 -->
+									@include("/admin/module/icon-list.html")
+								</ul>
+								<input type="hidden" name="feature_icon{id}[]" value="" class="js-insert-icon">
+								<button class="js-delete-icon acms-admin-btn acms-admin-btn-danger acms-admin-btn-small acms-admin-margin-bottom-small">削除する</button>
+							</div>
+							<div id="icon02{i}-{id}" class="acms-admin-tabs-panel">
+								<div class="js-media-field">
+									<div class="js-droparea" data-type="image" style="width:200px"></div>
+									<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+									<div class="acms-admin-margin-top-mini">
+										<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+									</div>
+									<input type="hidden" name="feature_image{id}[]" value="" class="js-value" />
+									<p style="margin: 0;"><small>※推奨サイズ100px x 100px</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="acms-admin-grid">
+				<div class="acms-admin-col-6">
+					<div class="acms-admin-form-group">
+						<label for="feature_title{id}[]">タイトル</label>
+						<input type="text" name="feature_title{id}[]" value="" id="feature_title{id}[]" class="acms-admin-form-width-full"/>
+					</div>
+					<div class="acms-admin-form-group">
+						<label for="feature_summary{id}[]">概要</label>
+						<textarea name="feature_summary{id}[]" id="feature_summary{id}[]" class="acms-admin-form-width-full"></textarea>
+					</div>
+				</div>
+				<div class="acms-admin-col-6">
+					<fieldset>
+						<legend>ボタン</legend>
+						<div class="acms-admin-form-action acms-admin-margin-bottom-small">
+							<label for="label-feature_btn_label{id}[]" class="acms-admin-form-side acms-admin-text-nowrap">ラベル</label>
+							<input type="text" name="feature_btn_label{id}[]" value="" id="label-feature_btn_label{id}[]" class="acms-admin-form-width-full" placeholder="例）くわしくはこちら"/>
+						</div>
+						<div class="acms-admin-form-action">
+							<label for="label-feature_btn_url{id}[]" class="acms-admin-form-side acms-admin-text-nowrap">URL</label>
+							<input type="text" name="feature_btn_url{id}[]" value="" id="label-feature_btn_url{id}[]" class="acms-admin-form-width-full" placeholder="http://"/>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr><td colspan="10"><input type="button" class="item-insert acms-admin-btn-admin" value="追加" /></td>
+	</tr>
+	</tfoot>
+</table>
+<input type="hidden" name="@group_feature{id}[]" value="feature_bg_color{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_bg_color{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_icon_color{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_icon_color{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_icon{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_icon{id}" />
+<input type="hidden" name="feature_image{id}:extension" value="media" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_image{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_image{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_title{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_title{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_summary{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_summary{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_btn_label{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_btn_label{id}" />
+<input type="hidden" name="@group_feature{id}[]" value="feature_btn_url{id}" />
+<input type="hidden" name="unit{id}[]" value="feature_btn_url{id}" />
+<input type="hidden" name="unit{id}[]" value="@group_feature{id}" />
+
+<!-- END custom_feature -->
+<!-- BEGIN custom_faq -->
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>カラム数</th>
+		<td>
+			<select name="faq_column{id}" class="acms-admin-form-width-full">
+				<option value=""></option>
+				<option value="1"{faq_column:selected#1}>1カラム</option>
+				<option value="2"{faq_column:selected#2}>2カラム</option>
+				<option value="3"{faq_column:selected#3}>3カラム</option>
+			</select>
+			<input type="hidden" name="unit{id}[]" value="faq_column{id}" />
+		</td>
+	</tr>
+</table>
+<h2 class="acms-admin-admin-title2">よくある質問</h2>
+<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+	<thead class="acms-admin-hide-sp">
+	<tr>
+		<th class="acms-admin-table-left acms-admin-admin-config-table-item-handle acms-admin-table-nowrap">&nbsp;</th>
+		<th class="acms-admin-table-left">質問内容</th>
+		<th class="acms-admin-table-left acms-admin-admin-config-table-action acms-admin-table-nowrap">削除</th>
+	</tr>
+	</thead>
+	<tbody>
+	<!-- BEGIN group_faq:loop -->
+	<tr class="sortable-item" style="border-bottom: 1px solid #CCC;">
+		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
+		<td style="padding: 10px">
+			<div class="acms-admin-margin-bottom-small">
+				<label for="faq_question{id}">質問</label>
+				<input type="text" name="faq_question{id}[]" value="{faq_question}" id="faq_question{id}" class="acms-admin-form-width-full">
+			</div>
+			<label for="faq_answer{id}">内容</label>
+			<textarea name="faq_answer{id}[]" id="faq_answer{id}" class="acms-admin-form-width-full">{faq_answer}</textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<!-- END group_faq:loop -->
+	<tr class="sortable-item item-template" style="border-bottom: 1px solid #CCC;">
+		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
+		<td style="padding: 10px">
+			<div class="acms-admin-margin-bottom-small">
+				<label for="faq_question{id}">質問</label>
+				<input type="text" name="faq_question{id}[]" value="" id="faq_question{id}" class="acms-admin-form-width-full"/>
+			</div>
+			<label for="faq_answer{id}">内容</label>
+			<textarea name="faq_answer{id}[]" id="faq_answer{id}" class="acms-admin-form-width-full"></textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr><td colspan="4"><input type="button" class="item-insert acms-admin-btn-admin" value="追加" /></td>
+	</tr>
+	</tfoot>
+</table>
+<input type="hidden" name="@group_faq{id}[]" value="faq_question{id}" />
+<input type="hidden" name="unit{id}[]" value="faq_question{id}" />
+<input type="hidden" name="@group_faq{id}[]" value="faq_answer{id}" />
+<input type="hidden" name="unit{id}[]" value="faq_answer{id}" />
+<input type="hidden" name="unit{id}[]" value="@group_faq{id}" />
+
+<!-- END custom_faq -->
+<!-- BEGIN custom_accordion -->
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>
+			<label for="accordion_heading_{id}">見出し</label>
+		</th>
+		<td>
+			<input type="text" name="accordion_heading{id}" value="{accordion_heading}" id="accordion_heading_{id}" class="acms-admin-form-width-full"/>
+			<input type="hidden" name="unit{id}[]" value="accordion_heading{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>
+			<label for="accordion_contents_{id}">内容</label>
+		</th>
+		<td>
+			<textarea name="accordion_contents{id}" id="accordion_contents_{id}" class="acms-admin-form-width-full" rows="6">{accordion_contents}</textarea>
+			<input type="hidden" name="unit{id}[]" value="accordion_contents{id}" />
+		</td>
+	</tr>
+</table>
+<!-- END custom_accordion -->
+<!-- BEGIN custom_testmonial -->
+<div class="acms-admin-grid">
+	<div class="acms-admin-col-4">
+		<label for="testmonial_image{id}">お客様のイメージ</label>
+		<div class="js-media-field">
+			<div class="js-droparea" data-thumbnail="{testmonial_image@thumbnail}" data-type="image" style="width:200px"></div>
+			<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+			<div class="acms-admin-margin-top-mini">
+				<button type="button" class="js-insert acms-admin-btn" data-type="image" id="testmonial_image{id}">メディアを選択</button>
+			</div>
+			<input type="hidden" name="testmonial_image{id}" value="{testmonial_image}" class="js-value" />
+			<input type="hidden" name="unit{id}[]" value="testmonial_image{id}" />
+			<input type="hidden" name="testmonial_image{id}:extension" value="media" />
+		</div>
+	</div>
+	<div class="acms-admin-col-8">
+		<div class="acms-admin-margin-bottom-small">
+			<label for="testmonial_summary{id}">お客様の声</label>
+			<textarea name="testmonial_summary{id}" id="testmonial_summary{id}" class="acms-admin-form-width-full">{testmonial_summary}</textarea>
+			<input type="hidden" name="unit{id}[]" value="testmonial_summary{id}" />
+		</div>
+		<div class="acms-admin-margin-bottom-small">
+			<label for="testmonial_customer_name{id}">お客様の名前</label>
+			<input type="text" name="testmonial_customer_name{id}" value="{testmonial_customer_name}" id="testmonial_customer_name{id}" class="acms-admin-form-width-full"/>
+			<input type="hidden" name="unit{id}[]" value="testmonial_customer_name{id}" />
+		</div>
+	</div>
+</div>
+<!-- END custom_testmonial -->
+<!-- BEGIN custom_form -->
+<h3>ご注文フォーム内容</h3>
+<p>※以下の内容がフォームとして挿入されます。入力フォームは固定の内容です。入力フォームを変更したい場合はHTMLを修正してください。</p>
+<ul class="contact-form">
+	<li class="contact-form-group">
+		<div class="contact-form-label">
+			お名前<span class="label-required">必須</span>
+		</div>
+		<div class="contact-form-control">
+			<label for="name" class="acms-hide-visually">苗字</label>
+			<input id="name" type="text" name="name" class="acms-admin-form-width-full" value="{name}" placeholder="山田 太郎" disabled="disabled">
+		</div>
+	</li>
+	<li class="contact-form-group">
+		<div class="contact-form-label">
+			<label for="email">メールアドレス</label><span class="label-required">必須</span>
+		</div>
+		<div class="contact-form-control">
+			<input id="email" type="email" name="email" value="{email}" class="acms-admin-form-width-full" placeholder="info@example.com" disabled="disabled">
+		</div>
+	</li>
+	<li class="contact-form-group">
+		<p class="contact-form-label"><label for="tel">お電話番号</label></p>
+		<div class="contact-form-control">
+			<input id="tel" type="tel" name="tel" value="{tel}" size="12" class="acms-admin-form-width-full" placeholder="000-000-0000" disabled="disabled">
+		</div>
+	</li>
+	<li class="contact-form-group">
+		<p class="contact-form-label">ご住所<span class="label-required">必須</span></p>
+		<div class="contact-form-control">
+			<div class="acms-form-group">
+				<span class="acms-margin-right-mini">
+					<label for="postal-code" class="acms-hide-visually">郵便番号</label>
+					<input type="text" name="postal-code" value="{postal-code}" id="postal-code" class="acms-form-width-mini" size="9" maxlength="8" placeholder="000-0000" disabled="disabled">
+				</span>
+
+				<label for="address-level1" class="acms-hide-visually">都道府県</label>
+				<select class="form-select" name="address-level1" id="address-level1" disabled="disabled">
+					<option value=""<!-- BEGIN_IF [{address-level1}/em] --> selected="selected"<!-- END_IF -->>都道府県</option>
+					<option value="北海道"{address-level1:selected#北海道}>北海道</option>
+
+					<option value="青森県"{address-level1:selected#青森県}>青森県</option>
+					<option value="岩手県"{address-level1:selected#岩手県}>岩手県</option>
+					<option value="宮城県"{address-level1:selected#宮城県}>宮城県</option>
+					<option value="秋田県"{address-level1:selected#秋田県}>秋田県</option>
+					<option value="山形県"{address-level1:selected#山形県}>山形県</option>
+					<option value="福島県"{address-level1:selected#福島県}>福島県</option>
+					<option value="茨城県"{address-level1:selected#茨城県}>茨城県</option>
+					<option value="栃木県"{address-level1:selected#栃木県}>栃木県</option>
+					<option value="群馬県"{address-level1:selected#群馬県}>群馬県</option>
+
+					<option value="埼玉県"{address-level1:selected#埼玉県}>埼玉県</option>
+					<option value="千葉県"{address-level1:selected#千葉県}>千葉県</option>
+					<option value="東京都"{address-level1:selected#東京都}>東京都</option>
+					<option value="神奈川県"{address-level1:selected#神奈川県}>神奈川県</option>
+					<option value="新潟県"{address-level1:selected#新潟県}>新潟県</option>
+					<option value="富山県"{address-level1:selected#富山県}>富山県</option>
+					<option value="石川県"{address-level1:selected#石川県}>石川県</option>
+					<option value="福井県"{address-level1:selected#福井県}>福井県</option>
+					<option value="山梨県"{address-level1:selected#山梨県}>山梨県</option>
+
+					<option value="長野県"{address-level1:selected#長野県}>長野県</option>
+					<option value="岐阜県"{address-level1:selected#岐阜県}>岐阜県</option>
+					<option value="静岡県"{address-level1:selected#静岡県}>静岡県</option>
+					<option value="愛知県"{address-level1:selected#愛知県}>愛知県</option>
+					<option value="三重県"{address-level1:selected#三重県}>三重県</option>
+					<option value="滋賀県"{address-level1:selected#滋賀県}>滋賀県</option>
+					<option value="京都府"{address-level1:selected#京都府}>京都府</option>
+					<option value="大阪府"{address-level1:selected#大阪府}>大阪府</option>
+					<option value="兵庫県"{address-level1:selected#兵庫県}>兵庫県</option>
+
+					<option value="奈良県"{address-level1:selected#奈良県}>奈良県</option>
+					<option value="和歌山県"{address-level1:selected#和歌山県}>和歌山県</option>
+					<option value="鳥取県"{address-level1:selected#鳥取県}>鳥取県</option>
+					<option value="島根県"{address-level1:selected#島根県}>島根県</option>
+					<option value="岡山県"{address-level1:selected#岡山県}>岡山県</option>
+					<option value="広島県"{address-level1:selected#広島県}>広島県</option>
+					<option value="山口県"{address-level1:selected#山口県}>山口県</option>
+					<option value="徳島県"{address-level1:selected#徳島県}>徳島県</option>
+					<option value="香川県"{address-level1:selected#香川県}>香川県</option>
+
+					<option value="愛媛県"{address-level1:selected#愛媛県}>愛媛県</option>
+					<option value="高知県"{address-level1:selected#高知県}>高知県</option>
+					<option value="福岡県"{address-level1:selected#福岡県}>福岡県</option>
+					<option value="佐賀県"{address-level1:selected#佐賀県}>佐賀県</option>
+					<option value="長崎県"{address-level1:selected#長崎県}>長崎県</option>
+					<option value="熊本県"{address-level1:selected#熊本県}>熊本県</option>
+					<option value="大分県"{address-level1:selected#大分県}>大分県</option>
+					<option value="宮崎県"{address-level1:selected#宮崎県}>宮崎県</option>
+					<option value="鹿児島県"{address-level1:selected#鹿児島県}>鹿児島県</option>
+
+					<option value="沖縄県"{address-level1:selected#沖縄県}>沖縄県</option>
+				</select>
+			</div>
+			<div>
+				<label for="address1" class="acms-hide-visually">市区町村、番地</label>
+				<input id="address1" type="text" name="address1" value="{address1}" size="12" class="acms-admin-form-width-full" placeholder="名駅中村区3丁目18-5" disabled="disabled">
+				<div class="acms-admin-margin-bottom-small"></div>
+				<label for="address2" class="acms-hide-visually">建物名</label>
+				<input id="address2" type="text" name="address2" value="{address2}" size="12" class="acms-admin-form-width-full" placeholder="モンマートビル5F" disabled="disabled">
+			</div>
+		</div>
+	</li>
+</ul>
+<!-- END custom_form -->
+<!-- BEGIN custom_sns_share -->
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th><label for="share_heading{id}">見出し</label></th>
+		<td>
+			<input type="text" name="share_heading{id}" value="{share_heading}" id="share_heading{id}" class="acms-admin-form-width-full" placeholder="例）知り合いにも伝える"/>
+			<input type="hidden" name="unit{id}[]" value="share_heading{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th>シェアボタンの表示設定</th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="share_twitter{id}" value="true"{share_twitter:checked#true} id="input-checkbox-share_twitter-true-{id}" />
+				<label for="input-checkbox-share_twitter-true-{id}"><i class="acms-admin-ico-checkbox"></i>ポストボタン</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="share_facebook{id}" value="true"{share_facebook:checked#true} id="input-checkbox-share_facebook-true-{id}" />
+				<label for="input-checkbox-share_facebook-true-{id}"><i class="acms-admin-ico-checkbox"></i>いいねボタン</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="share_hatena{id}" value="true"{share_hatena:checked#true} id="input-checkbox-share_hatena-true-{id}" />
+				<label for="input-checkbox-share_hatena-true-{id}"><i class="acms-admin-ico-checkbox"></i>はてなブックマークボタン</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="share_line{id}" value="true"{share_line:checked#true} id="input-checkbox-share_line-true-{id}" />
+				<label for="input-checkbox-share_line-true-{id}"><i class="acms-admin-ico-checkbox"></i>LINEへ送るボタン</label>
+			</div>
+			<input type="hidden" name="unit{id}[]" value="share_twitter{id}" />
+			<input type="hidden" name="unit{id}[]" value="share_facebook{id}" />
+			<input type="hidden" name="unit{id}[]" value="share_hatena{id}" />
+			<input type="hidden" name="unit{id}[]" value="share_line{id}" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="share_cooperation_text{id}">シェアご協力お願いテキスト</label></th>
+		<td>
+			<textarea name="share_cooperation_text{id}" id="share_cooperation_text{id}" class="acms-admin-form-width-full" placeholder="例）シェアしていただけると、今後の運営の励みとなります。">{share_cooperation_text}</textarea>
+			<input type="hidden" name="unit{id}[]" value="share_cooperation_text{id}" />
+		</td>
+	</tr>
+</table>
+<!-- END custom_sns_share -->

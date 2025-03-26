@@ -1,0 +1,113 @@
+<!-- BEGIN_IF [%{ADMIN}/nem] -->
+<link href="/css/acms.min.css" rel="stylesheet">
+@include("/include/head/edit.html")<!-- END_IF -->
+
+<!-- SEOの設定 -->
+@include("/admin/entry/seo.html")
+
+<h3 class="acms-admin-admin-title2">表示設定</h3>
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>パーツの表示設定</th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_appearance[]" value="header" id="input-enable_appearance-header"{enable_appearance:checked#header} />
+				<label for="input-enable_appearance-header"><i class="acms-admin-ico-checkbox"></i>ヘッダー</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_appearance[]" value="page_title" id="input-enable_appearance-page_title"{enable_appearance:checked#page_title} />
+				<label for="input-enable_appearance-page_title"><i class="acms-admin-ico-checkbox"></i>ページタイトル</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_appearance[]" value="topicpath" id="input-enable_appearance-topicpath"{enable_appearance:checked#topicpath} />
+				<label for="input-enable_appearance-topicpath"><i class="acms-admin-ico-checkbox"></i>トピックパス</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_appearance[]" value="contact" id="input-enable_appearance-contact"{enable_appearance:checked#contact} />
+				<label for="input-enable_appearance-contact"><i class="acms-admin-ico-checkbox"></i>お問い合わせ情報</label>
+			</div>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_appearance[]" value="footer" id="input-enable_appearance-footer"{enable_appearance:checked#footer} />
+				<label for="input-enable_appearance-footer"><i class="acms-admin-ico-checkbox"></i>フッター</label>
+			</div>
+			<input type="hidden" name="field[]" value="enable_appearance" />
+		</td>
+	</tr>
+</table>
+
+<h3 class="acms-admin-admin-title2">色の設定</h3>
+<table class="acms-admin-table-admin-edit">
+	<tr>
+		<th>背景色<i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="ユニットで使用する背景の色を変更できます"></i></th>
+		<td>
+			<div class="edit-group">
+				<p class="edit-group__label">背景色：01　</p>
+				<div>
+					<input type="text" name="bg_color_01" value="{bg_color_01}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="bg_color_01">
+				</div>
+				<div class="edit-group2">
+					<p class="edit-group__label acms-admin-padding-mini acms-admin-margin-bottom-mini">文字色　</p>
+					<div>
+						<input type="text" name="bg_color_01_text_color" value="{bg_color_01_text_color}" class="js-colorpicker" placeholder="例）#E60020">
+						<input type="hidden" name="field[]" value="bg_color_01_text_color">
+					</div>
+				</div>
+			</div>
+			<div class="edit-group">
+				<p class="edit-group__label">背景色：02　</p>
+				<div>
+					<input type="text" name="bg_color_02" value="{bg_color_02}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="bg_color_02">
+				</div>
+				<div class="edit-group2">
+					<p class="edit-group__label acms-admin-padding-mini acms-admin-margin-bottom-mini">文字色　</p>
+					<div>
+						<input type="text" name="bg_color_02_text_color" value="{bg_color_02_text_color}" class="js-colorpicker" placeholder="例）#E60020">
+						<input type="hidden" name="field[]" value="bg_color_02_text_color">
+					</div>
+				</div>
+			</div>
+			<div class="edit-group">
+				<p class="edit-group__label">背景色：03　</p>
+				<div>
+					<input type="text" name="bg_color_03" value="{bg_color_03}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="bg_color_03">
+				</div>
+				<div class="edit-group2">
+					<p class="edit-group__label acms-admin-padding-mini acms-admin-margin-bottom-mini">文字色　</p>
+					<div>
+						<input type="text" name="bg_color_03_text_color" value="{bg_color_03_text_color}" class="js-colorpicker" placeholder="例）#E60020">
+						<input type="hidden" name="field[]" value="bg_color_03_text_color">
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>文字色<i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="ユニットで使用する文字の色を変更できます"></i></th>
+		<td>
+			<div class="edit-group">
+				<p class="edit-group__label">文字色：01　</p>
+				<div>
+					<input type="text" name="text_color_01" value="{text_color_01}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="text_color_01">
+				</div>
+			</div>
+			<div class="edit-group">
+				<p class="edit-group__label">文字色：02　</p>
+				<div>
+					<input type="text" name="text_color_02" value="{text_color_02}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="text_color_02">
+				</div>
+			</div>
+			<div class="edit-group">
+				<p class="edit-group__label">文字色：03　</p>
+				<div>
+					<input type="text" name="text_color_03" value="{text_color_03}" class="js-colorpicker" placeholder="例）#E60020">
+					<input type="hidden" name="field[]" value="text_color_03">
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>

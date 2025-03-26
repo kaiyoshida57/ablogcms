@@ -1,0 +1,26 @@
+<tr>
+  <th>
+    <label for="key_color">キーカラー</label>
+    <i
+      class="acms-admin-icon-tooltip js-acms-tooltip-hover"
+      data-acms-tooltip="グローバルナビゲーションのボーダーカラー、続きを読むカラー、エントリー一覧の矢印アイコンカラー、リンクカラー、エントリーのNEWラベル、エントリーの目次カラー、カレンダーの日付背景色を変更します。"
+    ></i>
+  </th>
+  <td>
+    <input class="acms-admin-float-left" type="text" name="key_color" value="{key_color}" placeholder="例）#E28484" />
+    <input type="hidden" name="field[]" value="key_color" />
+    <div
+      id="key_color_demo"
+      class="acms-admin-float-left"
+      style="<!-- BEGIN_IF [{key_color}/nem] -->background-color: {key_color};<!-- ELSE -->background-color: #E28484;<!-- END_IF --> width: 27px; height: 27px; margin: 0 5px; background-image: none;"
+    ></div>
+    <button
+      class="js-acms-color-picker acms-admin-btn-admin"
+      data-target="[name='key_color']"
+      data-bg-color="#key_color_demo"
+      type="button"
+    >
+      色を選択
+    </button>
+  </td>
+</tr>

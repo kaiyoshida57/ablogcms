@@ -1,0 +1,27 @@
+<!-- BEGIN_MODULE Blog_Field -->{script_head}[raw|allow_dangerous_tag]<!-- END_MODULE Blog_Field -->
+<script src="%{JS_LIB_JQUERY_DIR}jquery-%{JS_LIB_JQUERY_DIR_VERSION}.min.js" charset="UTF-8"></script><!-- BEGIN_MODULE Js -->
+<script src="%{ROOT_DIR}acms.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script src="/js/modernizr.js"></script>
+
+<script src="/js/index.js" async></script>
+
+<!-- BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field id="BF_root" -->
+{google_analytics}[raw|allow_dangerous_tag]
+<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+
+<!-- BEGIN_IF [%{CCD}/eq/domestic/_or_/%{CCD}/eq/business] -->
+<!-- カテゴリーコードが domestic または business のとき -->
+<script<!-- BEGIN_MODULE Blog_Field id="BF_root" --><!-- BEGIN_IF [{cookie_consent}/eq/true] --> type="text/plain" data-cookiecategory="targeting"<!-- END_IF --><!-- END_MODULE Blog_Field -->>
+  ACMS.Ready(function () {
+    var cookie_interest = 'interest';
+    var expires_day = 30;
+    var ary_ccd = ['domestic', 'business'];
+
+    if (ary_ccd.indexOf('%{CCD}') >= 0) {
+      // Cookieを保存する
+      $.cookie(cookie_interest, '%{CCD}', { expires: expires_day, path: '/' });
+    }
+  });
+</script>
+<!-- END_IF -->

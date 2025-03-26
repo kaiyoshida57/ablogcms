@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　バナー
+------------------------------ */
+.banner {
+	margin: 0 math.div(acms.$grid-space, -2) 10px;
+	padding: 0;
+	list-style: none;
+
+	a {
+		display: block;
+
+		@include acms.transition(opacity .25s ease-out);
+
+		 &:hover {
+			opacity: .75;
+		}
+	}
+}
+
+.banner-item {
+	margin: 0 0 math.div(acms.$grid-space, 2) 0;
+}
+
+.banner-img-center {
+	margin: 0 auto;
+}

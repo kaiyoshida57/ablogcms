@@ -1,0 +1,38 @@
+<h3 class="acms-admin-admin-title2">重要なお知らせの設定</h3>
+<table class="entryFormTable acms-admin-table-entry">
+	<tr>
+		<th>表示設定<i data-acms-tooltip="トップページ上部に表示する重要なお知らせの表示を有効化します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="information_enable[]" value="true"{information_enable:checked#true} id="input-checkbox-information_enable" />
+				<label for="input-checkbox-information_enable"><i class="acms-admin-ico-checkbox"></i>トップページ上部に表示する</label>
+			</div>
+			<input type="hidden" name="field[]" value="information_enable" />
+		</td>
+	</tr>
+	<tr>
+		<th>アイコン<i data-acms-tooltip="メッセージ前に表示するアイコンの種類を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="information_type[]" value="good-news"{information_type:checked#good-news} id="input-radio-information_type-good-news" />
+				<label for="input-radio-information_type-good-news"><i class="acms-admin-ico-radio"></i><span class="acms-admin-icon-shortcut" aria-hidden="true"></span></label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="information_type[]" value="warning"{information_type:checked#warning} id="input-radio-information_type-warning" />
+				<label for="input-radio-information_type-warning"><i class="acms-admin-ico-radio"></i><span class="acms-admin-icon-attention" aria-hidden="true"></span></label>
+			</div>
+			<div class="acms-admin-form-radio">
+				<input type="radio" name="information_type[]" value="default"{information_type:checked#default} id="input-radio-information_type-default" />
+				<label for="input-radio-information_type-default"><i class="acms-admin-ico-radio"></i><span class="acms-admin-icon-news" aria-hidden="true"></span></label>
+			</div>
+			<input type="hidden" name="field[]" value="information_type" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-information_message">メッセージ</label><i data-acms-tooltip="メッセージを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<input type="text" name="information_message" value="{information_message}" id="input-text-information_message" class="acms-admin-form-width-large" />
+			<input type="hidden" name="field[]" value="information_message" />
+		</td>
+	</tr>
+</table>

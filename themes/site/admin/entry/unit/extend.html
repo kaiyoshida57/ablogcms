@@ -1,0 +1,82 @@
+<!-- BEGIN custom_product -->
+<div class="acms-admin-grid clearfix">
+  <div class="acms-admin-col-4 js-media-field">
+    <div
+      class="js-droparea"
+      data-thumbnail="{product_image@thumbnail}"
+      data-type="image"
+      style="width: 200px"
+    ></div>
+    <p class="js-text acms-admin-text-danger" style="display: none">
+      許可されていないファイルのため挿入できません。
+    </p>
+    <div class="acms-admin-margin-top-mini">
+      <button type="button" class="js-insert acms-admin-btn" data-type="image">
+        メディアを選択
+      </button>
+    </div>
+    <input
+      type="hidden"
+      name="product_image{id}"
+      value="{product_image}"
+      class="js-value"
+    />
+    <input type="hidden" name="unit{id}[]" value="product_image{id}" />
+    <input type="hidden" name="product_image{id}:extension" value="media" />
+  </div>
+  <!-- BEGIN custom_table:veil -->
+  <div class="acms-admin-col-8">
+    <table class="customTable entryFormColumnTable">
+      <!-- BEGIN product_price:veil -->
+      <tr>
+        <th>商品価格</th>
+        <td>
+          <div class="acms-admin-form-action acms-admin-form-action-separate">
+            <input
+              type="text"
+              name="product_price{id}"
+              value="{product_price}"
+              class="acms-admin-form-width-large"
+              placeholder="1,000"
+            />
+            <span class="acms-admin-form-side-btn">円</span>
+          </div>
+          <input type="hidden" name="unit{id}[]" value="product_price{id}" />
+        </td>
+      </tr>
+      <!-- END product_price:veil -->
+      <!-- BEGIN product_price:veil -->
+      <tr>
+        <th>サイズ</th>
+        <td>
+          <input
+            type="text"
+            name="product_size{id}"
+            value="{product_size}"
+            class="acms-admin-form-width-large"
+            placeholder="10cm x 10cm"
+          />
+          <input type="hidden" name="unit{id}[]" value="product_size{id}" />
+        </td>
+      </tr>
+      <!-- END product_price:veil -->
+      <!-- BEGIN product_price:veil -->
+      <tr>
+        <th>重量</th>
+        <td>
+          <input
+            type="text"
+            name="product_amount{id}"
+            value="{product_amount}"
+            class="acms-admin-form-width-large"
+            placeholder="100g"
+          />
+          <input type="hidden" name="unit{id}[]" value="product_amount{id}" />
+        </td>
+      </tr>
+      <!-- END product_price:veil -->
+    </table>
+  </div>
+  <!-- END custom_table:veil -->
+</div>
+<!-- END custom_product -->

@@ -1,0 +1,13 @@
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<div>
+	@include("/admin/module/setting.html")
+	<ul class="layout-group-list acms-grid heading-align-{group_heading_align} detail-align-{group_detail_align} btn-align-{group_btn_align}">
+		<!-- BEGIN module_field_group:loop -->
+		<li class="layout-group-item acms-col-md-4">
+			<!-- BEGIN group_heading:veil --><h3 class="layout-group-heading">{group_heading}</h3><!-- END group_heading:veil -->
+			<!-- BEGIN group_detail:veil --><p class="layout-group-detail">{group_detail}[nl2br]</p><!-- END group_detail:veil -->
+			<!-- BEGIN module_btn:veil --><p class="layout-group-btn-wrap"><a href="{group_btn_url}" class="btn">{group_btn_text}</a></p><!-- END module_btn:veil -->
+		</li><!-- END module_field_group:loop -->
+	</ul>
+</div>
+<!-- END_MODULE Module_Field -->

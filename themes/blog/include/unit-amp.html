@@ -1,0 +1,52 @@
+@extends("/_layouts/unit-amp.html")
+
+@section(quote-unit)
+<!-- 引用URL -->
+<div class="column-quote-{align}"{display_size}[raw]>
+	<!-- BEGIN html:veil -->
+	{quote_html}[raw]
+	<!-- END html:veil -->
+	<!-- BEGIN_IF [{quote_title}/nem/] -->
+	<blockquote class="quote">
+		<a href="{quote_url}" class="quoteLink" target="_blank">
+			<div class="quote-maincontents">
+				<div class="quoteTitle-wrap">
+					<p class="quoteTitle">{quote_title}</p><!-- BEGIN site_name:veil -->
+					<p class="quoteSiteName">{quote_site_name}</p><!-- END site_name:veil -->
+				</div><!-- BEGIN image:veil -->
+				<div class="quoteImageContainer">
+					<amp-img src="{quote_image}" class="quoteImage" width="150" height="{quote_image}[imageRatioSizeH(150)]" layout="responsive" alt="">
+				</div><!-- END image:veil -->
+			</div><!-- BEGIN description:veil -->
+			<p class="quoteDescription">{quote_description}[raw|trim(180, '...')]</p><!-- END description:veil -->
+		</a>
+	</blockquote>
+	<!-- END_IF -->
+</div>
+@endsection
+
+
+<!-- BEGIN unit#osmap -->
+@section(osmap-unit)
+<!-- Open Street Map -->
+<div class="column-map-{align}{display_size_class}"{display_size}[raw]>
+	<a href="https://www.openstreetmap.org/#map={zoom}/{lat}/{lng}" class="amp-btn amp-btn-large" target="_blank">別ページで地図を表示</a>
+</div>
+@endsection
+<!-- END unit#osmap -->
+
+<!-- BEGIN unit#map -->
+@section(map-unit)
+<!-- Google Maps -->
+
+
+<div class="column-map-{align}{display_size_class}"{display_size}[raw]>
+	<div class="acms-margin-bottom-small">
+	<amp-img src="https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size={x}x{y}&maptype=roadmap&markers={lat},{lng}&key=%{GOOGLE_API_KEY}" alt="{msg}" width="{x}" height="{y}" layout="responsive" title="クリックで地図が動かせるようになります。">
+	</div>
+		<a href="https://www.google.com/maps/@{lat},{lng},{zoom}z" class="amp-btn" target="_blank">別ページで地図を表示</a>
+</div>
+
+@endsection
+<!-- END unit#map -->
+

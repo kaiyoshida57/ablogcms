@@ -1,0 +1,10 @@
+<!-- BEGIN_MODULE Ogp -->
+<!-- Twitter Card tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{description}[mb_trim(350, '...')|delnl|escape]">
+<!-- BEGIN_IF [{image@type}/eq/media] --><meta name="twitter:image" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}"><!-- ELSE -->
+<meta name="twitter:image" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}"><!-- END_IF -->
+<!-- END_MODULE Ogp -->
+<!-- BEGIN_MODULE Blog_Field id="BF_root" --><!--  BEGIN twitter_creator:veil -->
+<meta name="twitter:creator" content="@{twitter_creator}"><!--  END twitter_creator:veil --><!-- END_MODULE Blog_Field -->

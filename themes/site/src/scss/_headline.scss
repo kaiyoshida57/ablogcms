@@ -1,0 +1,50 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ヘッドライン
+------------------------------ */
+.headline-item {
+	line-height: 1.5;
+}
+
+.headline-link {
+	color: #333;
+
+	@include acms.transition(background-color .25s ease-out);
+
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		color: #333;
+	}
+
+	&:hover {
+		padding: 10px;
+		background: #F1F1F1;
+	}
+}
+
+.headline-title {
+	margin: 0 10px;
+}
+
+@media screen and (max-width: acms.$breakpoint-sm-max){ /* 画面幅が小さいとき */
+	/* ヘッドライン */
+	.headline-item {
+		padding: 10px 0;
+	}
+
+	.headline-title {
+		display: block;
+		margin: 0;
+	}
+}
+
+
+
+/* 1カラムページ用のヘッドライン */
+.headline-1col {
+	@include acms.font-size(16);
+}

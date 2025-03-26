@@ -1,0 +1,14 @@
+<!-- BEGIN_IF [%{BID}/eq/1] -->
+
+<!-- ルートブログ設定 -->
+@include("/admin/blog/bid/id-1.html")
+
+<!-- ELSE -->
+
+<!-- 子ブログ共通設定 -->
+@include("/admin/blog/bid/id-not1.html")
+
+<!-- 子ブログ毎の個別設定 -->
+@include("/admin/blog/bid/%{BID}.html")
+
+<!-- END_IF -->

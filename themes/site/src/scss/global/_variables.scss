@@ -1,0 +1,104 @@
+// ------------------------------
+//　設定
+// ------------------------------
+$enable-iphonex: true;
+
+// ------------------------------
+//　ベース
+// ------------------------------
+// コンテイナー幅
+$container: 1140px;
+$narrow-container: 960px;
+
+// メインカラム幅
+$main-column-width: 820px;
+
+// グリッドの間隔
+//$grid-space           : 20px;
+
+// ------------------------------
+//　ファイルのパス
+// ------------------------------
+//$acms-font: '/themes/system/fonts/'; // フォントのパスを上書き
+
+
+// ------------------------------
+//　書体
+// ------------------------------
+$font-family: -apple-system,blinkmacsystemfont,"Segoe UI","Roboto","Helvetica Neue","Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans","Meiryo",sans-serif;
+
+
+// ------------------------------
+//　カラー
+// ------------------------------
+// 背景色
+$bg-color: #FFF;
+
+// プライマリーカラー
+$primary-color: #C41134;
+$primary-color-hover: #910021;
+
+// セカンダリーカラー
+$secondary-color: #333;
+
+// ベースカラー
+$base-color: #E5E5E5;
+
+//状態
+$focus-color: #00c2ff;
+
+// ボタン
+$btn-default-color: #666;
+$btn-start-color: #666;
+$btn-end-color: #444;
+$btn-active-color: #444;
+$btn-hover-color: #444;
+
+// 色付きボタン
+$btn-attention-default-color: #C41134;
+$btn-attention-start-color: #C41134;
+$btn-attention-end-color: #910021;
+$btn-attention-active-color: #910021;
+$btn-attention-hover-color: #910021;
+
+// 各SNS色
+$facebook-color: #1877f2;
+$twitter-color: #55ACEE;
+$x-color: #000;
+$youtube-color: #CD201F;
+
+// リンク色
+$link-color: #006DD9;
+$link-color-visited: #7F5AD7;
+$link-color-active: #006DD9;
+$link-color-hover: #006DD9;
+
+// テキスト色
+$text-color-base: #333;
+
+
+// ------------------------------
+//　ヘッダー
+// ------------------------------
+$header-height: 48px;
+
+
+// ------------------------------
+//　エントリー
+// ------------------------------
+//$unit-gutter                       : $grid-space;
+$entry-margin-bottom: 25px;
+$entry-element-margin-bottom-sm: 10px!default;
+$entry-element-margin-bottom-md: 25px!default;
+$entry-element-margin-bottom-lg: 30px!default;
+
+//$entry-class                       : entry-column;
+
+
+// ------------------------------
+//　スライダー
+// ------------------------------
+$main-slider-height-mobile: 300px;
+$main-slider-height-desktop: 400px;
+
+

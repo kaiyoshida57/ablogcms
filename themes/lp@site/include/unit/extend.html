@@ -1,0 +1,123 @@
+<!-- BEGIN unit#custom_cover_image -->
+<div class="lp-cover-image">
+	<div class="lp-cover-image-layout">
+		<div class="lp-cover-image-bg"<!-- BEGIN cover_image:veil --> style="<!-- BEGIN cover_image:veil_url -->background-image: url(%{MEDIA_ARCHIVES_DIR}{cover_image@path});<!-- END cover_image_url:veil --><!-- BEGIN cover_image_bg_color:veil -->color: {cover_image_bg_color};<!-- END cover_image_bg_color:veil -->"<!-- END cover_image:veil -->></div>
+		<div class="lp-cover-image-inner"<!-- BEGIN cover_image_inner_style:veil --> style="<!-- BEGIN cover_image_color:veil -->color:{cover_image_text_color};<!-- END cover_image_color:veil --><!-- BEGIN_IF [{cover_image_height}/eq/overall] -->height: 100vh;<!-- ELSE_IF [{cover_image_height}/eq/half] -->height: 50vh;<!-- END_IF -->"<!-- END cover_image_inner_style:veil -->>
+			<div>
+				<h2 class="lp-cover-image-heading">{cover_image_title}[raw|nl2br]</h2>
+				<p class="lp-cover-image-summary">{cover_image_summary}[raw|nl2br]</p><!-- BEGIN_IF [{cover_image_btn_label}/nem/_and_/{cover_image_btn_url}/nem] -->
+				<p class="lp-cover-image-btn-wrap"><a href="{cover_image_btn_url}" class="btn">{cover_image_btn_label}</a></p><!-- END_IF -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END unit#custom_cover_image -->
+<!-- BEGIN unit#custom_split_image -->
+<div class="lp-split-image lp-split-image-overall">
+	<div class="lp-split-image-col lp-split-image-col-left" style="<!-- BEGIN_IF [{split_image_height}/eq/overall] -->min-height: 100vh;<!-- ELSE_IF [{split_image_height}/eq/half] -->min-height: 50vh;<!-- END_IF -->">
+		<div class="lp-split-image-col-bg lp-split-image-col-bg-left" style="<!-- BEGIN split01_image:veil_url -->background-image: url(%{MEDIA_ARCHIVES_DIR}{split01_image@path});<!-- END split01_image_url:veil --><!-- BEGIN split01_bg_color:veil -->color: {split01_bg_color};<!-- END split01_bg_color:veil -->"></div>
+		<div class="lp-split-image-col-inner"<!-- BEGIN split01_text_color:veil --> style="color:{split01_text_color};"<!-- END split01_text_color:veil -->><!-- BEGIN split01_image_title:veil -->
+			<h2 class="lp-split-image-heading">{split01_image_title}[raw|nl2br]</h2><!-- END split01_image_title:veil --><!-- BEGIN split01_image_summary:veil -->
+			<p class="lp-split-image-summary">{split01_image_summary}[raw|nl2br]</p><!-- END split01_image_summary:veil --><!-- BEGIN_IF [{split01_image_btn_label}/nem/_and_/{split01_image_btn_url}/nem] -->
+			<p class="lp-split-image-btn-wrap"><a href="{split01_image_btn_url}" class="btn-attention">{split01_image_btn_label}</a></p><!-- END_IF -->
+		</div>
+	</div>
+	<div class="lp-split-image-col lp-split-image-col-right" style="<!-- BEGIN_IF [{split_image_height}/eq/overall] -->min-height: 100vh;<!-- ELSE_IF [{split_image_height}/eq/half] -->min-height: 50vh;<!-- END_IF -->">
+		<div class="lp-split-image-col-bg lp-split-image-col-bg-right" style="<!-- BEGIN split02_image_url:veil -->background-image: url(%{MEDIA_ARCHIVES_DIR}{split02_image@path});<!-- END split02_image_url:veil --><!-- BEGIN split02_bg_color:veil -->color: {split02_bg_color};<!-- END split02_bg_color:veil -->"></div>
+		<div class="lp-split-image-col-inner"<!-- BEGIN split02_text_color:veil --> style="color:{split02_text_color};"<!-- END split02_text_color:veil -->><!-- BEGIN split02_image_title:veil -->
+			<h2 class="lp-split-image-heading">{split02_image_title}[raw|nl2br]</h2><!-- END split02_image_title:veil --><!-- BEGIN split02_image_summary:veil -->
+			<p class="lp-split-image-summary">{split02_image_summary}[raw|nl2br]</p><!-- END split02_image_summary:veil --><!-- BEGIN_IF [{split02_image_btn_label}/nem/_and_/{split02_image_btn_url}/nem] -->
+			<p class="lp-split-image-btn-wrap"><a href="{split02_image_btn_url}" class="btn-attention">{split02_image_btn_label}</a></p><!-- END_IF -->
+		</div>
+	</div>
+</div>
+<!-- END unit#custom_split_image -->
+<!-- BEGIN unit#custom_media_image -->
+<div class="lp-media-image<!-- BEGIN media_image_direction:veil --> lp-media-image-{media_image_direction}<!-- BEGIN media_image_direction:veil -->">
+	<div class="lp-media-image-col"><!-- BEGIN media_image:veil -->
+		<div class="lp-media-visual-wrap lp-media-image-col-image">
+			<img src="%{MEDIA_ARCHIVES_DIR}{media_image@path}" alt="{media_image@alt}" class="lp-media-visual">
+		</div><!-- END media_image:veil -->
+	</div>
+	<div class="lp-media-image-col">
+		<div class="lp-media-image-col-inner"><!-- BEGIN media_image_title:veil -->
+			<h2 class="lp-media-image-heading">{media_image_title}[raw|nl2br]</h2><!-- END media_image_title:veil --><!-- BEGIN media_image_summary:veil -->
+			<p class="lp-media-image-summary">{media_image_summary}[raw|nl2br]</p><!-- END media_image_summary:veil --><!-- BEGIN_IF [{media_image_btn_label}/nem/_and_/{media_image_btn_url}/nem] -->
+			<p class="lp-media-image-btn-wrap"><a href="{media_image_btn_url}" class="btn">{media_image_btn_label}</a></p><!-- END_IF -->
+		</div>
+	</div>
+</div>
+<!-- END unit#custom_media_image -->
+<!-- BEGIN unit#custom_feature -->
+<!-- BEGIN_SetRendered id="feature_column{utid}" --><!-- BEGIN_IF [{feature_column}/eq/2] -->acms-col-md-6<!-- ELSE_IF [{feature_column}/eq/3] -->acms-col-md-4<!-- ELSE -->acms-col-12<!-- END_IF --><!-- END_SetRendered -->
+<div class="acms-container clearfix"><!-- BEGIN group_feature:loop -->
+	<div class="<!-- GET_Rendered id="feature_column{utid}" --> js-autoheight-r">
+		<div class="lp-feature">
+			<!-- BEGIN_IF [{feature_image@path}/nem] -->
+			<div class="lp-feature-image-wrap">
+				<img src="%{MEDIA_ARCHIVES_DIR}{feature_image@path}" alt="" class="acms-img-responsive">
+			</div><!-- ELSE -->
+			<div class="lp-feature-icon-wrap"<!-- BEGIN feature_icon_bg_color:veil --> style="background-color:{feature_bg_color};"<!-- END feature_icon_bg_color:veil -->>
+				<span class="{feature_icon}"<!-- BEGIN feature_icon_bg_color:veil --> style="color:{feature_icon_color};"<!-- END feature_icon_bg_color:veil -->></span>
+			</div><!-- END_IF -->
+			<h2 class="lp-feature-title">{feature_title}</h2>
+			<p class="lp-feature-summary">{feature_summary}[raw|nl2br]</p><!-- BEGIN_IF [{feature_btn_label}/nem/_and_/{feature_btn_url}/nem] -->
+			<p class="lp-feature-btn-wrap"><a href="{feature_btn_url}" class="btn">{feature_btn_label}</a></p><!-- END_IF -->
+		</div>
+	</div><!-- END group_feature:loop -->
+</div>
+<!-- END unit#custom_feature -->
+<!-- BEGIN unit#custom_faq -->
+<!-- BEGIN_SetRendered id="faq_column{utid}" --><!-- BEGIN_IF [{faq_column}/eq/2] -->acms-col-md-6<!-- ELSE_IF [{faq_column}/eq/3] -->acms-col-md-4<!-- ELSE -->acms-col-12<!-- END_IF --><!-- END_SetRendered -->
+
+<div class="lp-faq-wrapper js-autoheight-r-container"><!-- BEGIN group_faq:loop --><!-- BEGIN faq:veil -->
+	<div class="<!-- GET_Rendered id="faq_column{utid}" --> js-autoheight-r-list">
+		<div class="lp-faq js-autoheight-r-item"><!-- BEGIN faq_question:veil -->
+			<div class="lp-faq-q">
+				<h3 class="lp-faq-title">{faq_question}</h3>
+			</div><!-- END faq_question:veil --><!-- BEGIN faq_answer:veil -->
+			<div class="lp-faq-a">
+				{faq_answer}[raw|markdown]
+			</div><!-- END faq_answer:veil -->
+		</div>
+	</div><!-- END faq:veil --><!-- END group_faq:loop -->
+</div>
+<!-- END unit#custom_faq -->
+<!-- BEGIN unit#custom_accordion -->
+<div class="lp-accordion js-lp-accordion" data-utid="{utid}"><!-- BEGIN accordion_heading:veil -->
+	<h3 class="lp-accordion-title js-lp-accordion-title">{accordion_heading}</h3><!-- END accordion_question:veil --><!-- BEGIN accordion_contents:veil -->
+	<div class="lp-accordion-contents">
+	{accordion_contents}[raw|markdown]
+	</div><!-- END accordion_answer:veil -->
+</div>
+<!-- END unit#custom_accordion -->
+<!-- BEGIN unit#custom_testmonial -->
+<div class="lp-testmonial"><!-- BEGIN testmonial_image:veil -->
+	<div class="lp-testmonial-media">
+		<div class="lp-testmonial-image-wrap">
+			<img src="%{MEDIA_ARCHIVES_DIR}{testmonial_image@path}" alt="（イメージ写真）{testmonial_customer_name}" class="acms-img-responsive">
+		</div>
+	</div><!-- END testmonial_image:veil --><!-- BEGIN testmonial_content:veil -->
+	<div class="lp-testmonial-content">
+		<div class="lp-testmonial-comment"><!-- BEGIN testmonial_summary:veil -->
+			<p class="lp-testmonial-text">{testmonial_summary}[raw|nl2br]</p><!-- END testmonial_summary:veil --><!-- BEGIN testmonial_customer_name:veil -->
+			<p class="lp-testmonial-customer">-<span class="lp-testmonial-customer-inner">{testmonial_customer_name}</span>-</p><!-- ENd testmonial_customer_name:veil -->
+		</div>
+	</div><!-- END testmonial_content:veil -->
+</div>
+<!-- END unit#custom_testmonial -->
+<!-- BEGIN unit#custom_form -->
+@include("/form/form.html")
+<!-- END unit#custom_form -->
+<!-- BEGIN unit#custom_sns_share -->
+<div class="lp-sns-share"><!-- BEGIN share_heading:veil -->
+	<h2 class="lp-sns-share-heading">{share_heading}</h2><!-- END share_heading:veil -->
+	<ul class="lp-sns-share-list"><!-- BEGIN_IF [{share_twitter}/eq/true] -->
+		<li class="lp-sns-share-item"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="%{ENTRY_TITLE}" data-lang="ja" data-show-count="false">Post</a></li><!-- END_IF --><!-- BEGIN_IF [{share_facebook}/eq/true] -->
+		<li class="lp-sns-share-item"><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div></li><!-- END_IF --><!-- BEGIN_IF [{share_hatena}/eq/true] -->
+		<li class="lp-sns-share-item"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" data-hatena-bookmark-width="100" data-hatena-bookmark-height="28" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li><!-- END_IF --><!-- BEGIN_IF [{share_line}/eq/true] -->
+		<li class="lp-sns-share-item"><div class="line-it-button" data-lang="ja" data-type="share-c" data-url="http://%{PERMALINK}" style="display: none;"></div></li><!-- END_IF -->
+	</ul><!-- BEGIN share_cooperation_text:veil -->
+	<p class="lp-sns-share-cooperation-text">{share_cooperation_text}[raw]</p><!-- END share_cooperation_text:veil -->
+</div>
+<!-- END unit#custom_sns_share -->

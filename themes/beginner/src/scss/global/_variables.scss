@@ -1,0 +1,91 @@
+// ------------------------------
+//　設定
+// ------------------------------
+$enable-iphonex: true;
+
+// ------------------------------
+//　ベース
+// ------------------------------
+// コンテイナー
+$container: 1140px;
+$narrow-container: 960px;
+
+// メインカラム
+$main-column-width: 820px;
+
+
+// ------------------------------
+//　書体
+// ------------------------------
+$font-family: -apple-system,blinkmacsystemfont,"Segoe UI","Roboto","Helvetica Neue","Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans","Meiryo",sans-serif;
+
+
+// ------------------------------
+//　カラー
+// ------------------------------
+// 背景色
+$bg-color: #FFF;
+
+// プライマリーカラー
+$primary-color: #C41134;
+$primary-color-hover: #910021;
+
+// セカンダリーカラー
+$secondary-color: #333;
+
+// ベースカラー
+$base-color: #E5E5E5;
+
+//状態
+$focus-color: #00c2ff;
+
+// ボタン
+$btn-default-color: #999;
+$btn-start-color: #C1C1C1;
+$btn-end-color: #999;
+$btn-active-color: #878787;
+$btn-hover-color: #777;
+
+// 色付きボタン
+$btn-attention-default-color: #FF9A00;
+$btn-attention-start-color: #FDD87D;
+$btn-attention-end-color: #FF9A00;
+$btn-attention-active-color: #EDA800;
+$btn-attention-hover-color: #FF7E00;
+
+// 各SNS色
+$facebook-color: #1877f2;
+$twitter-color: #55ACEE;
+$x-color: #000;
+$youtube-color: #CD201F;
+
+// リンク色
+$link-color: #006DD9;
+$link-color-visited: #7F5AD7;
+$link-color-active: #006DD9;
+$link-color-hover: #006DD9;
+
+// テキスト色
+$text-color-base: #333;
+
+
+// ------------------------------
+//　ヘッダー
+// ------------------------------
+$header-height: 48px;
+
+
+// ------------------------------
+//　エントリー
+// ------------------------------
+$entry-margin-bottom: 25px;
+$entry-element-margin-bottom-sm: 10px!default;
+$entry-element-margin-bottom-md: 25px!default;
+$entry-element-margin-bottom-lg: 30px!default;
+
+
+// ------------------------------
+//　スライダー
+// ------------------------------
+$main-slider-height-mobile: 300px;
+$main-slider-height-desktop: 400px;

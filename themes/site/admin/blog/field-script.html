@@ -1,0 +1,39 @@
+<h3 class="acms-admin-admin-title2">scriptタグ</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th><label for="input-text-script_head">head要素内</label><i data-acms-tooltip="head要素内に挿入したいscriptタグを記述できます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<textarea name="script_head" cols="60" rows="5" id="input-text-script_head" class="acms-admin-form-width-large">{script_head}</textarea>
+			<input type="hidden" name="field[]" value="script_head" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-script_body_start">body要素開始直後</label><i data-acms-tooltip="body要素開始直後に挿入したいscriptタグを記述できます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<textarea name="script_body_start" cols="60" rows="5" id="input-text-script_body_start" class="acms-admin-form-width-large">{script_body_start}</textarea>
+			<input type="hidden" name="field[]" value="script_body_start" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-script_body_end">body要素終了直前</label><i data-acms-tooltip="body要素終了直前に挿入したいscriptタグを記述できます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<textarea name="script_body_end" cols="60" rows="5" id="input-text-script_body_end" class="acms-admin-form-width-large">{script_body_end}</textarea>
+			<input type="hidden" name="field[]" value="script_body_end" />
+		</td>
+	</tr>
+  <tr>
+    <th>EU購入者のための<span class="acms-admin-inline-block">データ収集の有効化</span>
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip='この機能の詳しいカスタマイズ方法はthemes/site内のREADMEをご覧ください。'></i>
+    </th>
+    <td>
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="cookie_consent[]" value="true" {cookie_consent:checked#true} id="input-checkbox-cookie_consent-true" />
+        <label for="input-checkbox-cookie_consent-true">
+          <i class="acms-admin-ico-checkbox"></i>テーマ内のCookieの取得に関するプログラムを対象にする</label>
+        <p class="acms-admin-text-helper acms-admin-margin-top-mini">2018年よりEUにて一般データ保護規則（GDPR）が制定され、欧州に在住している方の個人情報を取得するためにはウェブサイト訪問者の事前同意が必要となりました。
+          チェックして有効化すると、閲覧者から同意を得てからCookieを取得するようになります。</p>
+      </div>
+      <input type="hidden" name="field[]" value="cookie_consent" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,127 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　各モジュール
+------------------------------ */
+
+.module-section {
+	margin: 0 0 30px;
+}
+
+/* タイトル */
+.module-header {
+	position: relative;
+	margin: 0;
+	padding: 5px 0;
+	color: #333;
+	border-bottom: 2px solid #333;
+
+	 & + .thumbnail,
+	 & + .summary-default,
+	 & + .entry-column,
+	 & + .card,
+	 & + .search-form,
+	 & + .banner  {
+		margin-top: 10px;
+	}
+}
+
+.module-heading {
+	margin: 0;
+
+	@include acms.font-size(18);
+
+	[class*="acms-icon-"] {
+		margin: 0 10px 0 0;
+		vertical-align: baseline;
+	}
+}
+
+a.module-index-link {
+	position: absolute;
+		right: 0;
+		bottom: 5px;
+	color: #333;
+
+	@include acms.font-size(16);
+
+	[class*='acms-icon-'] {
+		color: #CCC;
+
+		@include acms.font-size(14);
+	}
+}
+
+/* カスタムフィールドグループ */
+.module-group-list {
+	margin: 0;
+	padding: 0 math.div(acms.$grid-space, 2);
+	list-style: none;
+
+  @include acms.clearfix;
+}
+
+.module-group-heading {
+	margin: 0 0 20px;
+
+	@include acms.font-size(18);
+
+	line-height: 1.2;
+}
+
+.module-group-detail {
+	margin: 0 0 30px;
+
+	@include acms.font-size(16);
+
+	line-height: 1.7;
+}
+
+/* 行揃えの設定 */
+
+/* 見出し */
+.module-group-heading {
+	.heading-align-left & {
+		text-align: left;
+	}
+
+	.heading-align-center & {
+		text-align: center;
+	}
+
+	.heading-align-right & {
+		text-align: right;
+	}
+}
+
+/* 概要文 */
+.module-group-detail {
+	.detail-align-left & {
+		text-align: left;
+	}
+
+	.detail-align-center & {
+		text-align: center;
+	}
+
+	.detail-align-right & {
+		text-align: right;
+	}
+}
+
+/* ボタン */
+.module-group-btn-wrap {
+	.btn-align-left & {
+		text-align: left;
+	}
+
+	.btn-align-center & {
+		text-align: center;
+	}
+
+	.btn-align-right & {
+		text-align: right;
+	}
+}

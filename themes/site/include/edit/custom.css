@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* ------------------------------
+　　テキストユニットのエディターの設定
+------------------------------ */
+/* エントリー内ボタン */
+.entry-column,
+.entryFormLiteEditor {
+  /* 色付きボタン */
+  /* ボタン内のアイコン */
+}
+.entry-column .entry-btn-default,
+.entryFormLiteEditor .entry-btn-default {
+  background: #666;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 1.3;
+  border: 0;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 3px;
+}
+.entry-column .entry-btn-default:hover,
+.entry-column .entry-btn-default:visited,
+.entryFormLiteEditor .entry-btn-default:hover,
+.entryFormLiteEditor .entry-btn-default:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+.entry-column .entry-btn-default:focus,
+.entry-column .entry-btn-default:active,
+.entryFormLiteEditor .entry-btn-default:focus,
+.entryFormLiteEditor .entry-btn-default:active {
+  color: #FFF;
+  -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .5);
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .5);
+}
+.entry-column .entry-btn-default:hover,
+.entryFormLiteEditor .entry-btn-default:hover {
+  color: #FFF;
+  background-color: #444;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#666), to(#444));
+  background-image: linear-gradient(to bottom, #666, #444);
+}
+.entry-column .entry-btn-default:active,
+.entry-column .entry-btn-default:focus,
+.entryFormLiteEditor .entry-btn-default:active,
+.entryFormLiteEditor .entry-btn-default:focus {
+  background: #444;
+}
+.entry-column .entry-btn-attention,
+.entryFormLiteEditor .entry-btn-attention {
+  background: #C41134;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 1.3;
+  border: 0;
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 3px;
+}
+.entry-column .entry-btn-attention:hover,
+.entry-column .entry-btn-attention:visited,
+.entryFormLiteEditor .entry-btn-attention:hover,
+.entryFormLiteEditor .entry-btn-attention:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+.entry-column .entry-btn-attention:focus,
+.entry-column .entry-btn-attention:active,
+.entryFormLiteEditor .entry-btn-attention:focus,
+.entryFormLiteEditor .entry-btn-attention:active {
+  color: #FFF;
+  -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .5);
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .5);
+}
+.entry-column .entry-btn-attention:hover,
+.entryFormLiteEditor .entry-btn-attention:hover {
+  color: #FFF;
+  background-color: #910021;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#C41134), to(#910021));
+  background-image: linear-gradient(to bottom, #C41134, #910021);
+}
+.entry-column .entry-btn-attention:active,
+.entry-column .entry-btn-attention:focus,
+.entryFormLiteEditor .entry-btn-attention:active,
+.entryFormLiteEditor .entry-btn-attention:focus {
+  background: #910021;
+}
+.entry-column .entry-btn-icon-before,
+.entryFormLiteEditor .entry-btn-icon-before {
+  margin: 0 10px 0 0;
+}
+.entry-column .entry-btn-icon-after,
+.entryFormLiteEditor .entry-btn-icon-after {
+  margin: 0 0 0 10px;
+}
+
+/* ------------------------------
+　　編集ページ
+------------------------------ */
+.field-title {
+  padding: 0 10px;
+}
+
+.field-title:first-child {
+  margin: 0 0 10px 0;
+}
+
+.field-table-inner {
+  width: 100%;
+}
+.field-table-inner th,
+.field-table-inner td {
+  border: 0;
+}

@@ -1,0 +1,86 @@
+@extends("/_layouts/basic.html")
+
+@section("main")
+<!-- 地図 -->
+@include("/include/parts/map.html")
+
+<header class="module-header acms-margin-top-large">
+	<h3 class="module-heading">条件から検索する</h3>
+</header>
+
+<div class="entry-column">
+	<!-- BEGIN_MODULE Field_Search -->
+	<form action="/" method="post" class="acms-form" role="search" aria-label="検索フォーム">
+		<div class="realestate-search">
+			<div class="realestate-search-group">
+				<div class="realestate-search-item">
+					<label for="kubun" class="realestate-search-label">区分</label>
+					<div class="realestate-search-input">
+						<select name="kubun" id="kubun">
+							<option value=""<!-- BEGIN_IF [{kubun}/em] --> selected="selected"<!-- END_IF -->>未設定</option>
+							<option value="一戸建て"{kubun:selected#一戸建て}>一戸建て</option>
+							<option value="マンション"{kubun:selected#マンション}>マンション</option>
+							<option value="アパート"{kubun:selected#アパート}>アパート</option>
+						</select>
+						<input type="hidden" name="field[]" value="kubun" />
+					</div>
+				</div>
+				<div class="realestate-search-item">
+					<label for="station" class="realestate-search-label">最寄り駅</label>
+					<div class="realestate-search-input">
+						<select name="station" id="station">
+							<option value="" <!-- BEGIN_IF [{station}/em] --> selected="selected"<!-- END_IF -->>未設定</option>
+							<option value="あの駅" {station:selected#あの駅}>あの駅</option>
+							<option value="この駅" {station:selected#この駅}>この駅</option>
+							<option value="その駅" {station:selected#その駅}>その駅</option>
+						</select>
+						<input type="hidden" name="field[]" value="station" />
+					</div>
+				</div>
+				<div class="realestate-search-item">
+					<span class="realestate-search-label">家賃</span>
+					<div class="realestate-search-input">
+						<label for="price" class="acms-hide-visually">家賃下限</label>
+						<div class="realestate-search-input">
+							<select name="price[]" id="price" class="realestate-search-select-price">
+								<option value=""<!-- BEGIN_IF [{price[0]}/em] --> selected="selected"<!-- END_IF -->>下限なし</option>
+								<option value="30000"{price[0]:selected#30000}>30,000円以上</option>
+								<option value="50000"{price[0]:selected#50000}>50,000円以上</option>
+								<option value="80000"{price[0]:selected#80000}>80,000円以上</option>
+							</select>
+							<span class="realestate-search-select-connector">〜</span>
+							<label for="price2" class="acms-hide-visually">家賃上限</label>
+							<select name="price[]" id="price2" class="realestate-search-select-price" >
+								<option value=""<!-- BEGIN_IF [{price[1]}/em] --> selected="selected"<!-- END_IF -->>上限なし</option>
+								<option value="80000"{price[1]:selected#80000}>80,000円以下</option>
+								<option value="50000"{price[1]:selected#50000}>50,000円以下</option>
+								<option value="30000"{price[1]:selected#30000}>30,000円以下</option>
+							</select>
+						</div>
+					</div>
+
+					<input type="hidden" name="field[]" value="price" />
+					<input type="hidden" name="price@operator[0]" value="gte" />
+					<input type="hidden" name="price@operator[1]" value="lte" />
+				</div>
+			</div>
+			<div class="realestate-search-item">
+				<label for="keyword" class="realestate-search-label">フリーワード</label>
+				<div class="realestate-search-input">
+					<input type="search" name="keyword" value="%{KEYWORD}" id="keyword" class="acms-form-width-full" />
+				</div>
+			</div>
+			<div class="realestate-search-footer">
+				<input type="hidden" name="cid" value="%{CID}" />
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="submit" name="ACMS_POST_2GET" value="検索" class="btn btn-search-block" />
+			</div>
+		</div>
+	</form>
+	<!-- END_MODULE Field_Search -->
+</div>
+
+<!-- エントリーサマリー（カスタムフィールド画像表示） -->
+@include("/include/entry/summary-custom.html")
+
+@endsection

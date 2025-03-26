@@ -1,0 +1,11 @@
+@extends("/_layouts/basic.html")
+
+@section("main")
+<!-- BEGIN_IF [%{CATEGORY_LEVEL}/eq/1] -->
+<!-- カテゴリーエントリーサマリー -->
+@include("/include/category/entry-summary.html", {"module_id": "category_entry_summary"})
+<!-- ELSE -->
+<!-- エントリーサマリー -->
+@include("/include/entry/summary.html", {"module_id": "summary_default"})
+<!-- END_IF -->
+@endsection

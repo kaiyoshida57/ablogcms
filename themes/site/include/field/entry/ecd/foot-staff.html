@@ -1,0 +1,18 @@
+<!-- BEGIN group_staff:veil -->
+<ul class="staff-list">
+	<!-- BEGIN group_staff:loop -->
+	<li class="staff-item">
+		<div class="staff-inner">
+			<div class="staff-body">
+				<p class="staff-job">{staff_job}</p>
+				<h3 class="staff-name">{staff_name}</h3>
+				<p class="staff-profile">{staff_profile}[nl2br]</p>
+			</div>
+			<div class="staff-img-wrap">
+				<img src="%{MEDIA_ARCHIVES_DIR}{staff_photo@path}[resizeImg('185','185')]" alt="" class="staff-img acms-img-responsive" width="185">
+			</div>
+		</div>
+	</li>
+	<!-- END group_staff:loop -->
+</ul>
+<!-- END group_staff:veil -->

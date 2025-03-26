@@ -1,0 +1,34 @@
+<!-- BEGIN_MODULE Category_EntrySummary id="{{module_id}}" -->
+<div>
+@include("/admin/module/setting.html")
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop --><section class="module-section {category:loop.class}">
+<div class="module-header clearfix">
+    <h2 id="category_entry_summary-{{module_id}}-{categoryCode}" class="module-heading">{categoryName}</h2>
+	<a href="{categoryUrl}" class="module-index-link"><span class="acms-icon acms-icon-arrow-right" aria-hidden="true"></span><span class="acms-hide-visually">{categoryName}の</span>一覧</a>
+</div>
+<!-- BEGIN notFound --><!-- END notFound -->
+<ul class="summary-default clearfix" aria-labelledby="category_entry_summary-{{module_id}}-{categoryCode}">
+    <!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="summary-default-item js-autoheight-r {entry:loop.class}">
+		<a href="{url}" class="summary-default-link acms-summary">
+            <div class="summary-default-entry-image-wrap acms-summary-image">
+                <!-- BEGIN image:veil -->
+                <img src="%{ROOT_DIR}{path}[resizeImg(120,120)]" width="120" height="120" alt=""><!-- END image:veil --><!-- BEGIN noimage -->
+                <img src="/images/noImage.png" width="120" height="120" alt="" />
+                <!-- END noimage -->
+            </div>
+            <div class="acms-summary-body">
+                <p class="summary-title acms-summary-heading">{title}</p>
+                <p class="summary-detail">{summary}[trim(500, '...')]</p>
+            </div>
+		</a>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+
+    <!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+</ul></section><!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear --><!-- END categoryUl#rear -->
+<!-- END categoryEntryList:loop -->
+</div>
+<!-- END_MODULE Category_EntrySummary -->

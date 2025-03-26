@@ -1,0 +1,52 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　タグクラウド
+------------------------------ */
+.tag-cloud {
+	margin: 0 0 30px;
+	padding: 0;
+
+	& a {
+		@include global.link-color(global.$text-color-light);
+		@include global.only-underline-on-hover;
+	}
+
+	& li {
+		display: inline;
+		list-style-type: none;
+	}
+
+	& ul {
+		margin: 0;
+		padding: 0 0 0 10px;
+		line-height: 1.4;
+	}
+
+	& .acms-admin-module-edit a {
+		@include global.link-color(#FFFFFF);
+
+		text-decoration: underline;
+	}
+}
+
+@for $i from 1 through 25 {
+	.tag-cloud-item#{$i} {
+		@if $i >= 1 and $i <= 2 {
+      @include acms.font-size(12);
+		} @else if $i >= 3 and $i <= 5 {
+			@include acms.font-size(14);
+		} @else if $i >= 6 and $i <= 13 {
+			@include acms.font-size(14);
+		} @else if $i >= 14 and $i <= 19 {
+      @include acms.font-size(16);
+		} @else if $i >= 20 {
+      @include acms.font-size(18);
+		}
+
+		@if $i >= 6 {
+			font-weight: bold;
+		}
+	}
+}

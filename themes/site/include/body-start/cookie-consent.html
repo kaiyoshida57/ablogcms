@@ -1,0 +1,125 @@
+<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.6.2/dist/cookieconsent.js"></script>
+<script>
+  window.addEventListener('load', function(){
+
+    // obtain plugin
+    var cc = initCookieConsent();
+
+    // run plugin with your configuration
+    cc.run({
+      current_lang: 'ja',
+      autoclear_cookies: true,                   // default: false
+      // theme_css: 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.6.2/dist/cookieconsent.css',  // 🚨 replace with a valid path
+      page_scripts: true,                        // default: false
+
+      // delay: 0,                               // default: 0
+      // auto_language: false,                   // default: false
+      // autorun: true,                          // default: true
+      // force_consent: false,                   // default: false
+      // hide_from_bots: false,                  // default: false
+      // remove_cookie_tables: false             // default: false
+      // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
+      // cookie_expiration: 182,                 // default: 182 (days)
+      // cookie_domain: location.hostname,       // default: current domain
+      // cookie_path: '/',                       // default: root
+      // cookie_same_site: 'Lax',                // default: 'Lax'
+      // use_rfc_cookie: false,                  // default: false
+      // revision: 0,                            // default: 0
+
+      onAccept: function (cookie) {
+        // ...
+      },
+
+      onChange: function (cookie, changed_preferences) {
+        // ...
+      },
+
+      languages: {
+        'ja': {
+          consent_modal: {
+            title: 'このウェブサイトはクッキーを使用しています',
+            description: 'このウェブサイトは適切な情報提供のためにクッキーを使用しています。個人情報保護方針に基づいたクッキーの取得と利用に同意をお願いします<button type="button" data-cc="c-settings" class="cc-link">選択する</button> {{revision_message}}',
+            revision_message: '<br> 規約を変更いたしました。お手数ですが、再度ご確認いただきクッキーの取得と利用に同意をお願いいたします。',
+            primary_btn: {
+              text: 'すべて同意する',
+              role: 'accept_all'              // 'accept_selected' or 'accept_all'
+            },
+            secondary_btn: {
+              text: 'すべて却下する',
+              role: 'accept_necessary'        // 'settings' or 'accept_necessary'
+            }
+          },
+          settings_modal: {
+            title: 'クッキーの設定',
+            save_settings_btn: '設定を保存する',
+            accept_all_btn: 'すべて同意する',
+            reject_all_btn: 'すべて却下する',
+            close_btn_label: '閉じる',
+            cookie_table_headers: [
+              {col1: '項目名'},
+              {col2: 'ドメイン'},
+              {col3: '有効期限'},
+              {col4: '説明'}
+            ],
+            blocks: [
+              {
+                title: 'クッキーの使用について 📢',
+                description: 'このWebサイトではクッキーを使用して、Webサイトの基本的な機能を確保し、オンラインの体験を向上させます。カテゴリごとに、いつでもオプトイン/オプトアウトするように選択できます。クッキーやその他の機密データに関する詳細については、<a href="/contact/privacy.html" class="cc-link">プライバシーポリシー</a>をお読みください.'
+              }, {
+                title: '動作のために必要なクッキー',
+                description: 'このWebサイトが適切に動作するために必要なCookieです。このクッキーを許可していただかないと、Webサイトが正しく機能しない可能性があります。',
+                toggle: {
+                  value: 'necessary',
+                  enabled: true,
+                  readonly: true          // cookie categories with readonly=true are all treated as "necessary cookies"
+                }
+              }, {
+                title: 'パフォーマンスと分析のクッキー',
+                description: 'これらのクッキーにより、Webサイトは過去の行動を記憶することができます',
+                toggle: {
+                  value: 'analytics',     // your cookie category
+                  enabled: false,
+                  readonly: false
+                },
+                cookie_table: [             // list of all expected cookies
+                  {
+                    col1: '^_ga',       // match all cookies starting with "_ga"
+                    col2: 'google.com',
+                    col3: '2 years',
+                    col4: 'より適切な体験を届けられるように過去の行動を記憶します',
+                    is_regex: true
+                  },
+                  {
+                    col1: '_gid',
+                    col2: 'google.com',
+                    col3: '2 years',
+                    col4: 'より適切な体験を届けられるように過去の行動を記憶します',
+                  }
+                ]
+              }, {
+                title: '広告とターゲティングのクッキー',
+                description: 'これらのクッキーは、Webサイトの使用方法、アクセスしたページ、およびクリックしたリンクに関する情報を収集します。すべてのデータは匿名化されており、あなたを特定するために使用することはできません',
+                toggle: {
+                  value: 'targeting',
+                  enabled: false,
+                  readonly: false
+                },
+                cookie_table: [
+                  {
+                    col1: 'interest',
+                    col2: '%{DOMAIN}',
+                    col3: '30 days',
+                    col4: 'あなたが興味のあるコンテンツをサイト内に優先して表示するために使用します',
+                  }
+                ]
+              }, {
+                title: '詳細について',
+                description: 'クッキーに関する当社の方針およびお客様のご要望に関するご質問は、<a class="cc-link" href="/contact/">お問い合わせ</a>ください。 ',
+              }
+            ]
+          }
+        }
+      }
+    });
+  });
+</script>

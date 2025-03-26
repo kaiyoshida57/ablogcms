@@ -1,0 +1,23 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　SNSアイコン
+------------------------------ */
+.social-icon {
+	display: inline-block;
+	margin-right: 10px;
+	color: global.$btn-color;
+
+  @include acms.font-size(16);
+
+	text-align: center;
+	vertical-align: middle;
+
+	@include global.link-color(global.$btn-color, global.$btn-color-on-hover);
+	@include global.text-decoration-none;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

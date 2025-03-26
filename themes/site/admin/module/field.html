@@ -1,0 +1,86 @@
+<style>
+	.edit-btn-group {
+		display: inline-block;
+		margin: 5px 0;
+		font-size: 0;
+		border: 1px solid #CCC;
+		border-radius: 3px;
+		background: #FFF;
+	}
+	.edit-btn-group label {
+		display: block;
+	}
+	.edit-btn-group-item-wrap {
+		width: 25px;
+		margin: 0;
+		padding: 0;
+		border-left: 1px solid #CCC;
+	}
+	.edit-btn-group-item-wrap:first-child {
+		border: 0;
+	}
+	.edit-btn-group-item{
+		padding: 5px;
+		font-size: 0;
+	}
+	input[type="radio"]:checked + .edit-btn-group-item{
+		background: #EEE;
+	}
+	input[type="radio"]:hover + .edit-btn-group-item{
+		background: #EEE;
+	}
+	input[type="radio"]:focus + .edit-btn-group-item{
+		position: relative;
+	}
+	input[type="radio"]:focus + .radio-btn:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 1px solid red;
+	}
+	/* 行揃え用ライン */
+	.edit-text-line {
+		display: inline-block;
+		width: 100%;
+		height: 2px;
+		margin: 1px 0;
+		background: #000;
+	}
+	.edit-text-line:nth-child(2) {
+		width: 85%;
+	}
+	.edit-text-line:nth-child(3) {
+		width: 70%;
+	}
+	.align-middle {
+		display: inline-block;
+		vertical-align: middle;
+	}
+</style>
+<h3 class="acms-admin-admin-title2">モジュールの設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th><label for="input-text-module_heading">見出し</label></th>
+		<td>
+			<!-- BEGIN_IF [%{MODULE_ID}/lk/section_heading_] -->@include("/admin/module/field-section-heading.html")<!-- END_IF -->
+			<input type="text" name="module_heading" value="{module_heading}" id="input-text-module_heading" class="acms-admin-form-width-3quarters">
+			<input type="hidden" name="field[]" value="module_heading">
+		</td>
+	</tr>
+	<tr>
+		<th>アイコン</th>
+		<td>
+			<!-- アイコン選択画面 -->
+			@include("/admin/module/field-icon-js.html")
+		</td>
+	</tr>
+</table>
+
+<!-- モジュール種類別 -->
+@include("/admin/module/name-%{MODULE_NAME}.html")
+
+<!-- モジュールID別 -->
+@include("/admin/module/id-%{MODULE_ID}.html")

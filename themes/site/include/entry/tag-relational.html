@@ -1,0 +1,32 @@
+<!-- BEGIN_MODULE Entry_TagRelational id="{{module_id}}" -->
+<!-- BEGIN tag_relational:veil  -->
+<section class="module-section clearfix">
+	@include("/admin/module/setting.html")
+	<div class="module-header clearfix">
+		<h2 id="relational_default-{{module_id}}" class="module-heading"><!-- BEGIN moduleField --><!-- BEGIN module_heading_icon:veil --><span class="{module_heading_icon}" aria-hidden="true"></span><!-- END module_heading_icon:veil --><!-- END moduleField --><!-- BEGIN_IF [<!-- BEGIN moduleField -->{module_heading}<!-- END moduleField -->/nem] --><!-- BEGIN moduleField -->{module_heading}<!-- END moduleField --><!-- ELSE -->この記事に関連している記事の一覧<!-- END_IF --></h2>
+	</div>
+	<ul class="summary-default clearfix" aria-labelledby="relational_default-{{module_id}}">
+		<!-- BEGIN entry:loop -->
+		<li class="summary-default-item js-autoheight-r">
+			<a href="{url}" class="summary-default-link acms-summary {entry:loop.class}">
+				<div class="summary-default-image-wrap acms-summary-image">
+					<!-- BEGIN_IF [{path}/nem/] -->
+					<div  style="width: {x}px; height: {y}px;">
+						<img class="js-focused-image"
+							data-focus-x="{focalX}"
+							data-focus-y="{focalY}"
+							src="%{ROOT_DIR}{path}[resizeImg(300)]" alt="{alt}">
+					</div>
+					<!-- ELSE -->
+					<img src="/images/noImage.png" width="120" height="120" alt="" /><!-- END_IF -->
+				</div>
+				<div class="acms-summary-body">
+					<p class="summary-title acms-summary-heading">{title}</p>
+					<p class="summary-detail">{summary}</p>
+				</div>
+			</a>
+		</li>
+		<!-- END entry:loop -->
+	</ul>
+</section><!-- END tag_relational:veil  -->
+<!-- END_MODULE Entry_TagRelational -->

@@ -1,0 +1,67 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　サムネイル
+------------------------------ */
+.thumbnail {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.thumbnail-row {
+	margin: 0 math.div(acms.$grid-space, 2);
+	padding: 0;
+	list-style: none;
+}
+
+.thumbnail-item {
+	margin: 0 0 20px;
+}
+
+@media screen and (max-width: acms.$breakpoint-md-max){
+	.thumbnail-row .thumbnail-item {
+		padding-right: math.div(acms.$grid-space, 4);
+		padding-left: math.div(acms.$grid-space, 4);
+	}
+}
+
+.thumbnail-link {
+	display: block;
+	color: #333;
+	transition: opacity .2s;
+
+	&:hover {
+		color: #333;
+		text-decoration: none;
+    opacity: .75;
+	}
+
+	&:visited {
+		color: #333;
+	}
+}
+
+.thumbnail-img {
+	display: block;
+
+	@include acms.transition(opacity .25s ease-out);
+
+	backface-visibility: hidden;
+}
+
+.thumbnail-title {
+	margin: 10px 0;
+	font-weight: bold;
+
+	@include acms.font-size(15);
+}
+
+.thumbnail-detail {
+	margin: 0;
+	line-height: 1.5;
+
+	@include acms.font-size(12);
+}

@@ -1,0 +1,28 @@
+@extend(/_layouts/cart_base.html)
+
+@section(main)
+<!-- 検索結果 -->
+@include("/include/search-result.html")
+
+<!-- タグフィルター -->
+@include("/include/tag-filter.html")
+
+<!-- エントリーボディ -->
+@include("/include/entry-body.html")
+
+<!-- 確認用テンプレート -->
+@include("/include/check-seo.html")
+
+<!-- コメントの編集 -->
+@include("/admin/comment/edit.html")
+
+<!-- コメント一覧 -->
+@include("/include/comment.html")
+@endsection
+
+@section(offcanvas)
+@include("/search/form.html")
+@endsection
+
+@section(blog-parts)
+@endsection

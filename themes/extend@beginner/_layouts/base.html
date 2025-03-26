@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	@section(head-meta)
+	@include("/include/head/meta.html")
+	@endsection
+
+	@section(head-link)
+	@include("/include/head/link.html")
+	@endsection
+
+	@section(head-js)
+	@include("/include/head/js.html")
+	@endsection
+</head>
+<body>
+@section(body-start)
+@endsection
+
+@section(header)
+<!-- ヘッダー -->
+@include("/include/header.html")
+@endsection
+
+@section(page-title)
+<!-- ページタイトル -->
+@include("/include/header/page-title.html")
+@endsection
+
+@section(topic-path)
+<!-- トピックパス -->
+@include("/include/header/topicpath.html")
+@endsection
+
+<div class="acms-container js-pretty-scroll-container">
+	@section(admin-part)
+	<!-- ※管理用パーツ -->
+	@include("/admin/action.html")
+	@include("/admin/switch-user.html")
+	@endsection
+
+	@section(main-image)
+	@endsection
+
+	<div class="acms-grid">
+		<main class="acms-col-lg-9 main">
+			<div class="main-inner is-space-right">
+				@section(main)
+				<p>継承してメインコンテンツを設定してください</p>
+				@endsection
+
+				<!-- 確認用テンプレート -->
+				@include("/include/check-seo.html")
+			</div>
+		</main>
+
+		<div class="acms-col-lg-3 side">
+			<div class="js-pretty-scroll">
+				@section(sub)
+				<!-- エントリーリスト -->
+				@include("/include/entry/list.html")
+
+				<!-- カテゴリーリスト -->
+				@include("/include/category/list.html")
+				@endsection
+
+				<!-- 検索フォーム -->
+				@include("/include/parts/search.html")
+
+				<!-- ピックアップリスト -->
+				@include("/include/entry/summary-pickup.html")
+
+				<!-- バナー -->
+				@include("/include/siteparts/banner.html")
+
+				<!-- リンクリスト -->
+				@include("/include/siteparts/link-list.html")
+
+				<!-- モバイル：ナビゲーションメニュー -->
+				@include("/include/parts/mobile-nav.html")
+
+				<!-- SNSアカウントへのリンク -->
+				@include("/include/footer/sns-link.html")
+			</div>
+		</div>
+	</div>
+</div>
+
+@section(footer-above)
+<!-- お問い合わせ -->
+@include("/include/footer/suggest.html")
+@endsection
+
+@section(footer)
+<!-- フッター -->
+@include("/include/footer.html")
+@endsection
+
+@section(body-end)
+@endsection
+</body>
+</html>

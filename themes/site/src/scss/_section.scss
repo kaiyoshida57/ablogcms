@@ -1,0 +1,51 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　セクション
+------------------------------ */
+
+/* 背景色 */
+.section-bg {
+	padding: 20px 0;
+	background: #F6F6F6;
+}
+
+.section-space {
+	padding: 20px 0;
+}
+
+/* カラムの中央寄せ */
+.section-center-col {
+	float: none;
+	margin: 0 auto;
+}
+
+/* 見出し */
+.section-heading {
+	margin: 20px 0;
+
+	@include acms.font-size(24);
+
+	a {
+		color: #333;
+	}
+}
+
+@media (min-width: acms.$breakpoint-md-min){
+	/* 背景色 */
+	.section-bg {
+		padding: 80px 0;
+	}
+
+	.section-space {
+		padding: 80px 0;
+	}
+
+	/* 見出し */
+	.section-heading {
+		margin: 20px 0 40px;
+
+		@include acms.font-size(28);
+	}
+}

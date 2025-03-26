@@ -1,0 +1,11 @@
+@forward "../../../../system/src/scss/global/variables" with (
+    $acms-container: 1170px,
+    $grid-space: 30px,
+    $unit-gutter : 20px,
+    $entry-class : entry-style,
+    $unit-margin-bottom : 30px,
+    $acms-font: '/themes/system/fonts/',
+    $acms-path-marker: '/themes/system/images/marker/',
+    $acms-form-select: '/themes/system/images/marker/arrow_black03.png'
+);
+@forward "../../../../system/src/scss/global/mixins";

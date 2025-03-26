@@ -1,0 +1,11 @@
+@extend(/_layouts/basic.html)
+
+@section(main)
+<section>
+	<header class="acms-page-header page-header">
+		<h2 class="entry-title">%{CATEGORY_NAME}</h2>
+	</header>
+	<!-- フォーム -->
+	@include("/contact/form/main.html")
+</section>
+@endsection

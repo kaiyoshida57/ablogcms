@@ -1,0 +1,11 @@
+@extends("/_layouts/admin.html")
+
+@section("admin-js")
+@parent
+<script>
+  ACMS.Ready(function () {
+    // 画像ユニットでexif情報をキャプションにセットする機能をON
+    ACMS.Config.exif.captionEnable = 'on';
+  });
+</script>
+@endsection

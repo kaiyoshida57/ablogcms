@@ -1,0 +1,99 @@
+@use "cart-mixins" as global;
+
+/* ------------------------------
+  カートテーマ
+------------------------------ */
+.cart-table {
+	width: 100%;
+	margin-bottom: 20px;
+	color: #333;
+	font-size: 16px;
+	border-collapse: collapse;
+
+	th {
+		padding: 10px;
+		text-align: left;
+		background: #eee;
+		border: 1px solid #999;
+	}
+
+	td {
+		padding: 10px;
+		text-align: left;
+		border: 1px solid #999;
+	}
+
+	input[type="text"] {
+		padding: 5px 5px 4px;
+		color: #333;
+		font-size: 13px;
+		line-height: 1;
+		border: 1px solid #a7a7aa;
+		border-radius: 3px;
+		box-shadow: 0 1px 1px rgb(0 0 0 / 10%) inset;
+	}
+}
+
+.cart-btn {
+	@include global.btn(#949494, #333333);
+
+	display: inline-block;
+	margin-right: 10px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.cart-btn-primary {
+	@include global.btn(#2262AC, #153964);
+
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.cart-btn-wrapper {
+	text-align: center;
+}
+
+.cart-flow-list {
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin-right: 20px;
+		margin-bottom: 15px;
+		list-style-type: none;
+	}
+
+	a,
+	a:link,
+	a:hover,
+	a:visited {
+		color: #2262ac;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.current {
+		color: #333;
+		font-weight: bold;
+
+		.cart-flow-list-number {
+			background: #333;
+		}
+	}
+}
+
+.cart-flow-list-number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	color: #fff;
+	text-align: center;
+	background: #b9b9b9;
+	border-radius: 50%;
+}

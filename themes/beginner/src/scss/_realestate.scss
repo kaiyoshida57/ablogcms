@@ -1,0 +1,111 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　物件情報
+------------------------------ */
+
+/* 地図 */
+.realestate-map {
+	overflow: hidden;
+}
+
+.realestate-map .js-s2d-ready,
+.realestate-map [class*='column-map-'] {
+	width: auto!important;
+	max-width: 100%;
+}
+
+.realestate-map img[class*='column-map-'] {
+	width: auto!important;
+	max-width: 100%;
+	height: auto;
+}
+
+.realestate-map-entry {
+	margin: 0 10px;
+}
+
+.entry-column {
+	table.realestate-search {
+		margin: 20px 0 30px;
+	}
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min){
+	.table-nowrap {
+		white-space: nowrap;
+	}
+}
+
+/* 物件情報 */
+.realestate-search {
+	border-collapse: collapse;
+
+	input {
+		box-sizing: border-box;
+	}
+}
+
+@media screen and (max-width: acms.$breakpoint-md-max){
+	.realestate-search {
+		th,td {
+			display: block;
+			box-sizing: border-box;
+		}
+
+		input {
+			box-sizing: border-box;
+		}
+	}
+}
+
+
+.realestate-search-group {
+	display: flex;
+}
+
+.realestate-search-item {
+	display: flex;
+	align-items: center;
+	margin: 0 0 10px;
+}
+
+.realestate-search-label {
+	max-width: 6em;
+	padding: 0 10px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.realestate-search-input {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 10px;
+}
+
+.realestate-search-select-price {
+	width: calc(50% - 1em);
+}
+
+.realestate-search-select-connector {
+	padding: 0 .5em;
+}
+
+.realestate-search-footer {
+	display: flex;
+	justify-content: center;
+	margin: 0 0 15px;
+	padding: 5px 10px 10px;
+}
+
+@media (max-width : acms.$breakpoint-md-max) {
+	.realestate-search-group {
+		flex-direction: column;
+	}
+
+	.realestate-search-input {
+		padding: 0;
+	}
+}

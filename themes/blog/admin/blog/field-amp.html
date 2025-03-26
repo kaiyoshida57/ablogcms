@@ -1,0 +1,87 @@
+<h3 class="acms-admin-admin-title2">AMP設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th><label for="input-checkbox-enable_amp">AMPを有効にする</label><i data-acms-tooltip="詳細ページでAMPを有効にします。有効にした場合、head要素に関連するAMPページのURLが記述されます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_amp[]" value="true"{enable_amp:checked#true} id="input-checkbox-enable_amp" />
+				<label for="input-checkbox-enable_amp">
+					<i class="acms-admin-ico-checkbox"></i>有効にする
+				</label>
+			</div>
+			<input type="hidden" name="field[]" value="enable_amp" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-amp_organization_name">団体の名前</label><i data-acms-tooltip="このブログを運営している団体の名前を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<input type="text" name="amp_organization_name" value="{amp_organization_name}" size="30" id="input-text-amp_organization_name" />
+			<input type="hidden" name="field[]" value="amp_organization_name" />
+		</td>
+	</tr>
+	<tr>
+		<th>団体のロゴ画像
+			<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="Google検索結果に表示する団体のロゴ画像を設定します。横幅600pxまたは高さ60px必要です。AMPが対応している拡張子は.png、.jpg、.gifのみ。"></i>
+		</th>
+		<td class="js-media-field">
+			<div class="js-droparea" data-thumbnail="{amp_organization_logo@thumbnail}" data-type="image" style="width:200px"></div>
+			<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+			<div class="acms-admin-margin-top-mini">
+				<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+			</div>
+			<input type="hidden" name="amp_organization_logo" value="{amp_organization_logo}" class="js-value" />
+			<input type="hidden" name="field[]" value="amp_organization_logo" />
+			<input type="hidden" name="amp_organization_logo:extension" value="media" />
+		</td>
+	</tr>
+</table>
+
+
+<h3 class="acms-admin-admin-title2">AMP アナリティクス設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th><label for="input-checkbox-enable_amp_analytics">アナリティクスを有効にする</label><i data-acms-tooltip="amp-analyticsを有効にします。amp-analyticsのscript要素の挿入およびその他の設定を有効にします。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="enable_amp_analytics[]" value="true"{enable_amp_analytics:checked#true} id="input-checkbox-enable_amp_analytics" />
+				<label for="input-checkbox-enable_amp_analytics">
+					<i class="acms-admin-ico-checkbox"></i>有効にする
+				</label>
+			</div>
+			<input type="hidden" name="field[]" value="enable_amp_analytics" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-amp_vendor">ベンダー</label><i data-acms-tooltip="ベンダーのタイプを指定します。詳しくは、<a href='https://amp.dev/ja/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors/?format=websites'>アナリティクス ベンダー</a>のリストをご覧ください。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<input type="text" name="amp_vendor" value="{amp_vendor}" size="30" id="input-text-amp_vendor" />
+			<input type="hidden" name="field[]" value="amp_vendor" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-amp_config">config</label><i data-acms-tooltip="amp-analyticsのconfig属性に設定したい内容を記述します。このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<input type="text" name="amp_config" value="{amp_config}" id="input-text-amp_config" class="acms-admin-form-width-full" placeholder="例）https://example.com/xxxxxxx.config.json">
+			<input type="hidden" name="field[]" value="amp_config" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-checkbox-amp_data_credentials">data-credentials</label><i data-acms-tooltip="include に設定すると、config 属性で指定したリクエストで Cookie の読み取りと書き込みを行えるようになります。この属性はオプションです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<div class="acms-admin-form-checkbox">
+				<input type="checkbox" name="amp_data_credentials[]" value="include"{amp_data_credentials:checked#include} id="input-checkbox-amp_data_credentials" />
+				<label for="input-checkbox-amp_data_credentials">
+					<i class="acms-admin-ico-checkbox"></i>includeに設定する
+				</label>
+			</div>
+			<input type="hidden" name="field[]" value="amp_data_credentials" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="input-text-amp_json">JSONの設定</label><i data-acms-tooltip="JSON形式でtriggerなどの設定を記述してください。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+		<td>
+			<textarea name="amp_json" rows="5" id="input-text-amp_json" class="js-countup acms-admin-form-width-full" placeholder='例）\{"vars": \{ "account": "UA-XXXXX-Y" \}\}'>{amp_json}</textarea>
+			<input type="hidden" name="field[]" value="amp_json" />
+		</td>
+	</tr>
+</table>

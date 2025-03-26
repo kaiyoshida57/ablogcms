@@ -1,0 +1,9 @@
+<!-- BEGIN_MODULE Blog_Field -->{script_body_start}[raw|allow_dangerous_tag]<!-- END_MODULE Blog_Field -->
+<!-- BEGIN_IF [{{sns_official_btn}}/eq/true] -->
+<!-- 公式SNSボタンを使うために必要なJS（公式SNSシェアボタン：/include/parts/sns.htmlを使う時に読み込んでください） -->
+@include("/include/body-start/js-sns.html")<!-- END_IF -->
+
+<!-- BEGIN_IF [<!-- BEGIN_MODULE Blog_Field id="BF_root" -->{cookie_consent}<!-- END_MODULE Blog_Field -->/eq/true] -->
+<!-- Cookieの同意ポップアップを使うために必要なJS -->
+@include("/include/body-start/cookie-consent.html")
+<!-- END_IF -->

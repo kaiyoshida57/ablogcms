@@ -1,0 +1,42 @@
+<div class="acms-hide-pc">
+  <div id="mobile-nav" class="js-mobile-nav mobile-nav">
+    <div class="mobile-nav-wrap">
+      <nav aria-label="メインメニュー" class="mobile-navbar">
+        <div class="mobile-nav-inner">
+          <!-- BEGIN_MODULE Navigation id="nav_global" --><div>
+          <!-- BEGIN navigation:loop -->
+          <!-- BEGIN ul#front --><ul class="mobile-navbar-list clearfix"><!-- END ul#front -->
+          <!-- BEGIN li#front --><li {attr}><!-- END li#front -->
+            <!-- BEGIN link#front --><a href="{url}" {attr} target="{target}"><!-- END link#front --><!-- BEGIN_IF [{level}/gt/1] --><span class="acms-icon-arrow-small-right"></span><!-- END_IF -->
+              {label}[raw]
+              <!-- BEGIN link#rear --></a><!-- END link#rear -->
+            <!-- BEGIN li#rear --></li><!-- END li#rear -->
+          <!-- BEGIN ul#rear --></ul><!-- END ul#rear -->
+          <!-- END navigation:loop --></div>
+          <!-- END_MODULE Navigation -->
+        </div>
+
+        <div class="mobile-nav-inner">
+          <!-- BEGIN_MODULE Links id="links_header_nav" -->
+          <div class="mobile-nav-side">
+            <ul class="mobile-nav-side-list">
+              <!-- BEGIN loop -->
+              <li class="mobile-nav-side-item">
+                <a href="{url}" class="mobile-nav-side-link">
+                  <span class="acms-icon-arrow-small-right"></span>
+                  {name}
+                </a>
+              </li>
+              <!-- END loop -->
+            </ul>
+          </div><!-- END_MODULE Links -->
+
+          <div class="mobile-navbar-footer">
+            <!-- SNSアカウントへのリンク -->
+            @include("/include/footer/sns-link.html")
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

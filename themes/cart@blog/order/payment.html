@@ -1,0 +1,158 @@
+<h3>ご住所</h3>
+<div>
+	<div>
+		<h4>1. お客様のご住所</h4>
+		<dl>
+			<dt>{name#1}（{ruby#1}）様</dt>
+			<dd>〒{zip#1}</dd>
+			<dd>{prefecture#1} {city#1} {field_1#1} {field_2#1}</dd>
+			<dd>{telephone#1}</dd>
+		</dl>
+	</div>
+	<div>
+		<h4>2. お届け先のご住所</h4>
+		<dl>
+			<dt>{name#2}（{ruby#2}）様</dt>
+			<dd>〒{zip#2}</dd>
+			<dd>{prefecture#2} {city#2} {field_1#2} {field_2#2}</dd>
+			<dd>{telephone#2}</dd>
+		</dl>
+	</div>
+	<hr class="clearHidden" />
+</div>
+
+<h3>お支払い・配送方法など</h3>
+<table class="cart-table">
+	<tr>
+		<th width="250">決済方法</th>
+		<td>{payment}</td>
+	</tr>
+	<tr>
+		<th>配送方法</th>
+		<td>{deliver}</td>
+	</tr><!-- BEGIN request_date:veil -->
+	<tr>
+		<th>配送希望日</th>
+		<td>{request_date}</td>
+	</tr><!-- END request_date:veil --><!-- BEGIN request_time:veil -->
+	<tr>
+		<th>配送希望時間</th>
+		<td>{request_time}</td>
+	</tr><!-- END request_time:veil --><!-- BEGIN request_others:veil -->
+	<tr>
+		<th>その他オプション</th>
+		<td>{request_others}</td>
+	</tr><!-- END request_others:veil -->
+</table>
+<h3>お買い物の内容</h3>
+
+<!-- BEGIN_MODULE Shop2_Cart_Result -->
+<!-- BEGIN contents -->
+
+<table class="cart-table">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>画像</th>
+			<th>商品名</th>
+			<th>単価</th>
+			<th>数量</th>
+			<th>小計</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN item:loop -->
+		<tr>
+			<td>{item_id}</td>
+			<td>
+				<div class="dotBorder">
+					<!-- BEGIN_IF [{path}/nem] -->
+					<img src="%{ROOT_DIR}{path}[resizeImg(60,60)]" width="60" height="60" alt="{item_name}" />
+					<!-- END_IF -->
+					<!-- BEGIN noimage --><img src="/images/noimage.png" width="60" height="60" /><!-- END noimage -->
+				</div>
+			</td>
+			<td><a href="{url}" title="{entry_title}">{item_name} {item_color} {item_size}</a></td>
+			<td>&yen;{item_price}[number_format]</td>
+			<td>{item_quantity}</td>
+			<td>&yen;{item_price#sum}[number_format]<!-- BEGIN item_tax:veil -->(&yen;{item_price#tax}[number_format])<!-- END item_tax:veil --> <!-- BEGIN_IF [{item_price#rate}/eq/8] -->※<!-- END_IF --></td>
+		</tr><!-- END item:loop -->
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="5">税込商品合計</th>
+			<th>&yen;{subtotal}[number_format]<!-- ( &yen;{tax-omit}[number_format]+&yen;{tax-only}[number_format] )--></th>
+		</tr>
+	</tfoot>
+</table>
+<!-- END contents -->
+<!-- END_MODULE Shop2_Cart_Result -->
+
+<table class="cart-table">
+	<tr width="250">
+		<th width="250">送料</th>
+		<td>&yen;{charge#deliver}[number_format] (&yen;{charge#deliver-tax}[number_format])
+			<!-- BEGIN item_except:touch#on -->
+			( 概算の配送料です )
+			<!-- END item_except:touch#on --></td>
+	</tr>
+	<tr>
+		<th>お支払い手数料</th>
+		<td>&yen;{charge#payment}[number_format] (&yen;{charge#payment-tax}[number_format])</td>
+	</tr><!-- BEGIN charge#others:veil -->
+	<tr>
+		<th>その他オプション</th>
+		<td>&yen;{charge#others}[number_format] (&yen;{charge#others-tax}[number_format])</td>
+	</tr><!-- END charge#others:veil -->
+	<tr>
+		<th>総合計</th>
+		<td><strong>&yen;{total}[number_format]</strong></td>
+	</tr>
+</table>
+
+<!-- BEGIN shop_tax_no:veil -->
+<p>適格請求書発行事業者 登録番号 : {shop_tax_no}</p>
+<!-- END shop_tax_no:veil -->
+
+<table class="cart-table">
+		<!-- BEGIN_IF [{tax-omit8}/neq/0] -->
+		<tr>
+			<th width="250">8%対象 税別合計</th>
+			<td>&yen;{tax-omit8}[number_format]</td>
+		</tr>
+		<tr>
+			<th>8%消費税額</th>
+			<td>&yen;{tax-only8}[number_format]</td>
+		</tr>
+		<!-- END_IF -->
+		<!-- BEGIN_IF [{tax-omit10}/neq/0] -->
+		<tr>
+			<th width="250">10%対象 税別合計</th>
+			<td>&yen;{tax-omit10}[number_format]</td>
+		</tr>
+		<tr>
+			<th>10%消費税額</th>
+			<td>&yen;{tax-only10}[number_format]</td>
+		</tr>
+		<!-- END_IF -->
+</table>
+
+<p>商品の消費税計算については 
+<!-- BEGIN_IF [{shop_tax_calculate}/eq/intax] -->内税
+<!-- ELSE -->外税
+<!-- END_IF -->
+<!-- BEGIN_IF [{shop_tax_calc_method}/eq/pileup] -->（商品毎に計算
+<!-- ELSE -->（小計毎に計算
+<!-- END_IF -->
+<!-- BEGIN_IF [{shop_tax_rounding}/eq/floor] -->：切り捨て）
+<!-- ELSE_IF [{shop_tax_rounding}/eq/round] -->：四捨五入）
+<!-- ELSE -->：切り上げ）
+<!-- END_IF --> で行っております。<p>
+
+<!-- BEGIN_IF [{tax-omit8}/nem] -->
+<p>※印は軽減対象</p>
+<!-- END_IF -->
+
+<!-- BEGIN item_except:touch#on -->
+<p>( 配送料は概算の配送料です。後ほど正確な配送料をお知らせします。それまでご入金はお控えください。 )</p>
+<!-- END item_except:touch#on -->

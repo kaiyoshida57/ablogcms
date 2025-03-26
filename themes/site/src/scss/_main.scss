@@ -1,0 +1,26 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　メインカラム
+------------------------------ */
+.main {
+	@include acms.clearfix;
+}
+
+.main-inner {
+	width: 100%;
+	max-width: global.$main-column-width;
+
+	&.is-space-left {
+		float: right;
+	}
+
+	&.is-space-right {
+		float: left;
+	}
+
+	&.is-space-center {
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,118 @@
+<h2 class="acms-admin-admin-title2">スタッフ紹介</h2>
+<table class="js-fieldgroup-sortable acms-admin-table-admin">
+	<thead class="acms-admin-hide-sp acms-admin-table-heading">
+		<tr>
+			<th class="acms-admin-table-left acms-admin-admin-config-table-item-handle"> </th>
+			<th>編集内容</th>
+			<th class="acms-admin-table-left acms-admin-admin-config-table-action">削除</th>
+		</tr>
+	</thead>
+	<tbody><!-- BEGIN group_staff:loop -->
+		<tr class="sortable-item">
+			<td class="item-handle acms-admin-table-nowrap">
+				<i class="acms-admin-icon-sort"></i>
+			</td>
+			<td>
+				<div class="acms-admin-grid">
+					<div class="acms-admin-col-8">
+						<table class="field-table-inner">
+							<tr>
+								<th>職種</th>
+								<td>
+									<input type="text" name="staff_job[]" value="{staff_job}" class="acms-admin-form-width-full" />
+								</td>
+							</tr>
+							<tr>
+								<th>名前</th>
+								<td>
+									<input type="text" name="staff_name[]" value="{staff_name}" class="acms-admin-form-width-full" />
+								</td>
+							</tr>
+							<tr>
+								<th>プロフィール</th>
+								<td>
+									<textarea name="staff_profile[]" class="acms-admin-form-width-full" rows="4">{staff_profile}</textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="acms-admin-col-4">
+						<div class="js-media-field">
+							<div class="js-droparea" data-thumbnail="{staff_photo@thumbnail}" data-type="image" style="width:200px"></div>
+							<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+							<div class="acms-admin-margin-top-mini">
+								<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+							</div>
+							<input type="hidden" name="staff_photo[]" value="{staff_photo}" class="js-value" />
+						</div>
+					</div>
+				</div>
+			</td>
+			<td class="acms-admin-table-nowrap">
+				<input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+			</td>
+		</tr>
+		<!-- END group_staff:loop -->
+		<tr class="sortable-item item-template">
+			<td class="item-handle acms-admin-table-nowrap">
+				<i class="acms-admin-icon-sort"></i>
+			</td>
+			<td>
+				<div class="acms-admin-grid">
+					<div class="acms-admin-col-8">
+						<table class="field-table-inner">
+							<tr>
+								<th>職種</th>
+								<td>
+									<input type="text" name="staff_job[]" value="" class="acms-admin-form-width-full" />
+								</td>
+							</tr>
+							<tr>
+								<th>名前</th>
+								<td>
+									<input type="text" name="staff_name[]" value="" class="acms-admin-form-width-full" />
+								</td>
+							</tr>
+							<tr>
+								<th>プロフィール</th>
+								<td>
+									<textarea name="staff_profile[]" class="acms-admin-form-width-full" rows="4"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="acms-admin-col-4">
+						<div class="js-media-field">
+							<div class="js-droparea" data-type="image" style="width:200px"></div>
+							<p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+							<div class="acms-admin-margin-top-mini">
+								<button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+							</div>
+							<input type="hidden" name="staff_photo[]" value="" class="js-value" />
+						</div>
+					</div>
+				</div>
+			</td>
+			<td class="acms-admin-table-nowrap">
+				<input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+			</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colSpan="3">
+				<input type="button" class="item-insert acms-admin-btn-admin" value="追加" />
+			</td>
+		</tr>
+	</tfoot>
+</table>
+<input type="hidden" name="@group_staff[]" value="staff_job" />
+<input type="hidden" name="field[]" value="staff_job" />
+<input type="hidden" name="@group_staff[]" value="staff_name" />
+<input type="hidden" name="field[]" value="staff_name" />
+<input type="hidden" name="@group_staff[]" value="staff_profile" />
+<input type="hidden" name="field[]" value="staff_profile" />
+<input type="hidden" name="staff_photo:extension" value="media" />
+<input type="hidden" name="@group_staff[]" value="staff_photo" />
+<input type="hidden" name="field[]" value="staff_photo" />
+<input type="hidden" name="field[]" value="@group_staff" />

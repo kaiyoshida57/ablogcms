@@ -1,0 +1,40 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　検索フォーム
+------------------------------ */
+.search-form {
+	.btn-search{
+		padding: 10px 20px;
+		color: #FFF;
+		background: #333;
+		border: 1px solid #333;
+		border-radius: 0 4px 4px 0;
+		filter: none; /* IEでのグラデーションを上書き */
+
+		@include acms.font-size(16);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: #666;
+		}
+	}
+
+	input[type="search"] {
+		box-sizing: border-box;
+		height: 40px;
+		padding: 9px 10px;
+
+		@include acms.font-size(16);
+	}
+}
+
+input[type="search"].search-form-input {
+  box-sizing: border-box;
+	padding-top: 5px;
+	padding-bottom: 4px;
+
+	@include acms.font-size(20);
+}

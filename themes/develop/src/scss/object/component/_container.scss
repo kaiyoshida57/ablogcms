@@ -1,0 +1,32 @@
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* ------------------------------
+　　コンテナー
+------------------------------ */
+.c-container {
+  max-width: global.$container-lg;
+  margin: 0 auto;
+  padding-right: acms.$grid-space;
+  padding-left: acms.$grid-space;
+
+  @include acms.box-sizing(border-box);
+}
+
+.c-container-md {
+  max-width: global.$container-md;
+  margin: 0 auto;
+  padding-right: acms.$grid-space;
+  padding-left: acms.$grid-space;
+
+  @include acms.box-sizing(border-box);
+}
+
+.c-container-sm {
+  max-width: global.$container-sm;
+  margin: 0 auto;
+  padding-right: acms.$grid-space;
+  padding-left: acms.$grid-space;
+
+  @include acms.box-sizing(border-box);
+}

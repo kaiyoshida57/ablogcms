@@ -1,0 +1,137 @@
+<h2 class="acms-admin-admin-title2">行揃え</h2>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>見出し</th>
+		<td>
+			<div class="edit-btn-group">
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_heading_align" value="left"{group_heading_align:checked#left} id="input-checkbox-group_heading_align-left" />
+					<label for="input-checkbox-group_heading_align-left" class="acms-text-left edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">左揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_heading_align" value="center"{group_heading_align:checked#center} id="input-checkbox-group_heading_align-center" />
+					<label for="input-checkbox-group_heading_align-center" class="acms-text-center edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">中央揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_heading_align" value="right"{group_heading_align:checked#right} id="input-checkbox-group_heading_align-right" />
+					<label for="input-checkbox-group_heading_align-right" class="acms-text-right edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">右揃え</span></label>
+				</div>
+			</div>
+			<input type="hidden" name="field[]" value="group_heading_align" />
+		</td>
+	</tr>
+	<tr>
+		<th>詳細</th>
+		<td>
+			<div class="edit-btn-group">
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_detail_align" value="left"{group_detail_align:checked#left} id="input-radio-group_detail_align-left" />
+					<label for="input-radio-group_detail_align-left" class="acms-text-left edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">左揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_detail_align" value="center"{group_detail_align:checked#center} id="input-radio-group_detail_align-center" />
+					<label for="input-radio-group_detail_align-center" class="acms-text-center edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">中央揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_detail_align" value="right"{group_detail_align:checked#right} id="input-radio-group_detail_align-right" />
+					<label for="input-radio-group_detail_align-right" class="acms-text-right edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">右揃え</span></label>
+				</div>
+			</div>
+			<input type="hidden" name="field[]" value="group_detail_align" />
+		</td>
+	</tr>
+	<tr>
+		<th>ボタン</th>
+		<td>
+			<div class="edit-btn-group">
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_btn_align" value="left"{group_btn_align:checked#left} id="input-radio-group_btn_align-left" />
+					<label for="input-radio-group_btn_align-left" class="acms-text-left edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">左揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_btn_align" value="center"{group_btn_align:checked#center} id="input-radio-group_btn_align-center" />
+					<label for="input-radio-group_btn_align-center" class="acms-text-center edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">中央揃え</span></label>
+				</div>
+				<div class="acms-admin-form-radio edit-btn-group-item-wrap">
+					<input type="radio" name="group_btn_align" value="right"{group_btn_align:checked#right} id="input-radio-group_btn_align-right" />
+					<label for="input-radio-group_btn_align-right" class="acms-text-right edit-btn-group-item"><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="edit-text-line"></span><span class="acms-hide-visually">右揃え</span></label>
+				</div>
+			</div>
+			<input type="hidden" name="field[]" value="group_btn_align" />
+		</td>
+	</tr>
+</table>
+<h2 class="acms-admin-admin-title2">カスタムフィールドグループ</h2>
+<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+	<tbody>
+		<!-- BEGIN module_field_group:loop -->
+		<tr class="sortable-item">
+			<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
+			<td>
+				<table>
+					<tr>
+						<th>見出し</th>
+						<td>
+							<input type="text" name="group_heading[{i}]" value="{group_heading}" class="acms-admin-form-width-large"><br>
+						</td>
+					</tr>
+					<tr>
+						<th>詳細</th>
+						<td>
+							<textarea name="group_detail[{i}]" rows="3" class="acms-admin-form-width-large">{group_detail}</textarea><br>
+						</td>
+					</tr>
+					<tr>
+						<th>ボタン</th>
+						<td>
+							<label class="acms-admin-margin-bottom-mini">URL：<input type="text" name="group_btn_url[{i}]" value="{group_btn_url}" class="acms-admin-form-width-large"><br></label>
+							<label class="acms-admin-margin-bottom-mini">テキスト：<input type="text" name="group_btn_text[{i}]" value="{group_btn_text}" class="acms-admin-form-width-large"><br></label>
+						</td>
+					</tr>
+				</table>
+			</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" ></td>
+		</tr>
+		<!-- END module_field_group:loop -->
+		<tr class="sortable-item item-template">
+			<td class="item-handle"></td>
+			<td>
+				<table>
+					<tr>
+						<th>見出し</th>
+						<td>
+							<input type="text" name="group_heading[]" value="" class="acms-admin-form-width-large">
+						</td>
+					</tr>
+					<tr>
+						<th>詳細</th>
+						<td>
+							<textarea name="group_detail[]" rows="3" class="acms-admin-form-width-large"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>ボタン</th>
+						<td>
+							<label class="acms-admin-margin-bottom-mini">URL：<input type="text" name="group_btn_url[]" value="" class="acms-admin-form-width-large"></label>
+							<label class="acms-admin-margin-bottom-mini">テキスト：<input type="text" name="group_btn_text[]" value="" class="acms-admin-form-width-large"></label>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" ></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="6"><input type="button" class="item-insert acms-admin-btn-admin" value="追加" ></td>
+		</tr>
+	</tfoot>
+</table>
+<input type="hidden" name="@module_field_group[]" value="group_heading" >
+<input type="hidden" name="field[]" value="group_heading" >
+<input type="hidden" name="@module_field_group[]" value="group_detail" >
+<input type="hidden" name="field[]" value="group_detail" >
+<input type="hidden" name="@module_field_group[]" value="group_btn_url" >
+<input type="hidden" name="field[]" value="group_btn_url" >
+<input type="hidden" name="@module_field_group[]" value="group_btn_text" >
+<input type="hidden" name="field[]" value="group_btn_text" >
+<input type="hidden" name="field[]" value="@module_field_group" >

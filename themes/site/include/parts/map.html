@@ -1,0 +1,33 @@
+<!-- BEGIN_IF [%{FIELD}/em] -->
+<section class="clearfix">
+	<div class="module-header acms-margin-bottom-small clearfix">
+		<h2 class="module-heading">地図から検索する</h2>
+	</div>
+	<div class="map-wrapper">
+
+		<!-- BEGIN_MODULE Category_Field -->
+		<div class="realestate-map">
+			<!-- BEGIN_MODULE Entry_Summary id="summary_map" -->
+				<!-- BEGIN_SetRendered id="map-markers" -->
+				<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->{map_lat},{map_lng}<!-- BEGIN glue -->|<!-- END glue --><!-- END entry:loop --><!-- END unit:loop -->
+				<!-- END_SetRendered -->
+
+				<!-- BEGIN_SetRendered id="map-messages" -->
+				<!-- BEGIN unit:loop --><!-- BEGIN entry:loop --><table><tr><td><a href="{url}"><!-- BEGIN_IF [{main_photo@path}/nem/] --><img src="%{MEDIA_ARCHIVES_DIR}{main_photo@path}" width="200" alt="" /><br/><!-- END_IF -->{title}</a></td></tr></table><!-- BEGIN glue -->[[:split:]]<!-- END glue --><!-- END entry:loop --><!-- END unit:loop -->
+				<!-- END_SetRendered -->
+			<!-- END_MODULE Entry_Summary -->
+
+			<div class="js-open-street-map"
+				 data-multiple="true"
+				 data-lat="{index_map_lat}"
+				 data-lng="{index_map_lng}"
+				 data-zoom="{index_map_zoom}"
+				 data-markers='<!-- GET_Rendered id="map-markers" trim="1" -->'
+				 data-messages='<!-- GET_Rendered id="map-messages" trim="1" -->'
+				 style="height: 400px;"
+			></div>
+		</div>
+		<!-- BEGIN_MODULE Touch_SessionWithCompilation --> <p class="edit-link">[<a href="%{BLOG_URL}bid/%{BID}/cid/%{CID}/admin/category_edit/">編集</a>]</p><!-- END_MODULE Touch_SessionWithCompilation -->
+		<!-- END_MODULE Category_Field -->
+	</div>
+</section><!-- END_IF -->

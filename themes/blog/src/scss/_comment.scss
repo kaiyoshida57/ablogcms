@@ -1,0 +1,168 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ----------------
+コメント
+------------------ */
+.comment-form {
+	margin-bottom: 50px;
+}
+
+.comment-table {
+	width: 100%;
+	margin-bottom: 15px;
+	border-top: none;
+
+	th {
+		width: 140px;
+		padding: 5px 20px 5px 0;
+		color: #000;
+		font-weight: normal;
+
+    @include acms.font-size(14);
+
+		line-height: 24px;
+		white-space: nowrap;
+		text-align: left;
+		vertical-align: top;
+		border-bottom: none;
+	}
+
+	td {
+		padding: 5px 0;
+		border-bottom: none;
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		width: 100%;
+		height: 40px;
+		padding: 0 10px;
+
+    @include acms.font-size(16);
+
+		line-height: 40px;
+		border: 1px solid #b2b2b4;
+		border-radius: 3px;
+	}
+
+	textarea {
+		width: 100%;
+		padding: 0 10px;
+
+    @include acms.font-size(16);
+
+		line-height: 40px;
+		border: 1px solid #b2b2b4;
+		border-radius: 3px;
+	}
+
+	@media screen and (max-width: acms.$breakpoint-md-max) {
+		display: block;
+
+		& tbody,
+		& td,
+		& th,
+		& tr {
+			display: block;
+			width: auto;
+		}
+	}
+}
+
+.comment-btn,
+.comment-btn-inline {
+	width: 152px;
+	padding: 10px 0;
+	color: #fff;
+
+  @include acms.font-size(14);
+
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+}
+
+.comment-btn {
+	@include global.roll-over-bg-color(global.$btn-color, global.$btn-color-on-hover, global.$transition-speed);
+
+	display: block;
+	margin: 0 auto;
+}
+
+.comment-btn-inline {
+	@include global.roll-over-bg-color(#949494, global.$bg-color-dark, global.$transition-speed);
+
+	display: inline-block;
+}
+
+.comment-list {
+	margin: 0 0 20px;
+	padding: 0;
+
+	& li {
+		display: block;
+		padding: 15px 0 0;
+		list-style-type: none;
+		border-top: 1px solid global.$border-color-dark;
+
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+
+	& > ol{
+		padding-left: 0;
+
+	}
+
+	& li:last-child{
+		border-bottom: none;
+	}
+
+	& ul {
+		display: block;
+		padding-left:20px;
+		border-top: 1px solid global.$border-color-dark;
+	}
+
+	& > li > ul{
+		padding-left: 0;
+		border-top: none;
+	}
+}
+
+
+.comment-list-title {
+	margin: 0 0 15px;
+	color: global.$text-color-base;
+	font-weight: bold;
+
+  @include acms.font-size(18);
+
+	a {
+		color: global.$text-color-base;
+
+		&:link,
+		&:visited {
+			color: global.$text-color-base;
+		}
+	}
+}
+
+.comment-list-text {
+	margin: 0 0 15px;
+	color: global.$text-color-base;
+
+  @include acms.font-size(16);
+}
+
+.comment-list-info {
+	margin: 0;
+	padding-bottom: 15px;
+	color: #636363;
+
+  @include acms.font-size(14);
+
+	text-align: right;
+}
