@@ -1,0 +1,24 @@
+<table class="acms-admin-table-admin-edit">
+  <tbody>
+    <tr>
+      <th>背景画像</th>
+      <td class="js-media-field">
+        <div class="js-droparea" data-thumbnail="{category-image@thumbnail}" data-type="image" data-thumbnail-type="{category-image@type}" data-width="200px" data-height="200px"></div>
+        <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+        <div class="acms-admin-margin-top-mini">
+          <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+        </div>
+        <input type="hidden" name="category-image" class="js-value" value="{category-image}" />
+        <input type="hidden" name="field[]" value="category-image" />
+        <input type="hidden" name="category-image:extension" value="media" />
+      </td>
+    </tr>
+    <tr>
+      <th>説明文</th>
+      <td>
+        <textarea name="category-description" class="acms-admin-form-width-full">{category-description}</textarea>
+        <input type="hidden" name="field[]" value="category-description" />
+      </td>
+    </tr>
+  </tbody>
+</table>

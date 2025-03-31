@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>sample static site</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/acms.css">
+	<link rel="stylesheet" href="./css/site.css">
+	<link rel="stylesheet" href="./js/slick/slick.css">
+
+	<script src="./js/jquery-2.2.3.min.js" charset="UTF-8"></script>
+	<script src="./js/slick/slick.js" charset="UTF-8"></script>
+	<script>
+		$(function() {
+			$('.js-slider').slick({
+				dots: true,
+				arrows: true,
+				prevArrow: '<button type="button" class="slick-prev">前へ</button>',
+				nextArrow: '<button type="button" class="slick-next">次へ</button>',
+				autoplay: true,
+				autoplaySpeed: 3000,
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<header class="head-wrapper">
+		<div class="acms-container">
+			<div class="header header-stack" role="banner">
+				<div class="header-logo">
+					<div>
+						<h1 class="site-name"><a href="index.html">
+							<img src="./images/ablogcms_mark.png" alt="ablogcms" class="site-logo"><span class="siteNameText">sample static site</span></a>
+						</h1>
+					</div>
+				</div>
+
+				<div class="header-nav">
+					<div class="acms-grid">
+						<nav class="navbar">
+							<ul>
+								<li class="stay"><a href="index.html">ホーム</a></li>
+								<li><a href="list.html">一覧</a></li>
+								<li><a href="entry.html">詳細</a></li>
+							</ul>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="acms-container">
+		<div class="module-section">
+			<div class="js-slider">
+
+				<div>
+					<a href="list.html" target="_self" class="slider-item"><img src="./images/slider_zoo1.jpg" width="1150" height="400" alt="" class="acms-img-responsive slider-image" /></a>
+				</div>
+
+				<div>
+					<a href="list.html" target="_self" class="slider-item"><img src="./images/slider_zoo2.jpg" width="1150" height="400" alt="" class="acms-img-responsive slider-image" /></a>
+				</div>
+
+				<div>
+					<a href="list.html" target="_self" class="slider-item"><img src="./images/slider_zoo3.jpg" width="1150" height="400" alt="" class="acms-img-responsive slider-image" /></a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="acms-grid">
+			<main class="acms-col-lg-9 main">
+				<section class="module-section" id="top-headline">
+					<div class="module-header clearfix">
+						<h2 class="module-heading">特定のカテゴリーの一覧</h2>
+						<a href="list.html" class="module-index-link"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
+					</div>
+
+					<ul class="headline acms-list-group clearfix">
+						<li class="acms-list-group-item headline-item  js-biggerlink">
+							<time class="headline-dat" datetime="2016-04-27">2016年04月27日( 水 )</time>
+							<a href="entry.html" class="acms-list-group-title-link headline-title">エントリー名1</a>
+						</li>
+						<li class="acms-list-group-item headline-item  js-biggerlink">
+							<time class="headline-dat" datetime="2016-04-12">2016年04月12日( 火 )</time>
+							<a href="entry.html" class="acms-list-group-title-link headline-title">エントリー名2</a>
+						</li>
+						<li class="acms-list-group-item headline-item  js-biggerlink">
+							<time class="headline-dat" datetime="2015-04-13">2015年04月13日( 月 )</time>
+							<a href="entry.html" class="acms-list-group-title-link headline-title">エントリー名3</a>
+						</li>
+						<li class="acms-list-group-item headline-item  js-biggerlink">
+							<time class="headline-dat" datetime="2013-06-19">2013年06月19日( 水 )</time>
+							<a href="entry.html" class="acms-list-group-title-link headline-title">エントリー名4</a>
+						</li>
+						<li class="acms-list-group-item headline-item  js-biggerlink">
+							<time class="headline-dat" datetime="2013-06-19">2013年06月19日( 水 )</time>
+							<a href="entry.htmll" class="acms-list-group-title-link headline-title">エントリー名5</a>
+						</li>
+					</ul>
+				</section>
+
+			</main>
+
+			<div class="acms-col-lg-3 sub">
+
+				<div class="module-section">
+					<section class="search">
+						<div class="module-header clearfix">
+							<h2 class="module-heading">検索</h2>
+						</div>
+						<form action="" method="post" name="searchForm" class="acms-form search-form" role="search">
+							<div class="acms-form-action">
+								<input type="search" id="searchForm" name="keyword" value="" size="15" class="search-form-input">
+								<span class="acms-form-side-btn"><button type="submit" name="submit" class="acms-btn btn-search"><span class="acms-icon-search"></span><span class="acms-hide-visually">検索</span></button></span>
+							</div>
+						</form>
+					</section>
+				</div>
+
+				<section class="module-section">
+					<div class="module-header clearfix">
+						<h2 class="module-heading">バナー</h2>
+					</div>
+					<ul class="banner">
+						<li class="banner-list-item ">
+							<a href="https://www.a-blogcms.jp/"><img src="./images/ablogcms_logo.png" width="300" height="135" alt="a-blog cms" class="acms-img-responsive" /></a>
+						</li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+	</div>
+
+	<footer class="foot-wrapper">
+		<div class="footer acms-container sp-container">
+			<div class="acms-grid">
+				<address class="acms-col-md-4">
+					<dl class="company-about">
+						<dt class="company-name">有限会社アップルップル</dt>
+						<dd class="company-detail">〒450-0002</dd>
+						<dd class="company-detail">名古屋市中村区名駅3-18-5 モンマートビル5F</dd>
+						<dd class="company-detail">TEL : <a href="tel:052-485-8577">052-485-8577</a></dd>
+					</dl>
+				</address>
+				<div class="acms-col-md-8">
+					<div class="acms-hide acms-block-lg acms-block-xl">
+						<ul class="sns-list">
+							<li class="sns-list-item"><a href="https://www.facebook.com/ablogcms" class="sns-list-facebook"><span class="acms-icon-facebook"></span></a></li>
+							<li class="sns-list-item"><a href="https://twitter.com/ablogcms" class="sns-list-twitter"><span class="acms-icon-twitter"></span></a></li>
+							<li class="sns-list-item"><a href="https://www.youtube.com/user/ablogcmsTube" class="sns-list-youtube"><span class="acms-icon-youtube"></span></a></li>
+						</ul>
+					</div>
+					<p class="page-top"><a class="scrollTo" href="#"><span class="page-top-btn">ページの先頭へ</span></a></p>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<p class="copyright-text acms-container acms-text-center">powered by <a href="http://www.a-blogcms.jp/"><img src="./images/acms.svg" width="96" alt="a-blog cms" class="copryright-logo" /></a></p>
+		</div>
+	</footer>
+</body>
+</html>
