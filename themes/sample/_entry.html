@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>詳細ページ：sample static site</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	@include("/include/head/meta.html")
+
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/acms.css">
 	<link rel="stylesheet" href="/css/site.css">
@@ -31,7 +29,10 @@
 					</div>
 				</div>
 
-				<div class="header-nav">
+        <!-- ヘッダー -->
+        @include("/include/header.html")
+
+        <!-- <div class="header-nav">
 					<div class="acms-grid">
 						<nav class="navbar">
 							<ul>
@@ -41,7 +42,8 @@
 							</ul>
 						</nav>
 					</div>
-				</div>
+				</div> -->
+
 			</div>
 		</div>
 	</header>
@@ -276,19 +278,22 @@
 					</ul>
 				</section>
 
-				<div class="module-section">
-					<section class="search">
-						<div class="module-header clearfix">
-							<h2 class="module-heading">検索</h2>
-						</div>
-						<form action="" method="post" name="searchForm" class="acms-form search-form" role="search">
-							<div class="acms-form-action">
-								<input type="search" id="searchForm" name="keyword" value="" size="15" class="search-form-input">
-								<span class="acms-form-side-btn"><button type="submit" name="submit" class="acms-btn btn-search"><span class="acms-icon-search"></span><span class="acms-hide-visually">検索</span></button></span>
-							</div>
-						</form>
-					</section>
-				</div>
+        <div class="module-section">
+          <section class="search">
+            <div class="module-header clearfix">
+              <h2 class="module-heading">検索</h2>
+            </div>
+            <form action="" method="post" name="searchForm" class="acms-form search-form" role="search">
+              <div class="acms-form-action">
+                <input type="search" id="searchForm" name="keyword" value="%{KEYWORD}" size="15" class="search-form-input">
+                <input type="hidden" name="query" value="keyword">
+                <span class="acms-form-side-btn"><button type="submit" name="ACMS_POST_2GET" class="acms-btn btn-search"><span class="acms-icon-search"></span><span class="acms-hide-visually">検索</span></button></span>
+                <input type="hidden" name="tpl" value="/entry.html">
+                <input type="hidden" name="bid" value="1">
+              </div>
+            </form>
+          </section>
+        </div>
 
 				<section class="module-section">
 					<div class="module-header clearfix">
